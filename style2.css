@@ -1,0 +1,462 @@
+ /* * =========================================
+         * 1. CẤU HÌNH MÀU SẮC & CƠ BẢN (CSS VARIABLES)
+         * Dựa trên bảng màu:
+         * Lavender Blush: #F4DFE6
+         * Amaranth Pink: #E0A3BB
+         * Azure: #D6E6E7
+         * Citron: #C5CC82
+         * Moss Green: #97A13B
+         * =========================================
+         */
+        :root {
+            --bg-color: #F4DFE6;        /* Nền chính - Lavender Blush */
+            --primary-color: #E0A3BB;   /* Màu chủ đạo - Amaranth Pink */
+            --accent-color: #97A13B;    /* Màu nhấn/Text đậm - Moss Green */
+            --secondary-color: #C5CC82; /* Màu phụ - Citron */
+            --light-blue: #D6E6E7;      /* Màu nền phụ - Azure */
+            --text-color: #555;         /* Màu chữ chung */
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border_box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Dancing Script', cursive; /* Font chữ viết tay cho tiêu đề */
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container chung để căn giữa nội dung */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* * =========================================
+         * 2. HEADER & NAVIGATION
+         * =========================================
+         */
+        header {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            transition: color 0.3s;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+
+        /* Nút menu mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--accent-color);
+        }
+
+        /* * =========================================
+         * 3. CHUYỂN ĐỔI TRANG (SPA Logic)
+         * Các section sẽ ẩn đi, chỉ hiện section đang active
+         * =========================================
+         */
+        section.page-section {
+             /* Mặc định ẩn tất cả */
+            padding: 40px 0;
+            min-height: 80vh;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        section.page-section.active {
+            display: block; /* Chỉ hiện trang active */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* * =========================================
+         * 4. TRANG HOME (Trang Chủ)
+         * - Banner Slideshow
+         * =========================================
+         */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active-slide {
+            opacity: 1;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Nút điều hướng Slider */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            color: var(--accent-color);
+            transition: 0.3s;
+        }
+        .slider-btn:hover { background: var(--white); }
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        .featured-cakes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .featured-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        /* * =========================================
+         * 5. TRANG GIỚI THIỆU (Layout 2 cột + Hover Scale)
+         * =========================================
+         */
+        .intro-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-img-container {
+            overflow: hidden; /* Cần thiết để hiệu ứng scale không bị tràn */
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease; /* Hiệu ứng mượt mà */
+            display: block;
+        }
+
+        /* Yêu cầu: Hover scale ảnh */
+        .intro-img-container:hover .intro-img {
+            transform: scale(1.1);
+        }
+
+        .intro-text {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* * =========================================
+         * 6. TRANG SẢN PHẨM (Grid Layout + Hover Price)
+         * =========================================
+         */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Yêu cầu: Hover hiển thị giá (Overlay) */
+        .price-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 250px; /* Bằng chiều cao ảnh */
+            background: rgba(224, 163, 187, 0.8); /* Màu Amaranth Pink mờ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover .price-overlay {
+            opacity: 1;
+        }
+
+        .price-text {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* * =========================================
+         * 7. TRANG CÔNG THỨC (List + Accordion)
+         * =========================================
+         */
+        .recipe-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recipe-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .recipe-header {
+            background: var(--secondary-color);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .recipe-header:hover {
+            background: var(--accent-color);
+        }
+
+        /* Nội dung Accordion mặc định ẩn */
+        .recipe-content {
+            display: none;
+            padding: 20px;
+            background: var(--light-blue);
+        }
+
+        .recipe-detail {
+            display: flex;
+            gap: 20px;
+        }
+
+        .recipe-detail img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* * =========================================
+         * 8. TRANG LIÊN HỆ (Form + Validate)
+         * =========================================
+         */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            width: 30px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--light-blue);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.85rem;
+            display: none; /* Mặc định ẩn */
+            margin-top: 5px;
+        }
+
+        /* * =========================================
+         * 9. FOOTER
+         * =========================================
+         */
+        footer {
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* * =========================================
+         * 10. RESPONSIVE
+         * =========================================
+         */
+        @media (max-width: 768px) {
+            .intro-layout, .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .menu-toggle { display: block; }
+            .nav-links {
+                display: none; /* Ẩn menu trên mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            .nav-links.active { display: flex; }
+            .recipe-detail { flex-direction: column; }
+            .slider-container { height: 300px; }
+            .featured-cakes { gap: 10px; }
+            .featured-item img { width: 100px; height: 100px; }
+        }

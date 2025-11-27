@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item active">Công Thức</a></li>
+                <li><a href="contact.html" class="nav-item">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ================= TRANG CÔNG THỨC ================= -->
+        <section id="recipes" class="page-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Góc Chia Sẻ Công Thức</h2>
+            <div class="recipe-list">
+                
+                <!-- Công thức 1: Accordion Item -->
+                <div class="recipe-item">
+                    <div class="recipe-header">
+                        <span>1. Cách làm bánh Macaron chuẩn Pháp</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-detail">
+                            <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=300" alt="Macaron">
+                            <div>
+                                <p><strong>Nguyên liệu:</strong> Bột hạnh nhân, đường bột, lòng trắng trứng, đường cát.</p>
+                                <p><strong>Cách làm:</strong> Đánh bông lòng trắng trứng, trộn đều với bột hạnh nhân rây mịn. Bắt kem lên khay nướng và nướng ở 150 độ C trong 15 phút. Kẹp nhân ganache ở giữa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Công thức 2 -->
+                <div class="recipe-item">
+                    <div class="recipe-header">
+                        <span>2. Bí quyết làm bánh bông lan trứng muối</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-detail">
+                            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=300" alt="Bông lan">
+                            <div>
+                                <p><strong>Nguyên liệu:</strong> Bột mì, trứng, sốt dầu trứng, chà bông, trứng muối.</p>
+                                <p><strong>Cách làm:</strong> Nướng cốt bánh chiffon mềm ẩm. Phủ sốt dầu trứng béo ngậy lên trên, rắc chà bông và đặt trứng muối nướng chín lên mặt bánh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Công thức 3 -->
+                <div class="recipe-item">
+                    <div class="recipe-header">
+                        <span>3. Cookies Chocolate Chip đơn giản</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="recipe-detail">
+                            <img src="https://images.unsplash.com/photo-1499636138143-bd649043ea52?w=300" alt="Cookies">
+                            <div>
+                                <p><strong>Nguyên liệu:</strong> Bơ, đường nâu, bột mì, chocolate chips.</p>
+                                <p><strong>Cách làm:</strong> Trộn bơ và đường. Thêm bột và chocolate chips. Nặn thành viên nhỏ và nướng 12 phút ở 180 độ C cho đến khi viền bánh vàng giòn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>

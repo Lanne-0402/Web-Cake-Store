@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item active">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li><a href="contact.html" class="nav-item">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ================= TRANG GIỚI THIỆU ================= -->
+        <section id="intro" class="page-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Câu Chuyện Của Chúng Tôi</h2>
+            <div class="intro-layout">
+                <div class="intro-img-container">
+                    <!-- Ảnh tiệm bánh, có hiệu ứng Hover Scale trong CSS -->
+                    <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tiệm bánh" class="intro-img">
+                </div>
+                <div class="intro-text">
+                    <h3>Halo Sweet - Nơi Khởi Nguồn Đam Mê</h3>
+                    <p style="margin-top: 15px;">
+                        Được thành lập vào năm 2015, Tiệm Bánh Halo Sweet bắt đầu từ một căn bếp nhỏ với niềm đam mê cháy bỏng dành cho bột mì và bơ sữa. Chúng tôi tin rằng mỗi chiếc bánh không chỉ là thức ăn, mà là một tác phẩm nghệ thuật chứa đựng tình yêu thương.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Với tông màu chủ đạo là hồng phấn và xanh rêu, chúng tôi muốn mang lại cảm giác ấm cúng, thư giãn cho mọi khách hàng ghé thăm. Hãy đến và trải nghiệm không gian ngọt ngào này nhé!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>

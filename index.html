@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item active">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li><a href="contact.html" class="nav-item">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ================= TRANG HOME ================= -->
+        <section id="home" class="page-section active">
+            <!-- Banner Slideshow -->
+            <div class="slider-container">
+                <!-- Slide 1 -->
+                <div class="slide active-slide" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');">
+                    <div class="slide-content">
+                        <h2>Vị Ngọt Hạnh Phúc</h2>
+                        <p>Chào mừng bạn đến với Tiệm Bánh Halo Sweet, nơi lưu giữ những hương vị ngọt ngào nhất.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');">
+                    <div class="slide-content">
+                        <h2>Bánh Tươi Mỗi Ngày</h2>
+                        <p>Nguyên liệu tự nhiên, công thức độc quyền tạo nên những chiếc bánh hoàn hảo.</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');">
+                    <div class="slide-content">
+                        <h2>Ưu Đãi Đặc Biệt</h2>
+                        <p>Giảm giá 20% cho các đơn hàng đặt online trong tuần này.</p>
+                    </div>
+                </div>
+
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Hình ảnh bánh trưng bày -->
+            <div style="text-align: center; margin-top: 50px;">
+                <h2>Bộ Sưu Tập Nổi Bật</h2>
+                <div class="featured-cakes">
+                    <div class="featured-item">
+                        <img src="cake-pic\cupcakecaramel25.jpg" alt="Cupcake">
+                    </div>
+                    <div class="featured-item">
+                        <img src="cake-pic\donut27.jpg" alt="Donut">
+                    </div>
+                    <div class="featured-item">
+                        <img src="cake-pic\tiramisu250.jpg" alt="Tiramisu">
+                    </div>
+                    <div class="featured-item">
+                        <img src="cake-pic\macaron14.jpg" alt="Macaron">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>
+</body>
+</html>

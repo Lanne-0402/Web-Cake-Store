@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li><a href="contact.html" class="nav-item active">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ================= TRANG LIÊN HỆ ================= -->
+        <section id="contact" class="page-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Liên Hệ Đặt Bánh</h2>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Thông Tin</h3>
+                    <p style="margin-bottom: 20px;">Hãy để lại lời nhắn hoặc đặt bánh trực tiếp qua form bên cạnh.</p>
+                    
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Bánh Ngọt, Quận 1, TP.HCM</p>
+                    <p><i class="fas fa-phone"></i> 0909 123 456</p>
+                    <p><i class="fas fa-envelope"></i> halosweetbakery@email.com</p>
+                    <p><i class="fas fa-clock"></i> 8:00 - 21:00 (Mỗi ngày)</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.494668106037!2d106.6997639148007!3d10.773374292323577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f487a2a0755%3A0x6b83ce60907481!2sBen%20Thanh%20Market!5e0!3m2!1sen!2s!4v1638890000000!5m2!1sen!2s" width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Form đặt bánh -->
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Họ và Tên</label>
+                        <input type="text" id="name" placeholder="Nhập tên của bạn">
+                        <div class="error-message" id="error-name">Vui lòng nhập họ tên.</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Số Điện Thoại</label>
+                        <input type="text" id="phone" placeholder="Nhập số điện thoại">
+                        <div class="error-message" id="error-phone">Số điện thoại không hợp lệ (cần 10 số).</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Địa Chỉ Giao Hàng</label>
+                        <input type="text" id="address" placeholder="Nhập địa chỉ nhận bánh">
+                        <div class="error-message" id="error-address">Vui lòng nhập địa chỉ.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Lời Nhắn / Yêu Cầu Bánh</label>
+                        <textarea id="message" rows="4" placeholder="Loại bánh, số lượng, ghi chú..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Gửi Đơn Hàng</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>

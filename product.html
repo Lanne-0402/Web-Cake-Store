@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item active">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li><a href="contact.html" class="nav-item">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+
+         <!-- ================= TRANG SẢN PHẨM ================= -->
+        <section id="products" class="page-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">Thực Đơn Bánh Ngọt</h2>
+            <!-- Grid Layout -->
+            <div class="products-grid">
+                <!-- Sản phẩm 1 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Strawberry Cake" class="product-img">
+                    <!-- Overlay hiển thị giá khi hover -->
+                    <div class="price-overlay">
+                        <span class="price-text">450.000 VNĐ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bánh Kem Dâu</h3>
+                        <p>Cốt bánh vanilla mềm mịn</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1606890737304-57a1fd872542?w=400" alt="Cheese Cake" class="product-img">
+                    <div class="price-overlay">
+                        <span class="price-text">85.000 VNĐ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Phô Mai Tan Chảy</h3>
+                        <p>Béo ngậy, thơm lừng</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Pancakes" class="product-img">
+                    <div class="price-overlay">
+                        <span class="price-text">60.000 VNĐ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pancake Mật Ong</h3>
+                        <p>Bữa sáng hoàn hảo</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 4 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=400" alt="Tiramisu" class="product-img">
+                    <div class="price-overlay">
+                        <span class="price-text">55.000 VNĐ</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tiramisu Cổ Điển</h3>
+                        <p>Hương vị Ý đích thực</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>
