@@ -87,4 +87,117 @@
                 }
             });
 
+            // 5. LỌC SẢN PHẨM (Sidebar Filter)
+$('.sidebar li').click(function() {
+    let filter = $(this).data('filter'); // lấy loại bánh
+
+    // Xóa highlight ở tất cả
+    $('.sidebar li').removeClass('active-filter');
+
+    // Thêm highlight chỗ được chọn
+    $(this).addClass('active-filter');
+
+    // Nếu chọn "Tất cả"
+    if (filter === 'all') {
+        $('.product-card').show();
+        return;
+    }
+
+    // Ẩn tất cả
+    $('.product-card').hide();
+
+    // Hiện đúng loại được chọn
+    $('.product-card[data-type="' + filter + '"]').show();
+});
+
+// ===============================
+// 6. FILTER + PAGINATION + ANIMATION
+// ===============================
+
+let allProducts = $('.product-card');      // tất cả sản phẩm
+let currentFilter = "all";                // loại đang chọn
+let itemsPerPage = 9;                     // 9 sản phẩm mỗi trang
+let currentPage = 1;                      // trang hiện tại
+
+// Hàm render lại sản phẩm theo filter + pagination
+function renderProducts() {
+    // 1. Lọc theo loại
+    let filtered = allProducts;
+
+    if (currentFilter !== "all") {
+        filtered = allProducts.filter(function () {
+            return $(this).data('type') === currentFilter;
         });
+    }
+
+    // 2. Ẩn toàn bộ trước
+    allProducts.hide().removeClass('show');
+
+    // 3. Pagination
+    let totalItems = filtered.length;
+    let totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    // Giới hạn trang không vượt ngoài
+    if (currentPage > totalPages) currentPage = 1;
+
+    // Tính vị trí
+    let start = (currentPage - 1) * itemsPerPage;
+    let end = start + itemsPerPage;
+
+    let pageItems = filtered.slice(start, end);
+
+    // 4. Hiển thị sản phẩm + animation
+    pageItems.each(function (i) {
+        $(this).show();
+
+        setTimeout(() => {
+            $(this).addClass('show');
+        }, 100 * i);
+    });
+
+    renderPagination(totalPages);
+}
+
+// ===============================
+// Tạo nút phân trang
+// ===============================
+function renderPagination(totalPages) {
+    let pagination = $('.pagination');
+    pagination.empty();
+
+    for (let i = 1; i <= totalPages; i++) {
+        let btn = $(`<button>${i}</button>`);
+
+        if (i === currentPage) {
+            btn.addClass('active-page');
+        }
+
+        btn.click(function () {
+            currentPage = i;
+            renderProducts();
+        });
+
+        pagination.append(btn);
+    }
+}
+
+// ===============================
+// LỌC CATEGORY KHI NHẤN SIDEBAR
+// ===============================
+$('.sidebar li').click(function () {
+    currentFilter = $(this).data('filter');
+    currentPage = 1; // reset về trang đầu
+
+    $('.sidebar li').removeClass('active-filter');
+    $(this).addClass('active-filter');
+
+    renderProducts();
+});
+
+// ===============================
+// KHỞI TẠO LẦN ĐẦU
+// ===============================
+renderProducts();
+
+
+});

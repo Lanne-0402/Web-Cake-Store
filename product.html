@@ -37,251 +37,264 @@
     <main class="container">
 
          <!-- ================= TRANG SẢN PHẨM ================= -->
-        <section id="products" class="page-section">
-            <h2 style="text-align: center; margin-bottom: 30px;">Thực Đơn Bánh Ngọt</h2>
-            <!-- Grid Layout -->
-            <div class="products-grid">
-                <!-- Sản phẩm 1 -->
-                <div class="product-card">
-                    <img src="cake-pic/banhsinhnhat299.jpg" alt="Birthday Cake" class="product-img">
-                    <!-- Overlay hiển thị giá khi hover -->
-                    <div class="price-overlay">
-                        <span class="price-text">299.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Bánh sinh nhật theo yêu cầu</h3>
-                        <p>Tùy chỉnh bánh ngọt theo yêu thích</p>
-                    </div>
-                </div>
+        <!-- ================= TRANG SẢN PHẨM ================= -->
+<section id="products" class="page-section">
+    <h2 style="text-align: center; margin-bottom: 30px;">Thực Đơn Bánh Ngọt</h2>
 
-                <!-- Sản phẩm 2 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1606890737304-57a1fd872542?w=400" alt="Cheese Cake" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">85.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Phô Mai Tan Chảy</h3>
-                        <p>Béo ngậy, thơm lừng</p>
-                    </div>
-                </div>
+    <!-- ====== LAYOUT MỚI: SIDEBAR + GRID ====== -->
+    <div class="product-layout">
 
-                <!-- Sản phẩm 3 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Pancakes" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">60.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pancake Mật Ong</h3>
-                        <p>Bữa sáng hoàn hảo</p>
-                    </div>
-                </div>
+        <!-- SIDEBAR BÊN TRÁI -->
+        <aside class="sidebar">
+            <h3>Phân Loại Bánh</h3>
+            <ul>
+                <li class="filter-btn" data-filter="all">Tất cả</li>
+                <li class="filter-btn" data-filter="cake">Bánh Kem</li>
+                <li class="filter-btn" data-filter="tiramisu">Tiramisu</li>
+                <li class="filter-btn" data-filter="cupcake">Cupcake</li>
+                <li class="filter-btn" data-filter="donut">Donut</li>
+                <li class="filter-btn" data-filter="macaron">Macaron</li>
+                <li class="filter-btn" data-filter="cookie">Bánh Quy</li>
+            </ul>
+        </aside>
 
-                <!-- Sản phẩm 4 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=400" alt="Tiramisu" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">55.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tiramisu Cổ Điển</h3>
-                        <p>Hương vị Ý đích thực</p>
-                    </div>
-                </div>
+        <div class="product-content-wrapper">
+    
+        <!-- GRID SẢN PHẨM BÊN PHẢI -->
+        <div class="products-grid">
 
-                 <!-- Sản phẩm 5 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022?w=400" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">120.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Chocolate Cake</h3>
-                        <p>Bánh socola đậm vị</p>
-                    </div>
+            <!-- Lưu ý: thêm CLASS loại bánh cho từng sản phẩm -->
+            <!-- Ví dụ: class="product-card cake" -->
+
+            <!-- Sản phẩm 1 -->
+            <div class="product-card" data-type="cake">
+                <img src="cake-pic/banhsinhnhat299.jpg" alt="Birthday Cake" class="product-img">
+                <div class="price-overlay"><span class="price-text">299.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Bánh sinh nhật theo yêu cầu</h3>
+                    <p>Tùy chỉnh bánh sinh nhật theo yêu thích của bạn</p>
                 </div>
-                
-                <!-- Sản phẩm 6 -->
-                <div class="product-card">
-                     <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400" class="product-img">
-                     <div class="price-overlay">
-                        <span class="price-text">70.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Bánh Mousse Xoài</h3>
-                        <p>Mềm mịn, chua nhẹ</p>
-                    </div>
-                 </div>
-                 
-                <!-- Sản phẩm 7 -->
-                <div class="product-card">
-                     <img src="https://images.unsplash.com/photo-1523987355523-c7b5bdf1f6f6?w=400" class="product-img">
-                     <div class="price-overlay">
-                        <span class="price-text">95.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Bánh Cuộn Trà Xanh</h3>
-                        <p>Matcha thơm nhẹ, kem tươi</p>
-                    </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card" data-type="cake">
+                <img src="cake-pic/banhtheoyeucau249.jpg" alt="Request Cake" class="product-img">
+                <div class="price-overlay"><span class="price-text">249.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Bánh theo yêu cầu</h3>
+                    <p>Vị ngọt theo cách của bạn</p>
                 </div>
-                
-                <!-- Sản phẩm 8 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">40.000 VNĐ</span>
-                    </div> 
-                    <div class="product-info">
-                        <h3>Macaron Pháp</h3>
-                        <p>Ngọt nhẹ, nhiều vị</p>
-                    </div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card" data-type="tiramisu">
+                <img src="cake-pic/tiramisu250.jpg" alt="Tiramisu" class="product-img">
+                <div class="price-overlay"><span class="price-text">250.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Tiramisu Truyền Thống</h3>
+                    <p>Ngọt ngào và mịn màn</p>
                 </div>
-                    
-                <!-- Sản phẩm 9 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">55.000 VNĐ</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Bánh Donut Socola</h3>
-                        <p>Phủ socola dày</p>
-                    </div>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card" data-type="tiramisu">
+                <img src="cake-pic/tiramisudautay320.jpg" alt="Tiramisu" class="product-img">
+                <div class="price-overlay"><span class="price-text">320.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Tiramisu Dâu Tây</h3>
+                    <p>Dâu tây tươi hòa quyện với lớp bánh mềm tan</p>
                 </div>
-                    
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="product-card" data-type="tiramisu">
+                <img src="cake-pic/tiramisumatcha22.jpg" class="product-img">
+                <div class="price-overlay"><span class="price-text">22.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Tiramisu mini Matcha</h3>
+                    <p>Tiramisu kết hợp cùng Matcha đậm vị</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="product-card" data-type="tiramisu">
+                <img src="cake-pic/tiramisumini17.jpg" class="product-img">
+                <div class="price-overlay"><span class="price-text">17.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Tiramisu mini</h3>
+                    <p>Tiramisu mini tan ngay trong miệng</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 7 -->
+            <div class="product-card" data-type="cupcake">
+                <img src="cake-pic/cupcakecaramel25.jpg" class="product-img">
+                <div class="price-overlay"><span class="price-text">25.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Cupcake Caramel</h3>
+                    <p>Hương Caramel hòa quyền trong Cupcake mịn</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 8 -->
+            <div class="product-card" data-type="cupcake">
+                <img src="cake-pic/cupcakematchachip27.jpg" class="product-img">
+                <div class="price-overlay"><span class="price-text">27.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Cupcake Matcha</h3>
+                    <p>Cupcake với sự hòa trộn của Matcha và Chocochip</p>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 9 -->
+            <div class="product-card" data-type="cupcake">
+                <img src="cake-pic/cupcakevani25.jpg" class="product-img">
+                <div class="price-overlay"><span class="price-text">25.000 VNĐ</span></div>
+                <div class="product-info">
+                    <h3>Cupcake Vani</h3>
+                    <p>Vani đậm đà trong lớp bánh mềm</p>
+                </div>
+            </div>
+               
                 <!-- Sản phẩm 10 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" class="product-img">
+                <div class="product-card" data-type="cupcake">
+                    <img src="cake-pic/cupcakeredvelvet27.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">48.000 VNĐ</span>
+                        <span class="price-text">27.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Donut Dâu Tươi</h3>
-                        <p>Mềm, thơm, topping dâu</p>
+                        <h3>Cupcake RedVelvet</h3>
+                        <p>Cupcake + RedVelvet = bùng nổ!</p>
                     </div>
                 </div>
                     
                 <!-- Sản phẩm 11 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1614332287897-cdc94dfb9c3c?w=400" class="product-img">
+                <div class="product-card" data-type="donut">
+                    <img src="cake-pic/donut27.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">90.000 VNĐ</span>
+                        <span class="price-text">27.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                            <h3>Cupcake Kem Bơ</h3>
-                            <p>Trang trí đẹp, vị ngọt nhẹ</p>
+                            <h3>Donut</h3>
+                            <p>Ngọt, xốp và giòn tan</p>
                     </div>
                 </div>
                         
                 <!-- Sản phẩm 12 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400" class="product-img">
+                <div class="product-card" data-type="macaron">
+                    <img src="cake-pic/macaron14.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">110.000 VNĐ</span>
+                        <span class="price-text">14.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Red Velvet Cake</h3>
-                        <p>Màu đỏ truyền thống, kem béo</p>
+                        <h3>Macaron Truyền Thống</h3>
+                        <p>Xốp mềm, vui miệng</p>
                     </div>
                 </div>
 
                 <!-- Sản phẩm 13 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1620570623449-43c6c6d885ab?w=400" class="product-img">
+                <div class="product-card" data-type="macaron">
+                    <img src="cake-pic/macaronchristmas22.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">65.000 VNĐ</span>
+                        <span class="price-text">22.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Puff Kem Tươi</h3>
-                        <p>Vỏ giòn, nhân béo</p>
+                        <h3>Macaron Christmas</h3>
+                        <p>Christmas trong Macaron của bạn?</p>
                     </div>
                 </div>
                 
                 <!-- Sản phẩm 14 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400" class="product-img">
+                <div class="product-card" data-type="macaron">
+                    <img src="cake-pic/setmacaron135.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">30.000 VNĐ</span>
+                        <span class="price-text">135.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Bánh Quy Bơ</h3>
-                        <p>Giòn tan, thơm ngậy</p>
+                        <h3>Set Macaron</h3>
+                        <p>Nhiều vị, nhiều trải nghiệm!</p>
                     </div>
                 </div>
                 
                 <!-- Sản phẩm 15 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1578985545555-1b1f3b3a1f46?w=400" class="product-img">
+                <div class="product-card" data-type="donut">
+                    <img src="cake-pic/setdonutsocola155.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">150.000 VNĐ</span>
+                        <span class="price-text">155.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Bánh Kem Socola Đen</h3>
-                        <p>Đậm đà nhưng không ngọt gắt</p>
+                        <h3>Set Donut Socola</h3>
+                        <p>Socola đậm vị trong từng Donut</p>
                     </div>
                 </div>
                 
                 <!-- Sản phẩm 16 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400" class="product-img">
+                <div class="product-card" data-type="cookie">
+                    <img src="cake-pic/cookieschip17.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">75.000 VNĐ</span>
+                        <span class="price-text">17.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Mousse Việt Quất</h3>
-                        <p>Chua nhẹ, thơm mát</p>
+                        <h3>Bánh quy</h3>
+                        <p>Giòn vui, ngọt nhẹ</p>
                     </div>
                 </div>
 
 
                 <!-- Sản phẩm 17 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1612192527350-19ba93c1f5f8?w=400" class="product-img">
+                <div class="product-card" data-type="cookie">
+                    <img src="cake-pic/dorayaki35.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">50.000 VNĐ</span>
+                        <span class="price-text">35.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Cheesecake Trà Xanh</h3>
-                        <p>Béo nhẹ, thơm matcha</p>
+                        <h3>Dorayaki</h3>
+                        <p>Béo nhẹ, dẻo thơm</p>
                     </div>
                 </div>
                 
                 <!-- Sản phẩm 18 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1619995745882-c97055d8f770?w=400" class="product-img">
+                <div class="product-card" data-type="sukem">
+                    <img src="cake-pic/sukemsocola25.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">95.000 VNĐ</span>
+                        <span class="price-text">25.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                    <h3>Bánh Kem Cam</h3>
-                    <p>Vị cam tươi mát</p>
+                    <h3>Bánh Sukem Socola</h3>
+                    <p>Sukem mềm cùng Socola ngọt lịm</p>
                     </div>
                 </div>
                 
                 <!-- Sản phẩm 19 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1557040605-9897e1c73d63?w=400" class="product-img">
+                <div class="product-card" data-type="sukem">
+                    <img src="cake-pic/sukemsocolamini22.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">135.000 VNĐ</span>
+                        <span class="price-text">21.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Caramel Custard</h3>
-                        <p>Mịn mượt, thơm caramel</p></div>
+                        <h3>Sukem Socola Mini</h3>
+                        <p>Mini tan nhanh hơn trong miệng</p></div>
                     </div>
 
                 <!-- Sản phẩm 20 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400" class="product-img">
+                <div class="product-card" data-type="cake">
+                    <img src="cake-pic/redvelvetcake299.jpg" class="product-img">
                     <div class="price-overlay">
-                        <span class="price-text">58.000 VNĐ</span>
+                        <span class="price-text">299.000 VNĐ</span>
                     </div>
                     <div class="product-info">
-                        <h3>Brownie Socola</h3>
-                        <p>Đậm vị, hơi đắng nhẹ</p>
+                        <h3>Bánh RedVelvet</h3>
+                        <p>Đậm vị, ngọt và tươi mới</p>
                     </div>
                 </div>
-        </section>
+
+        </div>
+        
+        <div class="pagination"></div>
+
+        </div>
+
+</section>
 
     </main>
 
