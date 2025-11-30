@@ -14,6 +14,30 @@
     <link rel="stylesheet" href="style2.css">
     <script src="main.js" defer></script>
 </head>
+
+<!-- CHAT BUBBLE -->
+<div id="chat-bubble">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- CHAT POPUP -->
+<div id="chat-popup" class="hidden">
+    <div class="chat-header">
+        <img src="https://i.imgur.com/4Z3FQyC.png" class="chat-avatar">
+        <span>Halo Sweet Hỗ Trợ</span>
+        <i class="fas fa-times close-chat"></i>
+    </div>
+
+    <div class="chat-body">
+        <div class="chat-msg bot">Xin chào 👋 Bạn muốn hỏi công thức bánh nào thế nè?</div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" placeholder="Nhập câu hỏi...">
+        <button><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
 <body>
 
     <!-- Header -->
@@ -38,63 +62,183 @@
 
         <!-- ================= TRANG CÔNG THỨC ================= -->
         <section id="recipes" class="page-section">
-            <h2 style="text-align: center; margin-bottom: 30px;">Góc Chia Sẻ Công Thức</h2>
-            <div class="recipe-list">
-                
-                <!-- Công thức 1: Accordion Item -->
-                <div class="recipe-item">
-                    <div class="recipe-header">
-                        <span>1. Cách làm bánh Macaron chuẩn Pháp</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-detail">
-                            <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=300" alt="Macaron">
-                            <div>
-                                <p><strong>Nguyên liệu:</strong> Bột hạnh nhân, đường bột, lòng trắng trứng, đường cát.</p>
-                                <p><strong>Cách làm:</strong> Đánh bông lòng trắng trứng, trộn đều với bột hạnh nhân rây mịn. Bắt kem lên khay nướng và nướng ở 150 độ C trong 15 phút. Kẹp nhân ganache ở giữa.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <h2 style="text-align: center; margin-bottom: 30px;">Góc Chia Sẻ Công Thức</h2>
 
-                <!-- Công thức 2 -->
-                <div class="recipe-item">
-                    <div class="recipe-header">
-                        <span>2. Bí quyết làm bánh bông lan trứng muối</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-detail">
-                            <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=300" alt="Bông lan">
-                            <div>
-                                <p><strong>Nguyên liệu:</strong> Bột mì, trứng, sốt dầu trứng, chà bông, trứng muối.</p>
-                                <p><strong>Cách làm:</strong> Nướng cốt bánh chiffon mềm ẩm. Phủ sốt dầu trứng béo ngậy lên trên, rắc chà bông và đặt trứng muối nướng chín lên mặt bánh.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="recipe-wrapper">
 
-                <!-- Công thức 3 -->
-                <div class="recipe-item">
-                    <div class="recipe-header">
-                        <span>3. Cookies Chocolate Chip đơn giản</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="recipe-content">
-                        <div class="recipe-detail">
-                            <img src="https://images.unsplash.com/photo-1499636138143-bd649043ea52?w=300" alt="Cookies">
-                            <div>
-                                <p><strong>Nguyên liệu:</strong> Bơ, đường nâu, bột mì, chocolate chips.</p>
-                                <p><strong>Cách làm:</strong> Trộn bơ và đường. Thêm bột và chocolate chips. Nặn thành viên nhỏ và nướng 12 phút ở 180 độ C cho đến khi viền bánh vàng giòn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- ==== LEFT MENU ==== -->
+        <div class="recipe-menu">
+            <div class="recipe-menu-item active" data-target="macaron">Macaron chuẩn Pháp</div>
+            <div class="recipe-menu-item" data-target="bonglan">Donut Socola</div>
+            <div class="recipe-menu-item" data-target="cookies">Cookies Chocolate Chip</div>
+            <div class="recipe-menu-item" data-target="tiramisu">Tiramisu mềm mịn</div>
+            <div class="recipe-menu-item" data-target="banhmidi">Red Velvet truyền thống</div>
+        </div>
 
+        <!-- ==== RIGHT CONTENT ==== -->
+        <div class="recipe-display">
+
+            <!-- MACARON -->
+             <div class="recipe-box" id="macaron">
+    <h3>Macaron chuẩn Pháp</h3><br>
+
+    <p><strong>🔹 Nguyên liệu:</strong></p>
+    <p>
+        <li>Bột hạnh nhân: 150 gram</li>
+        <li>Đường bột: 320 gram</li>
+        <li>Lòng trắng trứng: 110 gram</li>
+        <li>Đường cát: 300 gram</li>
+        <li>Whipping cream: 400ml</li>
+        <li>Bơ: 100 gram</li>
+        <li>Nước: 40ml</li>
+        <li>Màu thực phẩm (tùy chọn)</li>
+    </p><br>
+
+    <p><strong>🔹 Cách làm:</strong></p>
+
+    <div class="step">
+        <p><strong>Bước 1: Làm hỗn hợp bột và đun chảy socola</strong></p>
+        <img src="https://ctvvietnam.com/upload/sanpham/792430.png" alt="Rây bột">
+        <p class="img-note">Lọc hỗn hợp qua bột rây</p>
+        <p>
+            <li>Cho bột hạnh nhân và icing sugar vào máy xay sinh tố, xay nhuyễn ra. Sau đó, lọc hỗn hợp qua rây.</li>
+            <li>Đun cách thủy wipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn</li>
+            <li>làm tan chảy chocolate trắng bằng phương pháp đun cách thủy. Làm tương tự như vậy với chocolate đen. Lưu ý là phải khuấy liên tục trong quá trình đun</li>
+        </p>
+    </div>
+
+    <div class="step">
+        <p><strong>Bước 2: Làm vỏ bánh</strong></p>
+        <img src="https://i.ytimg.com/vi/QUqv6TcZz-I/maxresdefault.jpg" alt="Đánh trứng">
+        <p class="img-note">Đánh bông lòng trắng trứng</p>
+        <p>
+            <li>Đun sôi đường với nước đến 1180C thì tắt bếp. Dùng máy đánh trứng đánh bông 50 gram lòng trắng rồi từ từ đổ nước đường vào, vừa đổ vừa đánh.</li>
+            <li>Thêm một ít màu thực phẩm vào, tiếp tục đánh đều lên để tạo màu cho vỏ bánh thật đẹp và bắt mắt.</li>
+            <li>Thêm 60 gram lòng trắng trứng còn lại vào hỗn hợp bột hạnh nhân và icing sugar, trộn đều rồi tiếp tục cho hỗn hợp vỏ bánh vào, trộn nhẹ nhàng đến khi các nguyên liệu hòa quyện vào nhau và nhuyễn mịn.</li>
+        </p>
+    </div>
+
+    <div class="step">
+        <p><strong>Bước 3: Tạo hình và nướng bánh</strong></p>
+        <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/158591/Originals/lam-banh-Macaron-bang-lo-vi-song-4.jpg" alt="Bắt macaron">
+        <p class="img-note">Tạo hình bánh trước khi nướng</p>
+        <p>
+            <li>Cho hỗn hợp vỏ bánh vào túi bắt kem, bắt thành những hình tròn nhỏ lên khay nướng đã lót giấy nến.</li>
+            <li>Để khay bánh ở nhiệt độ phòng trong vòng 30 phút đến 1 tiếng để vỏ bánh khô lại, khi chạm tay vào không còn dính nữa.</li>
+            <li>Bật sẵn lò nướng ở 1500C trước 10 phút rồi cho khay vào nướng khoảng 12 phút.</li>
+        </p>
+    </div>
+
+    <div class="step">
+        <p><strong>Bước 4: Làm nhân bánh</strong></p>
+        <img src="https://file.hstatic.net/200000692767/file/banh-macaron__2_.jpg" alt="Nướng macaron">
+        <p class="img-note">Làm nhân bánh Macaron</p>
+        <p>
+            <li>Đun cách thủy whipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn.</li>
+            <li>Chia nhân bánh thành hai phần, một phần cho socola trắng đã đun chảy vào trộn đều, một phần cho socola đen đã đun chảy vào trộn đều.</li>
+            <li>Cho nhân bánh vào túi bắt kem, bắt nhân vào giữa hai vỏ bánh macaron đã nướng.</li>
+    </div>
+
+    <p><strong>🔹 Bảo quản và thưởng thức:</strong></p>
+    <p>
+        <li>Bảo quản macaron trong hộp kín, để ngăn mát tủ lạnh từ 24 – 48 tiếng trước khi thưởng thức để bánh đạt hương vị ngon nhất.</li>
+        <li>Trước khi ăn, nên để bánh ở nhiệt độ phòng khoảng 15 phút để nhân bánh mềm mịn và thơm ngon hơn.</li>
+        ✨Lời khuyên từ đầu bếp Christophe Felder: "Macaron ngon nhất khi được thưởng thức ở ngày thứ 2 hoặc thứ 3 sau khi làm. Thời gian ủ giúp hương vị hòa quyện và kết cấu bánh trở nên hoàn hảo hơn."
+    </p><br>
+
+    <p><strong>❗ Lưu ý:</strong></p>
+    <p>
+        <li>Khi khuấy phải fold nhẹ tay để macaron không bị xẹp.</li>
+        <li>Khi có “chân bánh” là macaron đạt chuẩn.</li>
+        <li>Không nên thay thế đường bột bằng đường cát. Nếu có thời gian bạn nên xay kỹ bột hạnh nhân và đường bột, rây từ 2 – 3 lần để chắc chắn các nguyên liệu đều mịn màng</li>
+        <li>Bạn có thể không dùng đuôi bắt kem khi nặn bánh ra khay nhưng thành phẩm sẽ không được tròn đều và đẹp mắt nhất.</li>
+    </p>
+</div>
+
+            <!-- BÔNG LAN -->
+            <div class="recipe-box hidden" id="bonglan">
+                <h3>Bông lan trứng muối</h3>
+                <p><strong>Nguyên liệu:</strong></p>
+                <ul>
+                    <li>Bột mì</li>
+                    <li>Trứng</li>
+                    <li>Sốt dầu trứng</li>
+                    <li>Chà bông</li>
+                    <li>Trứng muối</li>
+                </ul>
+
+                <p><strong>Cách làm:</strong></p>
+                <p>Nướng cốt chiffon mềm ẩm → phết sốt dầu trứng → rắc chà bông → thêm trứng muối đã nướng chín.</p>
+
+                <p><strong>Lưu ý:</strong></p>
+                <ul>
+                    <li>Không đánh lòng trắng quá cứng để cốt bánh không bị khô.</li>
+                </ul>
             </div>
-        </section>
 
+            <!-- COOKIES -->
+            <div class="recipe-box hidden" id="cookies">
+                <h3>Cookies Chocolate Chip</h3>
+                <p><strong>Nguyên liệu:</strong></p>
+                <ul>
+                    <li>Bơ</li>
+                    <li>Đường nâu</li>
+                    <li>Bột mì</li>
+                    <li>Chocolate chips</li>
+                </ul>
+
+                <p><strong>Cách làm:</strong></p>
+                <p>Trộn bơ + đường → thêm bột → thêm chocolate chips → nặn viên → nướng 12 phút ở 180°C.</p>
+
+                <p><strong>Lưu ý:</strong></p>
+                <ul>
+                    <li>Không nướng quá lâu để cookies giữ độ mềm bên trong.</li>
+                </ul>
+            </div>
+
+            <!-- TIRAMISU -->
+            <div class="recipe-box hidden" id="tiramisu">
+                <h3>Tiramisu mềm mịn</h3>
+                <p><strong>Nguyên liệu:</strong></p>
+                <ul>
+                    <li>Bánh ladyfinger</li>
+                    <li>Phô mai mascarpone</li>
+                    <li>Cafe đậm</li>
+                    <li>Bột cacao</li>
+                </ul>
+
+                <p><strong>Cách làm:</strong></p>
+                <p>Nhúng bánh vào cafe → phủ kem mascarpone → xếp lớp → rắc cacao → để lạnh 2–3 tiếng.</p>
+
+                <p><strong>Lưu ý:</strong></p>
+                <ul>
+                    <li>Không nhúng bánh quá lâu, sẽ bị nhão.</li>
+                </ul>
+            </div>
+
+            <!-- BÁNH MÌ DỪA -->
+            <div class="recipe-box hidden" id="banhmidi">
+                <h3>Bánh mì dừa nướng</h3>
+                <p><strong>Nguyên liệu:</strong></p>
+                <ul>
+                    <li>Bột mì</li>
+                    <li>Men nở</li>
+                    <li>Sữa tươi</li>
+                    <li>Dừa sợi</li>
+                </ul>
+
+                <p><strong>Cách làm:</strong></p>
+                <p>Nhào bột → ủ → tạo hình → thêm nhân dừa → nướng 180°C trong 15 phút.</p>
+
+                <p><strong>Lưu ý:</strong></p>
+                <ul>
+                    <li>Nên dùng men còn hoạt động mạnh để bánh nở đều.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     </main>
 

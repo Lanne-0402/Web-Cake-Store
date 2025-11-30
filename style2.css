@@ -247,11 +247,7 @@
 
         /* * =========================================
          * 6. TRANG SẢN PHẨM (Grid Layout + Hover Price)
-         * =========================================
-         */
-        /* =============================================================
-   FIX + TỐI ƯU MÀU SIDEBAR
-============================================================= */
+         * ========================================= */
 :root {
     --pink-light: #f7dce7;
     --pink: #e0a3bb;
@@ -462,57 +458,189 @@
     }
 }
 
-
         /* * =========================================
          * 7. TRANG CÔNG THỨC (List + Accordion)
          * =========================================
          */
-        .recipe-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+.recipe-wrapper {
+    display: flex;
+    gap: 25px;
+}
 
-        .recipe-item {
-            background: var(--white);
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
+/* LEFT MENU */
+.recipe-menu {
+    width: 25%;
+    border-right: 2px solid #eee;
+    padding-right: 20px;
+}
 
-        .recipe-header {
-            background: var(--secondary-color);
-            padding: 15px 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-            font-weight: bold;
-        }
-        
-        .recipe-header:hover {
-            background: var(--accent-color);
-        }
+.recipe-menu-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #f8f8f8;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 600;
+}
 
-        /* Nội dung Accordion mặc định ẩn */
-        .recipe-content {
-            display: none;
-            padding: 20px;
-            background: var(--light-blue);
-        }
+.recipe-menu-item:hover {
+    background: #ffe6ee;
+}
 
-        .recipe-detail {
-            display: flex;
-            gap: 20px;
-        }
+.recipe-menu-item.active {
+    background: #ffb5c8;
+    color: #fff;
+}
 
-        .recipe-detail img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+/* RIGHT CONTENT */
+.recipe-display {
+    font-size: 18px;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.recipe-box {
+    animation: fade 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step {
+    margin-bottom: 25px;
+    image-align: center;
+}
+
+.step img {
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;          /* CHIỀU CAO CỐ ĐỊNH */
+    object-fit: cover;      /* Crop đẹp, không méo hình */
+    border-radius: 12px;
+    margin-top: 8px;
+    margin: 10px auto 5px auto;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    display: block;
+}
+.img-note {
+    font-style: italic;
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+/* CHAT BUBBLE */
+#chat-bubble {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #ff7fa7;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#chat-bubble:hover {
+    transform: scale(1.08);
+}
+
+/* CHAT POPUP */
+#chat-popup {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 320px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEADER */
+.chat-header {
+    background: #ff7fa7;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.close-chat {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* BODY */
+.chat-body {
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.chat-msg {
+    background: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 85%;
+}
+
+.chat-msg.bot {
+    background: #ffe6f1;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    background: #ff7fa7;
+    color: #fff;
+    border: none;
+    width: 50px;
+    cursor: pointer;
+}
+
 
         /* * =========================================
          * 8. TRANG LIÊN HỆ (Form + Validate)
