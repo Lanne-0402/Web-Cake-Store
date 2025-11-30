@@ -249,99 +249,55 @@
          * 6. TRANG SẢN PHẨM (Grid Layout + Hover Price)
          * =========================================
          */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
+        /* =============================================================
+   FIX + TỐI ƯU MÀU SIDEBAR
+============================================================= */
+:root {
+    --pink-light: #f7dce7;
+    --pink: #e0a3bb;
+    --pink-dark: #c07697;
+}
 
-        .product-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
+/* =============================================================
+   SIDEBAR (BÊN TRÁI)
+============================================================= */
+.product-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 15px;
-            text-align: center;
-        }
-
-        /* Yêu cầu: Hover hiển thị giá (Overlay) */
-        .price-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 250px; /* Bằng chiều cao ảnh */
-            background: rgba(224, 163, 187, 0.8); /* Màu Amaranth Pink mờ */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .product-card:hover .price-overlay {
-            opacity: 1;
-        }
-
-        .price-text {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        /* --- LAYOUT SIDEBAR + GRID --- */
-        .product-layout {
-        display: grid;
-        grid-template-columns: 250px 1fr; /* Sidebar 250px + Grid bên phải */
-        gap: 30px;
-        margin-top: 40px;
-        }
-
-/* --- SIDEBAR BÊN TRÁI --- */
-    .sidebar {
-    background: #fff;
+.sidebar {
+    background: var(--white);
     padding: 20px;
     border-radius: 15px;
     box-shadow: var(--shadow);
     height: fit-content;
-    }
+}
 
 .sidebar h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: var(--pink-dark);
+    color: var(--accent-color);
+    font-family: 'Dancing Script', cursive;
 }
 
 .sidebar ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .sidebar li {
-    padding: 10px;
-    margin-bottom: 8px;
-    background: var(--pink-light);
+    padding: 12px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
+    background: var(--pink-light);
     text-align: center;
+    cursor: pointer;
+    transition: 0.25s;
     font-weight: bold;
+    user-select: none;
 }
 
 .sidebar li:hover {
@@ -349,38 +305,32 @@
     color: white;
 }
 
-/* --- GRID SẢN PHẨM (CHỈ CÒN 3 CỘT) --- */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cột cố định */
-    gap: 20px;
-}
-
-/* --- THU NHỎ PRODUCT CARD --- */
-.product-card {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    transform: scale(0.95); /* Thu nhỏ toàn bộ card */
-}
-
-.product-img {
-    width: 100%;
-    height: 250px; /* giảm chiều cao ảnh */
-    object-fit: cover;
-    display: block;
-}
-
 .active-filter {
     background: var(--primary-color) !important;
     color: white !important;
 }
 
-/* Animation fade-in khi sản phẩm xuất hiện */
+
+/* =============================================================
+   GRID SẢN PHẨM (3 CỘT)
+============================================================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+/* CARD SẢN PHẨM */
 .product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
     opacity: 0;
     transform: translateY(20px);
-    transition: 0.4s ease;
 }
 
 .product-card.show {
@@ -388,49 +338,130 @@
     transform: translateY(0);
 }
 
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ẢNH SẢN PHẨM */
+.product-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* INFO */
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Hover – Overlay giá */
+.price-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 280px;
+    background: rgba(224, 163, 187, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.product-card:hover .price-overlay {
+    opacity: 1;
+}
+
+.price-text {
+    color: white;
+    font-size: 1.7rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+
+/* =============================================================
+   SORT BAR
+============================================================= */
+.sort-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    gap: 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.sort-bar select {
+    padding: 8px 12px;
+    border-radius: 7px;
+    border: 2px solid #ddd; 
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sort-bar select:hover {
+    transform: translateY(-2px);
+    transition: 0.2s;
+    border-color: var(--primary-color);
+    background: #fff7f9;
+}
+
+
+/* =============================================================
+   PAGINATION
+============================================================= */
 .product-content-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* giữ pagination luôn giữa */
+    align-items: center;
 }
 
-/* Pagination */
 .pagination {
     width: 100%;
     display: flex;
-    justify-content: center;   /* luôn căn giữa */
-    margin-top: 40px;
-    margin-bottom: 40px;
-    position: relative;        /* giữ vị trí cố định theo layout */
+    justify-content: center;
+    margin: 25px 0 40px 0;
 }
 
 .pagination button {
     padding: 10px 15px;
     margin: 0 6px;
     border: none;
-    background: #e8a7c0;
+    background: var(--primary-color);
     color: white;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.3s all ease;
+    transition: 0.3s;
 }
 
 .pagination button.active-page {
-    background: #a4b84a;       /* màu xanh bạn dùng */
+    background: var(--accent-color);
 }
 
 .pagination button:hover {
     transform: translateY(-3px);
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
-/* Sidebar active */
-.active-filter {
-    background: var(--primary-color) !important;
-    color: white !important;
+/* RESPONSIVE GRID */
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
         /* * =========================================
          * 7. TRANG CÔNG THỨC (List + Accordion)
