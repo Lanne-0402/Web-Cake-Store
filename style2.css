@@ -498,6 +498,7 @@
     font-size: 18px;
     width: 100%;
     padding-left: 20px;
+    width: calc(100% - 300px);
 }
 
 .recipe-box {
@@ -520,12 +521,12 @@
 
 .step img {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: fit-content;          /* CHIỀU CAO CỐ ĐỊNH */
     object-fit: cover;      /* Crop đẹp, không méo hình */
     border-radius: 12px;
     margin-top: 8px;
-    margin: 10px auto 5px auto;
+    margin: 15px auto;
     box-shadow: 0 3px 8px rgba(0,0,0,0.15);
     display: block;
 }
@@ -641,6 +642,101 @@
     cursor: pointer;
 }
 
+/* RELATED RECIPES BOX */
+.related-box {
+    width: 260px;
+    position: sticky;
+    top: 150px;
+    z-index: 10;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff7fa;
+    border: 2px solid #ffd3e0;
+    font-size: 16px;
+    transition: all 0.25s ease;
+}
+
+.related-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #d45a8b;
+}
+
+.related-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #ffd6e3;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.related-item:hover {
+    background: #ffe8f0;
+    transform: translateX(4px);
+}
+
+.related-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.related-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.related-info a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #b94570;
+    text-decoration: none;
+}
+
+.related-info a:hover {
+    text-decoration: underline;
+}
+
+/* NÚT QUAY LÊN ĐẦU TRANG */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background: #ff85a1; /* màu hồng pastel xinh */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    padding: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+    background: #ff6c8d;
+}
 
         /* * =========================================
          * 8. TRANG LIÊN HỆ (Form + Validate)
