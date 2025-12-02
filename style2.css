@@ -54,21 +54,156 @@
         }
 
         /* * =========================================
-         * 2. HEADER & NAVIGATION
-         * =========================================
-         */
-        .topbar {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            padding: 5px 0;
-            font-size: 0.9rem;
+        * TOP BAR STYLING
+        * =========================================
+        */
+        .top-bar {
+            background-color: var(--accent-color); /* Màu Moss Green */
+            color: var(--white);
+            font-size: 0.9rem; /* Chữ nhỏ hơn body một chút cho tinh tế */
+            padding: 8px 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .top-bar-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Đẩy 2 khối sang 2 bên */
             align-items: center;
-            
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Khoảng cách giữa các phần tử */
+        }
+
+        /* Style cho các liên kết và icon */
+        .top-bar a {
+            color: var(--white);
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .top-bar a:hover {
+            color: var(--secondary-color); /* Đổi màu vàng chanh khi hover */
+            text-decoration: underline;
+        }
+
+        .top-bar i {
+            margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+        }
+
+        .separator {
+            opacity: 0.6; /* Làm mờ dấu gạch đứng cho đẹp */
         }
 
 
+
+ /* Thêm mới*/
+
+
+    /* === NEW: DANH MỤC SẢN PHẨM (Category Circle) === */
+    .section-title { text-align: center; margin: 50px 0 30px; font-size: 2.5rem; position: relative; }
+    .section-title::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-color); margin: 10px auto 0; }
+
+    .category-row {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .category-item {
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+    .category-item:hover { transform: translateY(-10px); }
+
+    .cat-img-box {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 10px;
+        border: 3px solid var(--primary-color);
+        padding: 3px;
+    }
+
+    .cat-img-box img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .category-item h4 { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text-color); }
+
+    /* === PRODUCT GRID (Style giống Poeme: Card trắng, sạch) === */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .product-card {
+        background: var(--white);
+        border: 1px solid #eee;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary-color); }
+
+    .product-img-wrap { position: relative; height: 260px; overflow: hidden; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .product-card:hover .product-img { transform: scale(1.05); }
+
+    .product-info { padding: 15px; text-align: center; }
+    .product-name { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 5px; font-size: 1.1rem; }
+    .product-price { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; }
+
+    .btn-add {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 20px;
+        background: var(--primary-color);
+        color: var(--white);
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+    .btn-add:hover { background: var(--accent-color); }
+
+    /* === NEW: TẠI SAO CHỌN CHÚNG TÔI (Icons) === */
+    .features-section {
+        background-color: var(--light-blue);
+        padding: 50px 0;
+        margin: 50px 0;
+    }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+    .feature-box i { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
+    .feature-box h4 { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 10px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--white); padding: 20px; box-shadow: var(--shadow); }
+        .nav-links.active { display: flex; }
+        .slider-container { height: 300px; }
+        .top-bar-content { flex-direction: column; gap: 5px; }
+        .desktop-only { display: none; }
+    }
+
+
+
+        /* * =========================================
+         * 2. HEADER & NAVIGATION
+         * =========================================
+         */
         header {
             background-color: var(--white);
             padding: 15px 0;
