@@ -48,7 +48,7 @@
 
         /* Container chung để căn giữa nội dung */
         .container {
-            max-width: 1500px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px;
         }
@@ -488,7 +488,7 @@
 /* ẢNH SẢN PHẨM */
 .product-img {
     width: 100%;
-    height: 280px;
+    height: 273px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -616,9 +616,10 @@
 
 /* LEFT MENU */
 .recipe-menu {
-    width: 25%;
+    font-size: 18px;
+    width: 300px;
     border-right: 2px solid #eee;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 
 .recipe-menu-item {
