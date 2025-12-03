@@ -203,11 +203,16 @@ $('#sortOption').on('change', function () {
     renderProducts();
 });
 
-
 // ======================================================
 // KHỞI TẠO LẦN ĐẦU
 // ======================================================
 renderProducts();
+
+$(".product-card").click(function () {
+    const id = $(this).data("id");
+    window.location.href = "product-detail.html?id=" + id;
+});
+
 
 });
 
@@ -379,6 +384,7 @@ $(".recipe-menu-item").click(function () {
 $(document).ready(function () {
     renderRelated("macaron");
 });
+
 
 // 5. CHAT POPUP
 // MỞ POPUP
