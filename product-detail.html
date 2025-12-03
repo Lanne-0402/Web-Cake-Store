@@ -1,178 +1,120 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi tiết sản phẩm – Halo Sweet Bakery</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    /* ========== STYLE CHO DETAIL PAGE ========== */
+    .product-detail-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .detail-image-box {
+      flex: 1 1 380px;
+    }
+    .detail-image-box img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+    .detail-info {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+    .detail-info h2 {
+      font-size: 32px;
+      color: #C15D75;
+      margin: 0;
+    }
+    .detail-info .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d66aa3;
+    }
+    .detail-info .desc {
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-    <link rel="stylesheet" href="style2.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <style>
-        .product-detail {
-    display: flex;
-    gap: 40px;
-    padding: 40px 60px;
-}
-
-.product-left {
-    width: 45%;
-}
-
-.main-img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.thumb-gallery {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.thumb-gallery img {
-    width: 90px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0.8;
-}
-
-.thumb-gallery img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.product-right {
-    width: 45%;
-}
-
-.price {
-    font-size: 22px;
-    color: #d66a63;
-    font-weight: bold;
-}
-
-.back-btn {
-    margin-top: 20px;
-    padding: 10px 18px;
-    background: #ffb8cf;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.related-title {
-    margin: 40px 60px 15px;
-    font-size: 22px;
-    color: #7a8a35;
-}
-
-.related-wrapper {
-    overflow-x: auto;
-    padding: 10px 50px 40px;
-}
-
-.related-carousel {
-    display: flex;
-    gap: 25px;
-}
-
-.related-item {
-    width: 150px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.related-item img {
-    width: 100%;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.related-item img:hover {
-    transform: scale(1.06);
-}
-    </style>
+    .similar-title {
+      text-align: center;
+      margin: 60px 0 20px;
+      font-size: 26px;
+      color: #C15D75;
+    }
+    .similar-products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 60px auto;
+    }
+    .similar-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+    .similar-item:hover {
+      transform: translateY(-5px);
+    }
+    .similar-item img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .similar-item h4 {
+      margin: 10px 0 5px 0;
+      font-size: 18px;
+      color: #6b4c63;
+    }
+    .similar-item p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
 </head>
-
 <body>
-<section class="page-section active" id="product-detail">
-    <div class="container product-detail-container">
 
-        <!-- Ảnh sản phẩm -->
-        <div class="product-image">
-            <img src="images/cupcake-matcha.jpg" alt="">
-        </div>
+  <!-- HEADER nếu có chung site -->
+  <header>
+    <div class="container navbar">
+      <div class="logo"><i class="fas fa-bread-slice"></i> Halo Sweet Bakery</div>
+      <!-- ... menu nếu cần ... -->
+    </div>
+  </header>
 
-        <!-- Thông tin sản phẩm -->
-        <div class="product-info-box">
-            <h1 class="product-title">Cupcake Matcha</h1>
-            <p class="product-price-detail">27.000 VNĐ</p>
-
-            <p class="product-desc">
-                Cupcake matcha thơm nhẹ, hòa quyện chocochip đậm vị – siêu hợp cho buổi chiều chill.
-            </p>
-
-            <a href="products.html" class="btn-back">← Quay lại</a>
-        </div>
+  <main>
+    <div class="product-detail-container">
+      <div class="detail-image-box">
+        <img id="detail-image" src="" alt="Ảnh sản phẩm">
+      </div>
+      <div class="detail-info">
+        <h2 id="detail-name">Tên sản phẩm</h2>
+        <div class="price" id="detail-price">0 VNĐ</div>
+        <div class="desc" id="detail-desc">Mô tả sản phẩm...</div>
+      </div>
     </div>
 
-    <!-- Món liên quan -->
-    <div class="container related-section">
-        <h2 class="related-title">Món liên quan</h2>
+    <h2 class="similar-title">Có thể bạn cũng thích</h2>
+    <div class="similar-products" id="similar-products"></div>
+  </main>
 
-        <div class="related-list">
-            
-            <a href="product-detail.html?id=01" class="related-item">
-                <img src="images/cupcake-caramel.jpg">
-                <div class="related-name">Cupcake Caramel</div>
-            </a>
-
-            <a href="product-detail.html?id=02" class="related-item">
-                <img src="images/cupcake-vanilla.jpg">
-                <div class="related-name">Cupcake Vani</div>
-            </a>
-
-            <a href="product-detail.html?id=03" class="related-item">
-                <img src="images/cupcake-redvelvet.jpg">
-                <div class="related-name">Cupcake Red Velvet</div>
-            </a>
-
-        </div>
-    </div>
-
-    <!-- Decor để trang không bị trống -->
-    <div class="container product-detail-decor">
-        <p>💗 Chúc bạn luôn có những chiếc bánh thơm ngon và những ngày thật ngọt ngào 💗</p>
-    </div>
-
-    
-    <div class="container">
-
-    <div class="product-detail">
-        <img class="p-img" src="" alt="">
-
-        <div class="p-info">
-            <h2 class="p-name"></h2>
-            <div class="p-price"></div>
-            <p class="p-desc"></p>
-
-            <a href="index.html" class="btn-back">← Quay lại</a>
-        </div>
-    </div>
-
-    <h3 class="related-title">Món liên quan</h3>
-    <div class="related-list"></div>
-
-</div>
-
-</section>
-
-    </main>
-
-    <script src="product-detail.js"></script>
-
+  <script src="product-detail.js"></script>
 </body>
 </html>
