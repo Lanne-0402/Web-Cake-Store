@@ -216,6 +216,41 @@
     }
     .btn-add:hover { background: var(--accent-color); }
 
+
+    /* * =========================================
+    * NÚT XEM TẤT CẢ (Tách biệt & Trang trí)
+    * =========================================
+    */
+
+    .view-all-container {
+        text-align: center;
+        margin-top: 40px;    /* Cách sản phẩm ở trên */
+        margin-bottom: 80px; /* Cách phần "Tại sao chọn chúng tôi" ở dưới (Tách ra) */
+        position: relative;
+        z-index: 10;
+    }
+
+    .btn-view-all {
+        display: inline-block;
+        padding: 12px 40px;
+        background-color: var(--primary-color); /* Màu hồng chủ đạo */
+        color: var(--white);
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 50px; /* Bo tròn hình viên thuốc */
+        box-shadow: 0 5px 15px rgba(224, 163, 187, 0.4); /* Đổ bóng hồng nhẹ */
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Hiệu ứng khi di chuột vào nút */
+    .btn-view-all:hover {
+        background-color: var(--accent-color); /* Đổi sang màu xanh rêu */
+        transform: translateY(-3px); /* Nút bay lên nhẹ */
+        box-shadow: 0 8px 20px rgba(151, 161, 59, 0.3);
+    }
+
     /* * =========================================
     * NEW: TẠI SAO CHỌN CHÚNG TÔI (Parallax + Image Frame)
     * =========================================
@@ -255,7 +290,8 @@
     .features-section .section-title {
         position: relative;
         z-index: 2;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
+        margin-top: 2px;
     }
 
     /* 2. CLASS BẠN ĐANG THIẾU: Dàn trang dạng lưới (Grid) */
