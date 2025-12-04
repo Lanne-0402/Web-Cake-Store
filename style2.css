@@ -102,13 +102,24 @@
  /* Thêm mới*/
 
     /* === NEW: DANH MỤC SẢN PHẨM (Category Circle) === */
-    .section-title { text-align: center; margin: 50px 0 30px; font-size: 2.5rem; position: relative; }
-    .section-title::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-color); margin: 10px auto 0; }
+    .section-title { 
+        text-align: center; 
+        margin: 50px 0 30px; 
+        font-size: 3rem; 
+        position: relative; 
+    }
+    .section-title::after { 
+        content: ""; 
+        display: block; 
+        width: 60px; 
+        height: 3px; 
+        background: var(--primary-color); 
+        margin: 10px auto 0; }
 
     .category-row {
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 100px;
         flex-wrap: wrap;
         margin-bottom: 50px;
     }
@@ -121,8 +132,8 @@
     .category-item:hover { transform: translateY(-10px); }
 
     .cat-img-box {
-        width: 120px;
-        height: 120px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         overflow: hidden;
         margin: 0 auto 10px;
@@ -137,7 +148,11 @@
         object-fit: cover;
     }
 
-    .category-item h4 { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text-color); }
+    .category-item h4 { 
+        font-family: 'Nunito', sans-serif; 
+        font-weight: 700; 
+        color: var(--text-color); 
+    }
 
     /* === PRODUCT GRID (Style giống Poeme: Card trắng, sạch) === */
     .products-grid {
@@ -156,15 +171,39 @@
         position: relative;
     }
 
-    .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary-color); }
+    .product-card:hover { 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        border-color: var(--primary-color); 
+    }
 
-    .product-img-wrap { position: relative; height: 260px; overflow: hidden; }
-    .product-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+    .product-img-wrap { 
+        position: relative; 
+        height: 260px; 
+        overflow: hidden; 
+    }
+    .product-img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        transition: 0.5s; 
+    }
     .product-card:hover .product-img { transform: scale(1.05); }
 
-    .product-info { padding: 15px; text-align: center; }
-    .product-name { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 5px; font-size: 1.1rem; }
-    .product-price { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; }
+    .product-info { 
+        padding: 15px; 
+        text-align: center; 
+    }
+    .product-name { 
+        font-family: 'Nunito', sans-serif; 
+        font-weight: 700; 
+        margin-bottom: 5px; 
+        font-size: 1.1rem; 
+    }
+    .product-price { 
+        color: var(--accent-color); 
+        font-weight: bold; 
+        font-size: 1.2rem; 
+    }
 
     .btn-add {
         display: inline-block;
@@ -177,23 +216,122 @@
     }
     .btn-add:hover { background: var(--accent-color); }
 
-    /* === NEW: TẠI SAO CHỌN CHÚNG TÔI (Icons) === */
+    /* * =========================================
+    * NEW: TẠI SAO CHỌN CHÚNG TÔI (Parallax + Image Frame)
+    * =========================================
+    */
+
+    /* * =========================================
+ * CODE HOÀN CHỈNH: TẠI SAO CHỌN CHÚNG TÔI
+ * (Bao gồm: Parallax, Grid Layout, Zoom Effect)
+ * =========================================
+ */
+
+/* 1. Thiết lập nền Parallax */
     .features-section {
-        background-color: var(--light-blue);
-        padding: 50px 0;
-        margin: 50px 0;
+        /* Ảnh nền Parallax */
+        background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+        background-attachment: fixed; /* QUAN TRỌNG: Tạo hiệu ứng nền đứng yên khi cuộn */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+        text-align: center; /* Căn giữa chữ */
     }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-    .feature-box i { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
-    .feature-box h4 { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 10px; }
+
+    /* Lớp phủ màu trắng mờ để chữ dễ đọc hơn */
+    .features-section::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255, 255, 255, 0.85); /* Màu trắng đục 85% */
+        z-index: 1;
+    }
+
+    /* Tiêu đề section */
+    .features-section .section-title {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 50px;
+    }
+
+    /* 2. CLASS BẠN ĐANG THIẾU: Dàn trang dạng lưới (Grid) */
+    .features-grid {
+        display: grid;
+        /* Tự động chia cột: Mỗi cột tối thiểu 220px, còn lại tự co giãn */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 40px; /* Khoảng cách giữa các ô */
+        position: relative;
+        z-index: 2; /* Để nội dung nổi lên trên lớp phủ nền */
+        padding: 0 20px;
+    }
+
+    /* 3. Hiệu ứng Animation (Thu vào tâm) */
+    .feature-box {
+        opacity: 0; /* Ban đầu ẩn */
+        transform: scale(0.5); /* Ban đầu nhỏ xíu (50%) */
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy đàn hồi */
+    }
+
+    /* Class này sẽ được JS thêm vào khi cuộn tới */
+    .feature-box.visible {
+        opacity: 1;
+        transform: scale(1); /* Phóng to về kích thước thật */
+    }
+
+    /* 4. Khung ảnh tròn */
+    .feature-img-frame {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid var(--primary-color);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background: #fff;
+        transition: transform 0.3s;
+    }
+
+    .feature-img-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Hiệu ứng khi di chuột vào từng ô */
+    .feature-box:hover .feature-img-frame {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--accent-color);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .feature-box h4 {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+    }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--white); padding: 20px; box-shadow: var(--shadow); }
+        .nav-links { 
+            display: none; 
+            flex-direction: column; 
+            position: absolute; 
+            top: 60px; left: 0; 
+            width: 100%; background: var(--white); 
+            padding: 20px; 
+            box-shadow: var(--shadow); 
+        }
         .nav-links.active { display: flex; }
         .slider-container { height: 300px; }
-        .top-bar-content { flex-direction: column; gap: 5px; }
+        .top-bar-content { 
+            flex-direction: column; 
+            gap: 5px; 
+        }
         .desktop-only { display: none; }
     }
 
@@ -349,7 +487,7 @@
         .slider-container {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 600px;
             overflow: hidden;
             border-radius: 20px;
             margin-bottom: 30px;

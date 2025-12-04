@@ -468,7 +468,36 @@ $("#back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
 });
 
+// ... (Code cũ của bạn ở trên) ...
 
+    /* * 5. HIỆU ỨNG SCROLL REVEAL (Cho phần Tại sao chọn chúng tôi)
+     * Sử dụng Intersection Observer API để tối ưu hiệu suất
+     */
+    
+    // Tạo bộ quan sát (Observer)
+    const observerOptions = {
+        threshold: 0.2 // Kích hoạt khi 20% phần tử xuất hiện trong màn hình
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Tạo độ trễ (delay) cho từng phần tử để chúng hiện ra lần lượt
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200); // Mỗi hình hiện cách nhau 0.2 giây
+                
+                // Sau khi hiện xong thì ngừng quan sát để không lặp lại animation gây rối mắt
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Bắt đầu quan sát tất cả các .feature-box
+    const featureBoxes = document.querySelectorAll('.feature-box');
+    featureBoxes.forEach(box => {
+        observer.observe(box);
+    });
 
 
 
