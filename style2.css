@@ -60,7 +60,7 @@
         .top-bar {
             background-color: var(--accent-color); /* Màu Moss Green */
             color: var(--white);
-            font-size: 0.9rem; /* Chữ nhỏ hơn body một chút cho tinh tế */
+            font-size: 1rem; /* Chữ nhỏ hơn body một chút cho tinh tế */
             padding: 8px 0;
             font-family: 'Nunito', sans-serif;
         }
@@ -91,6 +91,7 @@
 
         .top-bar i {
             margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+            font-size: 1.2rem;
         }
 
         .separator {
@@ -202,13 +203,16 @@
          * 2. HEADER & NAVIGATION
          * =========================================
          */
+
         header {
             background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: var(--shadow);
+            /* 1. Tăng chiều cao (Rộng hơn) */
+            padding: 22px 0; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Bóng mờ nhẹ sang trọng hơn */
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s;
         }
 
         .navbar {
@@ -218,31 +222,94 @@
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: bold;
+            /* Logo to hơn một chút */
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--primary-color);
-        }
-
-        .logo i {
-            color: var(--secondary-color);
+            letter-spacing: 1.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 30px; /* Tăng khoảng cách giữa các menu */
+            align-items: center;
         }
 
+        /* Style cho các link menu thường */
         .nav-links li a {
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 700;
+            /* 2. Chữ in hoa cho bắt mắt */
+            text-transform: uppercase; 
+            color: var(--text-color);
+            padding: 10px 0;
+            position: relative;
             transition: color 0.3s;
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 15px;
+            background: none; /* Bỏ background cũ */
         }
 
-        .nav-links li a:hover, .nav-links li a.active {
-            color: var(--white);
+        /* Hiệu ứng gạch chân chạy từ trái sang phải khi hover */
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
             background-color: var(--primary-color);
+            transition: width 0.3s ease-out;
+            border-radius: 2px;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%; /* Gạch chân chạy full */
+        }
+
+        /* Loại bỏ gạch chân cho nút active nếu muốn, hoặc giữ nguyên */
+        .nav-links li a.active {
+            color: var(--primary-color);
+        }
+
+        /* 3. Style đặc biệt cho nút ĐẶT NGAY/LIÊN HỆ (Nút nổi bật) */
+        .nav-links li a.btn-navbar-highlight {
+            background-color: var(--accent-color); /* Màu xanh rêu */
+            color: white !important;
+            padding: 12px 30px; /* Nút to rộng */
+            border-radius: 50px; /* Bo tròn hoàn toàn */
+            box-shadow: 0 4px 10px rgba(151, 161, 59, 0.3); /* Đổ bóng cho nút */
+            text-transform: uppercase;
+        }
+
+        /* Khi hover vào nút nổi bật */
+        .nav-links li a.btn-navbar-highlight:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px); /* Nút bay lên nhẹ */
+            box-shadow: 0 6px 15px rgba(151, 161, 59, 0.4);
+        }
+
+        /* Ẩn gạch chân đối với nút nổi bật */
+        .nav-links li a.btn-navbar-highlight::after {
+            display: none;
+        }
+
+        /* Responsive giữ nguyên */
+        @media (max-width: 768px) {
+            header { padding: 15px 0; }
+            .nav-links { gap: 0; }
+            .nav-links li a { 
+                padding: 15px; 
+                width: 100%; 
+                display: block; 
+            }
+            .nav-links li a.btn-navbar-highlight {
+                border-radius: 0; 
+                margin-top: 10px; 
+                text-align: center;
+            }
         }
 
         /* Nút menu mobile */
@@ -305,12 +372,12 @@
 
         .slide-content {
             position: absolute;
-            bottom: 20%;
-            left: 10%;
-            background: rgba(255, 255, 255, 0.8);
+            bottom: 5%;
+            left: 5%;
             padding: 20px;
             border-radius: 10px;
             max-width: 400px;
+            color: var(--white);
         }
 
         .slide-content h2 {
@@ -324,13 +391,13 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0);
             border: none;
             padding: 10px 15px;
             cursor: pointer;
             font-size: 1.5rem;
             border-radius: 50%;
-            color: var(--accent-color);
+            color: var(--primary-color);
             transition: 0.3s;
         }
         .slider-btn:hover { background: var(--white); }
