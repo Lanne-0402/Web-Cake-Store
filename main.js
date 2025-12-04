@@ -208,30 +208,6 @@ $('#sortOption').on('change', function () {
 // ======================================================
 renderProducts();
 
-            // TRANG CHI TIẾT SẢN PHẨM
-            // Khi click vào sản phẩm → chuyển trang detail
-
-$(".product-card").click(function () {
-    const id = $(this).data("id");
-    window.location.href = "product-detail.html?id=" + id;
-});
-// Lấy data từ sessionStorage
-const data = sessionStorage.getItem("selectedProduct");
-if (!data) {
-  alert("Không tìm thấy thông tin sản phẩm!");
-  window.location.href = "product.html";
-} else {
-  const prod = JSON.parse(data);
-
-  document.getElementById("detail-image").src = prod.img;
-  document.getElementById("detail-name").innerText = prod.name;
-  document.getElementById("detail-price").innerText = prod.price;
-  document.getElementById("detail-desc").innerText = prod.desc;
-}
-
-// Có thể thêm phần “similar products” — ở đây tạm lấy các 4 sản phẩm đầu trong product.html để gợi ý
-// Nếu muốn: bạn có thể xuất toàn bộ danh sách ra JSON rồi lọc theo category, v.v.
-
 
 });
 
@@ -408,13 +384,14 @@ $(document).ready(function () {
 // 5. CHAT POPUP
 // MỞ POPUP
 $("#chat-bubble").click(function () {
-    $("#chat-popup").removeClass("hidden");
+    $("#chat-popup").toggleClass("hidden");
 });
 
-// ĐÓNG POPUP
+// ĐÓNG POPUP bằng dấu X vẫn giữ nguyên
 $(".close-chat").click(function () {
     $("#chat-popup").addClass("hidden");
 });
+
 // ====== CHAT AUTO REPLY ======
 function botReply(message) {
     let msg = message.toLowerCase();
@@ -490,6 +467,13 @@ $(window).scroll(function () {
 $("#back-to-top").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
 });
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake - Halo Sweet Bakery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F4DFE6;
+            --primary-color: #E0A3BB;
+            --accent-color: #97A13B;
+            --secondary-color: #C5CC82;
+            --light-blue: #D6E6E7;
+            --text-color: #555;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --error-color: #e74c3c;
+            --success-color: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { 
+            font-family: 'Dancing Script', cursive;
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        .detail-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        /* Product Detail Layout */
+        .product-detail-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 16px;
+            position: relative;
+            cursor: zoom-in;
+            border: 2px solid #f0f0f0;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.15s ease-out;
+        }
+
+        .zoom-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            color: var(--accent-color);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .thumbnail {
+            min-width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            object-fit: cover;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .thumbnail.active {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(151, 161, 59, 0.3);
+        }
+
+        /* Product Info */
+        .detail-info h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+        }
+
+        .review-count {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .original-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .discount-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stock-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .stock-status.low-stock {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .description {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        /* Product Features */
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Size Selection */
+        .size-selector {
+            margin-bottom: 25px;
+        }
+
+        .size-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .size-option {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .size-option:hover {
+            border-color: var(--primary-color);
+        }
+
+        .size-option.selected {
+            border-color: var(--accent-color);
+            background: var(--light-blue);
+            font-weight: 600;
+        }
+
+        /* Quantity Selector */
+        .quantity-section {
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-input {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--light-blue);
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--accent-color);
+            transition: background 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .qty-value {
+            width: 60px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            outline: none;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #7d8a32;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            padding: 15px 25px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            background: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Delivery Info */
+        .delivery-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-top: 2px;
+        }
+
+        /* Tabs Section */
+        .tabs-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Reviews */
+        .review-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+        }
+
+        .review-date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        /* Related Products */
+        .related-section {
+            margin-top: 60px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .related-wrapper {
+            position: relative;
+        }
+
+        .related-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+        }
+
+        .related-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .related-scroll::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .related-item {
+            min-width: 280px;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .related-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-item-info {
+            padding: 15px;
+        }
+
+        .related-item h4 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .related-price {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .arrow-btn {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--accent-color);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .arrow-btn:hover {
+            background: #7d8a32;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-btn.left { left: -25px; }
+        .arrow-btn.right { right: -25px; }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(400px);
+            transition: transform 0.3s;
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success { border-left: 4px solid var(--success-color); }
+        .toast.error { border-left: 4px solid var(--error-color); }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .product-detail-wrapper {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .main-image-container {
+                height: 400px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .arrow-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="introduce.html">Giới Thiệu</a></li>
+                <li><a href="product.html" class="active">Sản Phẩm</a></li>
+                <li><a href="recipe.html">Công Thức</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a> / 
+        <a href="product.html">Sản phẩm</a> / 
+        <span>Tart Chocolate</span>
+    </div>
+
+    <main class="detail-container">
+        <!-- Product Detail -->
+        <div class="product-detail-wrapper">
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div class="main-image-container" id="mainImageContainer">
+                    <img src="cake-pic/crepe249.jpg" 
+                         alt="Tart Chocolate" 
+                         class="main-image" 
+                         id="mainImage">
+                    <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="thumbnail-container">
+                    <img src="cake-pic/banhkemdau299.jpg" 
+                         class="thumbnail active" 
+                         alt="Góc nhìn 1">
+                    <img src="cake-pic/brownie22.jpg" 
+                         class="thumbnail" 
+                         alt="Góc nhìn 2">
+                    <img src="cake-pic/churros14.jpg" 
+                         class="thumbnail" 
+                         alt="Góc nhìn 3">
+                    <img src="cake-pic/crepe249.jpg" 
+                         class="thumbnail" 
+                         alt="Góc nhìn 4">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="detail-info">
+                <h1>Tart Chocolate Cao Cấp</h1>
+                
+                <div class="rating-section">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="review-count">(128 đánh giá)</span>
+                </div>
+
+                <div class="price-section">
+                    <span class="current-price">55.000đ</span>
+                    <span class="original-price">75.000đ</span>
+                    <span class="discount-badge">-27%</span>
+                </div>
+
+                <div class="stock-status">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Còn hàng - Giao trong 2 giờ</span>
+                </div>
+
+                <p class="description">
+                    Một chiếc tart chocolate đậm đà với lớp vỏ bánh giòn tan kết hợp cùng nhân chocolate Bỉ mềm mịn. 
+                    Được làm từ 70% cacao nguyên chất, mang đến hương vị chocolate đắng nhẹ hòa quyện cùng vị ngọt thanh. 
+                    Trang trí bằng bột cacao nguyên chất và chocolate shavings cao cấp.
+                </p>
+
+                <ul class="features-list">
+                    <li>Chocolate Bỉ nguyên chất 70% cacao</li>
+                    <li>Vỏ bánh giòn tan làm thủ công</li>
+                    <li>Không chất bảo quản, làm tươi mỗi ngày</li>
+                    <li>Bảo quản 3 ngày trong tủ lạnh</li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <a href="contact.html" class="btn-primary" id="buyNow">
+                        <i class="fas fa-shopping-bag"></i>
+                        Đặt Hàng Ngay
+                    </a>
+                    <button class="btn-secondary" id="addToWishlist">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="description">Mô tả</button>
+                <button class="tab-btn" data-tab="ingredients">Thành phần</button>
+                <button class="tab-btn" data-tab="nutrition">Dinh dưỡng</button>
+                <button class="tab-btn" data-tab="reviews">Đánh giá (128)</button>
+            </div>
+
+            <div class="tab-content active" id="description">
+                <h3 style="margin-bottom: 15px;">Về sản phẩm</h3>
+                <p style="line-height: 1.8;">
+                    Tart Chocolate là một trong những sản phẩm đặc trưng của Halo Sweet Bakery. 
+                    Chúng tôi sử dụng chocolate Bỉ cao cấp với 70% hàm lượng cacao nguyên chất, 
+                    kết hợp cùng công thức làm vỏ tart truyền thống của Pháp. Mỗi chiếc bánh 
+                    được làm thủ công bởi các thợ làm bánh giàu kinh nghiệm, đảm bảo chất lượng 
+                    và hương vị đồng đều.
+                </p>
+                <p style="line-height: 1.8; margin-top: 15px;">
+                    Lớp vỏ bánh được làm từ bơ Pháp cao cấp, giòn tan và thơm béo. Nhân chocolate 
+                    được pha chế theo tỷ lệ hoàn hảo, mang đến độ mịn màng tan chảy trong miệng. 
+                    Trang trí hoàn thiện bằng bột cacao nguyên chất và chocolate shavings tạo 
+                    nên vẻ ngoài sang trọng và hấp dẫn.
+                </p>
+            </div>
+
+            <div class="tab-content" id="ingredients">
+                <h3 style="margin-bottom: 15px;">Thành phần chính</h3>
+                <ul style="line-height: 2;">
+                    <li><strong>Vỏ bánh:</strong> Bột mì cao cấp, bơ Pháp, đường, trứng gà, muối</li>
+                    <li><strong>Nhân:</strong> Chocolate Bỉ 70% cacao, kem tươi, bơ, đường</li>
+                    <li><strong>Trang trí:</strong> Bột cacao nguyên chất, chocolate shavings</li>
+                    <li><strong>Chất bảo quản:</strong> Không sử dụng</li>
+                </ul>
+                <p style="margin-top: 15px; color: #e74c3c;">
+                    <strong>Lưu ý:</strong> Sản phẩm chứa gluten, sữa và trứng. 
+                    Không phù hợp cho người dị ứng với các thành phần trên.
+                </p>
+            </div>
+
+            <div class="tab-content" id="nutrition">
+                <h3 style="margin-bottom: 15px;">Thông tin dinh dưỡng (100g)</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px 0;"><strong>Năng lượng</strong></td>
+                        <td style="text-align: right;">420 kcal</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px 0;"><strong>Chất béo</strong></td>
+                        <td style="text-align: right;">24g</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px 0;"><strong>Carbohydrate</strong></td>
+                        <td style="text-align: right;">45g</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px 0;"><strong>Đường</strong></td>
+                        <td style="text-align: right;">28g</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px 0;"><strong>Protein</strong></td>
+                        <td style="text-align: right;">6g</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0;"><strong>Chất xơ</strong></td>
+                        <td style="text-align: right;">3g</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tab-content" id="reviews">
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-name">Nguyễn Minh Anh</span>
+                        <span class="review-date">15/11/2024</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Bánh chocolate rất ngon, vỏ giòn tan, nhân chocolate đậm đà không quá ngọt. Giao hàng nhanh, đóng gói cẩn thận. Sẽ ủng hộ tiệm lâu dài!</p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-name">Trần Văn Hùng</span>
+                        <span class="review-date">10/11/2024</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>Chất lượng tốt, vị chocolate ngon. Giá hơi cao một chút nhưng xứng đáng với chất lượng. Mình sẽ quay lại mua!</p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-name">Lê Thị Hoa</span>
+                        <span class="review-date">05/11/2024</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Tuyệt vời! Đây là món bánh chocolate tart ngon nhất mình từng ăn. Chocolate thơm, không bị ngấy. Nhân viên tư vấn nhiệt tình. 10/10!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-section">
+            <h2 class="section-title">Sản phẩm tương tự</h2>
+            <div class="related-wrapper">
+                <button class="arrow-btn left" id="scrollLeft"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow-btn right" id="scrollRight"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="related-scroll" id="relatedScroll">
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1559553156-2e97137af16f?w=400" alt="Donut Ngọt Ngào">
+                        <div class="related-item-info">
+                            <h4>Donut Ngọt Ngào</h4>
+                            <p class="related-price">25.000đ</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1fd872542?w=400" alt="Bánh Phô Mai">
+                        <div class="related-item-info">
+                            <h4>Bánh Phô Mai Cháy</h4>
+                            <p class="related-price">120.000đ</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400" alt="Red Velvet">
+                        <div class="related-item-info">
+                            <h4>Red Velvet Cake</h4>
+                            <p class="related-price">450.000đ</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Cupcake">
+                        <div class="related-item-info">
+                            <h4>Cupcake Vanilla</h4>
+                            <p class="related-price">35.000đ</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1587241321921-91a834d82e76?w=400" alt="Macaron">
+                        <div class="related-item-info">
+                            <h4>Macaron Pháp</h4>
+                            <p class="related-price">15.000đ/cái</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="related-item">
+                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400" alt="Tiramisu">
+                        <div class="related-item-info">
+                            <h4>Tiramisu Ý</h4>
+                            <p class="related-price">85.000đ</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+            <p>&copy; 2024 Tiệm Bánh Halo Sweet. Thiết kế với <i class="fas fa-heart"></i> và Bột Mì.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle" style="color: var(--success-color); font-size: 24px;"></i>
+        <div>
+            <strong>Đã thêm vào yêu thích!</strong>
+            <p style="margin: 0; font-size: 14px; color: #888;">Bạn có thể xem lại trong danh sách yêu thích</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== IMAGE GALLERY =====
+        const mainImage = document.getElementById('mainImage');
+        const mainImageContainer = document.getElementById('mainImageContainer');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        // Thumbnail click to change main image
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                mainImage.src = this.src.replace('w=200', 'w=800');
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Image zoom on hover
+        mainImageContainer.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            mainImage.style.transformOrigin = `${x}% ${y}%`;
+            mainImage.style.transform = 'scale(2)';
+        });
+
+        mainImageContainer.addEventListener('mouseleave', function() {
+            mainImage.style.transform = 'scale(1)';
+        });
+
+        // ===== SIZE SELECTION =====
+        const sizeOptions = document.querySelectorAll('.size-option');
+        const currentPrice = document.querySelector('.current-price');
+        let selectedSize = 'small';
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                sizeOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                selectedSize = this.dataset.size;
+                const price = parseInt(this.dataset.price);
+                currentPrice.textContent = price.toLocaleString('vi-VN') + 'đ';
+            });
+        });
+
+        // ===== QUANTITY CONTROL =====
+        const decreaseBtn = document.getElementById('decreaseQty');
+        const increaseBtn = document.getElementById('increaseQty');
+        const qtyValue = document.getElementById('qtyValue');
+
+        decreaseBtn.addEventListener('click', function() {
+            let value = parseInt(qtyValue.value);
+            if (value > 1) {
+                qtyValue.value = value - 1;
+            }
+        });
+
+        increaseBtn.addEventListener('click', function() {
+            let value = parseInt(qtyValue.value);
+            if (value < 99) {
+                qtyValue.value = value + 1;
+            }
+        });
+
+        // ===== WISHLIST =====
+        const wishlistBtn = document.getElementById('addToWishlist');
+        const toast = document.getElementById('toast');
+        let isWishlisted = false;
+
+        wishlistBtn.addEventListener('click', function() {
+            isWishlisted = !isWishlisted;
+            
+            if (isWishlisted) {
+                this.innerHTML = '<i class="fas fa-heart"></i>';
+                this.style.background = '#ffe6f1';
+                this.style.borderColor = '#E0A3BB';
+                this.style.color = '#E0A3BB';
+                
+                // Show toast
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            } else {
+                this.innerHTML = '<i class="far fa-heart"></i>';
+                this.style.background = 'white';
+                this.style.borderColor = '#E0A3BB';
+                this.style.color = '#E0A3BB';
+            }
+        });
+
+        // ===== TABS =====
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // ===== RELATED PRODUCTS SCROLL =====
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+        const relatedScroll = document.getElementById('relatedScroll');
+
+        scrollLeftBtn.addEventListener('click', function() {
+            relatedScroll.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener('click', function() {
+            relatedScroll.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        // ===== STORE ORDER INFO BEFORE REDIRECT =====
+        const buyNowBtn = document.getElementById('buyNow');
+        
+        buyNowBtn.addEventListener('click', function(e) {
+            // Store order details in sessionStorage
+            const orderDetails = {
+                productName: 'Tart Chocolate Cao Cấp',
+                size: selectedSize,
+                quantity: qtyValue.value,
+                price: currentPrice.textContent,
+                timestamp: new Date().toISOString()
+            };
+            
+            sessionStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+        });
+
+        // ===== SMOOTH SCROLL TO TOP =====
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                // Could add a back-to-top button here if needed
+            }
+        });
+    </script>
+</body>
+</html>
