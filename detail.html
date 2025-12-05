@@ -3,86 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cake - Halo Sweet Bakery</title>
+    <title>Tart Chocolate - Halo Sweet Bakery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
     
     <style>
-        :root {
-            --bg-color: #F4DFE6;
-            --primary-color: #E0A3BB;
-            --accent-color: #97A13B;
-            --secondary-color: #C5CC82;
-            --light-blue: #D6E6E7;
-            --text-color: #555;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
-            --error-color: #e74c3c;
-            --success-color: #27ae60;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 { 
-            font-family: 'Dancing Script', cursive;
-            color: var(--accent-color);
-        }
-
-        /* Header */
-        header {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 15px;
-            transition: all 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--white);
-            background-color: var(--primary-color);
-        }
 
         /* Breadcrumb */
         .breadcrumb {
@@ -105,7 +33,7 @@
         .detail-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px 40px;
+            padding: 0 15px;
         }
 
         /* Product Detail Layout */
@@ -276,91 +204,6 @@
             font-weight: bold;
         }
 
-        /* Size Selection */
-        .size-selector {
-            margin-bottom: 25px;
-        }
-
-        .size-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .size-options {
-            display: flex;
-            gap: 10px;
-        }
-
-        .size-option {
-            padding: 10px 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: white;
-        }
-
-        .size-option:hover {
-            border-color: var(--primary-color);
-        }
-
-        .size-option.selected {
-            border-color: var(--accent-color);
-            background: var(--light-blue);
-            font-weight: 600;
-        }
-
-        /* Quantity Selector */
-        .quantity-section {
-            margin-bottom: 25px;
-        }
-
-        .quantity-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .quantity-input {
-            display: flex;
-            align-items: center;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .qty-btn {
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: var(--light-blue);
-            cursor: pointer;
-            font-size: 18px;
-            color: var(--accent-color);
-            transition: background 0.3s;
-        }
-
-        .qty-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .qty-value {
-            width: 60px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            outline: none;
-        }
-
         /* Action Buttons */
         .action-buttons {
             display: flex;
@@ -406,31 +249,6 @@
         .btn-secondary:hover {
             background: var(--primary-color);
             color: white;
-        }
-
-        /* Delivery Info */
-        .delivery-info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-item i {
-            color: var(--accent-color);
-            font-size: 18px;
-            margin-top: 2px;
         }
 
         /* Tabs Section */
@@ -484,124 +302,178 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Reviews */
-        .review-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
+        /* === RELATED PRODUCTS === */
+.related-section {
+    margin-top: 60px;
+}
 
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--text-color);
+}
 
-        .reviewer-name {
-            font-weight: 600;
-        }
+.related-wrapper {
+    position: relative;
+    padding: 0 70px;
+}
 
-        .review-date {
-            color: #888;
-            font-size: 14px;
-        }
+.related-scroll {
+    display: flex;
+    gap: 28px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 4px;
+}
 
-        .review-stars {
-            color: #ffc107;
-            margin-bottom: 10px;
-        }
+.related-item {
+    min-width: calc((100% - 84px) / 4);
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    transform: translateY(0);
+}
 
-        /* Related Products */
-        .related-section {
-            margin-top: 60px;
-        }
+.related-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
 
-        .section-title {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+.related-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(224,163,187,0.12),
+        rgba(151,161,59,0.12)
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 1;
+}
+.related-item:hover::before {
+    opacity: 1;
+}
 
-        .related-wrapper {
-            position: relative;
-        }
+.related-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 22px 22px 0 0;
+}
 
-        .related-scroll {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 10px 0;
-        }
+.related-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+    border-radius: inherit;
+}
 
-        .related-scroll::-webkit-scrollbar {
-            height: 8px;
-        }
+.related-item:hover img {
+    transform: scale(1.12);
+}
 
-        .related-scroll::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 4px;
-        }
+.related-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
 
-        .related-item {
-            min-width: 280px;
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
+.related-item-info {
+    padding: 22px 20px;
+    position: relative;
+    z-index: 2;
+}
 
-        .related-item:hover {
-            transform: translateY(-8px);
-        }
+.related-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.35;
+    min-height: 48px;
+}
 
-        .related-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+.related-price {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 12px;
+}
 
-        .related-item-info {
-            padding: 15px;
-        }
+.related-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #444;
+}
 
-        .related-item h4 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--text-color);
-        }
+.related-stars {
+    color: #ffc107;
+}
 
-        .related-price {
-            color: var(--accent-color);
-            font-weight: 700;
-            font-size: 20px;
-        }
+.related-count {
+    color: #888;
+}
 
-        .arrow-btn {
-            position: absolute;
-            top: 40%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background: var(--accent-color);
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 10;
-        }
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(151,161,59,0.75);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+}
 
-        .arrow-btn:hover {
-            background: #7d8a32;
-            transform: translateY(-50%) scale(1.1);
-        }
+.arrow-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
 
-        .arrow-btn.left { left: -25px; }
-        .arrow-btn.right { right: -25px; }
+.arrow-btn:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.arrow-btn.left { left: 0; }
+.arrow-btn.right { right: 0; }
+
+.arrow-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
 
         /* Footer */
         footer {
@@ -659,27 +531,34 @@
 </head>
 
 <body>
+
     <!-- Header -->
     <header>
-        <div class="navbar">
+        <div class="container navbar">
             <div class="logo">
                 <i class="fas fa-bread-slice"></i> Halo Sweet Bakery
             </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li><a href="introduce.html">Giới Thiệu</a></li>
-                <li><a href="product.html" class="active">Sản Phẩm</a></li>
-                <li><a href="recipe.html">Công Thức</a></li>
-                <li><a href="contact.html">Liên Hệ</a></li>
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item active">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li>
+                    <a href="contact.html" class="btn-navbar-highlight">
+                        Liên hệ
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
 
-    <!-- NÚT LÊN ĐẦU TRANG -->
+<!-- NÚT LÊN ĐẦU TRANG -->
     <div id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-
+    
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a> / 
@@ -693,23 +572,23 @@
             <!-- Image Gallery -->
             <div class="image-gallery">
                 <div class="main-image-container" id="mainImageContainer">
-                    <img src="cake-pic/crepe249.jpg" 
+                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c39a?w=800" 
                          alt="Tart Chocolate" 
                          class="main-image" 
                          id="mainImage">
                     <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="thumbnail-container">
-                    <img src="cake-pic/banhkemdau299.jpg" 
+                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c39a?w=200" 
                          class="thumbnail active" 
                          alt="Góc nhìn 1">
-                    <img src="cake-pic/brownie22.jpg" 
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200" 
                          class="thumbnail" 
                          alt="Góc nhìn 2">
-                    <img src="cake-pic/churros14.jpg" 
+                    <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=200" 
                          class="thumbnail" 
                          alt="Góc nhìn 3">
-                    <img src="cake-pic/crepe249.jpg" 
+                    <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?w=200" 
                          class="thumbnail" 
                          alt="Góc nhìn 4">
                 </div>
@@ -753,7 +632,7 @@
                     <li>Không chất bảo quản, làm tươi mỗi ngày</li>
                     <li>Bảo quản 3 ngày trong tủ lạnh</li>
                 </ul>
-
+                
                 <!-- Action Buttons -->
                 <div class="action-buttons">
                     <a href="contact.html" class="btn-primary" id="buyNow">
@@ -764,7 +643,6 @@
                         <i class="far fa-heart"></i>
                     </button>
                 </div>
-
             </div>
         </div>
 
@@ -773,7 +651,6 @@
             <div class="tabs-header">
                 <button class="tab-btn active" data-tab="description">Mô tả</button>
                 <button class="tab-btn" data-tab="ingredients">Thành phần</button>
-                <button class="tab-btn" data-tab="nutrition">Dinh dưỡng</button>
                 <button class="tab-btn" data-tab="reviews">Đánh giá (128)</button>
             </div>
 
@@ -808,40 +685,10 @@
                 </p>
             </div>
 
-            <div class="tab-content" id="nutrition">
-                <h3 style="margin-bottom: 15px;">Thông tin dinh dưỡng (100g)</h3>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 10px 0;"><strong>Năng lượng</strong></td>
-                        <td style="text-align: right;">420 kcal</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 10px 0;"><strong>Chất béo</strong></td>
-                        <td style="text-align: right;">24g</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 10px 0;"><strong>Carbohydrate</strong></td>
-                        <td style="text-align: right;">45g</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 10px 0;"><strong>Đường</strong></td>
-                        <td style="text-align: right;">28g</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 10px 0;"><strong>Protein</strong></td>
-                        <td style="text-align: right;">6g</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px 0;"><strong>Chất xơ</strong></td>
-                        <td style="text-align: right;">3g</td>
-                    </tr>
-                </table>
-            </div>
-
             <div class="tab-content" id="reviews">
                 <div class="review-item">
                     <div class="review-header">
-                        <span class="reviewer-name">Nguyễn Minh Anh</span>
+                        <span class="reviewer-name">hanari</span>
                         <span class="review-date">15/11/2024</span>
                     </div>
                     <div class="review-stars">
@@ -856,7 +703,7 @@
 
                 <div class="review-item">
                     <div class="review-header">
-                        <span class="reviewer-name">Trần Văn Hùng</span>
+                        <span class="reviewer-name">Lanne</span>
                         <span class="review-date">10/11/2024</span>
                     </div>
                     <div class="review-stars">
@@ -871,7 +718,7 @@
 
                 <div class="review-item">
                     <div class="review-header">
-                        <span class="reviewer-name">Lê Thị Hoa</span>
+                        <span class="reviewer-name">DaUa</span>
                         <span class="review-date">05/11/2024</span>
                     </div>
                     <div class="review-stars">
@@ -894,53 +741,7 @@
                 <button class="arrow-btn right" id="scrollRight"><i class="fas fa-chevron-right"></i></button>
 
                 <div class="related-scroll" id="relatedScroll">
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1559553156-2e97137af16f?w=400" alt="Donut Ngọt Ngào">
-                        <div class="related-item-info">
-                            <h4>Donut Ngọt Ngào</h4>
-                            <p class="related-price">25.000đ</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1606890737304-57a1fd872542?w=400" alt="Bánh Phô Mai">
-                        <div class="related-item-info">
-                            <h4>Bánh Phô Mai Cháy</h4>
-                            <p class="related-price">120.000đ</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400" alt="Red Velvet">
-                        <div class="related-item-info">
-                            <h4>Red Velvet Cake</h4>
-                            <p class="related-price">450.000đ</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Cupcake">
-                        <div class="related-item-info">
-                            <h4>Cupcake Vanilla</h4>
-                            <p class="related-price">35.000đ</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1587241321921-91a834d82e76?w=400" alt="Macaron">
-                        <div class="related-item-info">
-                            <h4>Macaron Pháp</h4>
-                            <p class="related-price">15.000đ/cái</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="related-item">
-                        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400" alt="Tiramisu">
-                        <div class="related-item-info">
-                            <h4>Tiramisu Ý</h4>
-                            <p class="related-price">85.000đ</p>
-                        </div>
-                    </a>
+                    <!-- Products will be dynamically loaded here -->
                 </div>
             </div>
         </div>
@@ -963,21 +764,115 @@
     </div>
 
     <script>
+        // ===== PRODUCT DATABASE =====
+        const products = [
+            { id: '01', name: 'Bánh sinh nhật theo yêu cầu', price: 299000, img: 'cake-pic/banhsinhnhat299.jpg', type: 'cake', rating: 4.8, reviews: 221 },
+            { id: '02', name: 'Bánh theo yêu cầu', price: 249000, img: 'cake-pic/banhtheoyeucau249.jpg', type: 'cake', rating: 4.9, reviews: 530 },
+            { id: '06', name: 'Tiramisu Truyền Thống', price: 250000, img: 'cake-pic/tiramisu250.jpg', type: 'tiramisu', rating: 4.7, reviews: 264 },
+            { id: '07', name: 'Tiramisu Dâu Tây', price: 320000, img: 'cake-pic/tiramisudautay320.jpg', type: 'tiramisu', rating: 4.9, reviews: 310 },
+            { id: '08', name: 'Tiramisu mini Matcha', price: 22000, img: 'cake-pic/tiramisumatcha22.jpg', type: 'tiramisu', rating: 4.6, reviews: 198 },
+            { id: '09', name: 'Tiramisu mini', price: 17000, img: 'cake-pic/tiramisumini17.jpg', type: 'tiramisu', rating: 4.7, reviews: 275 },
+            { id: '03', name: 'Cupcake Caramel', price: 25000, img: 'cake-pic/cupcakecaramel25.jpg', type: 'cupcake', rating: 4.8, reviews: 357 },
+            { id: '04', name: 'Cupcake Matcha', price: 27000, img: 'cake-pic/cupcakematchachip27.jpg', type: 'cupcake', rating: 4.7, reviews: 289 },
+            { id: '05', name: 'Cupcake Vani', price: 25000, img: 'cake-pic/cupcakevani25.jpg', type: 'cupcake', rating: 4.8, reviews: 312 },
+            { id: '10', name: 'Cupcake RedVelvet', price: 27000, img: 'cake-pic/cupcakeredvelvet27.jpg', type: 'cupcake', rating: 4.7, reviews: 298 },
+            { id: '12', name: 'Donut', price: 27000, img: 'cake-pic/donut27.jpg', type: 'donut', rating: 4.5, reviews: 150 },
+            { id: '11', name: 'Macaron Truyền Thống', price: 14000, img: 'cake-pic/macaron14.jpg', type: 'cookie', rating: 4.9, reviews: 384 },
+            { id: '20', name: 'Macaron Christmas', price: 22000, img: 'cake-pic/macaronchristmas22.jpg', type: 'cookie', rating: 4.6, reviews: 210 },
+            { id: '15', name: 'Set Macaron', price: 135000, img: 'cake-pic/setmacaron135.jpg', type: 'cookie', rating: 4.7, reviews: 175 },
+            { id: '14', name: 'Set Donut Socola', price: 155000, img: 'cake-pic/setdonutsocola155.jpg', type: 'donut', rating: 4.6, reviews: 200 },
+            { id: '13', name: 'Bánh quy', price: 17000, img: 'cake-pic/cookieschip17.jpg', type: 'cookie', rating: 4.7, reviews: 225 },
+            { id: '19', name: 'Set Cookies Christmas', price: 249000, img: 'cake-pic/setcookies249.jpg', type: 'cookie', rating: 4.5, reviews: 180 },
+            { id: '16', name: 'Bánh Sukem Socola', price: 25000, img: 'cake-pic/sukemsocola25.jpg', type: 'donut', rating: 4.7, reviews: 230 },
+            { id: '17', name: 'Sukem Socola Mini', price: 21000, img: 'cake-pic/sukemsocolamini22.jpg', type: 'donut', rating: 4.6, reviews: 190 },
+            { id: '18', name: 'Bánh RedVelvet', price: 299000, img: 'cake-pic/redvelvetcake299.jpg', type: 'cake', rating: 4.8, reviews: 280 },
+            { id: '21', name: 'Bánh Churros', price: 14000, img: 'cake-pic/churros14.jpg', type: 'donut', rating: 4.9, reviews: 398 },
+            { id: '23', name: 'Set Tiramisu', price: 199000, img: 'cake-pic/settiramisu199.jpg', type: 'tiramisu', rating: 4.9, reviews: 432 },
+            { id: '25', name: 'Bánh Brownie', price: 22000, img: 'cake-pic/brownie22.jpg', type: 'cake', rating: 4.9, reviews: 398 },
+            { id: '27', name: 'Cupcake Ginger', price: 27000, img: 'cake-pic/ginggercupcake27.jpg', type: 'cupcake', rating: 4.5, reviews: 152 },
+            { id: '29', name: 'Bomboloni Donut', price: 27000, img: 'cake-pic/bomboloni27.jpg', type: 'donut', rating: 4.9, reviews: 420 },
+            { id: '22', name: 'Bánh kem dâu tây', price: 299000, img: 'cake-pic/banhkemdau299.jpg', type: 'cake', rating: 5.0, reviews: 512 },
+            { id: '24', name: 'Bánh Phô mai cháy', price: 299000, img: 'cake-pic/basque299.jpg', type: 'cake', rating: 4.6, reviews: 122 },
+            { id: '26', name: 'Bánh rán Pháp Beignet', price: 17000, img: 'cake-pic/beignet.jpg', type: 'donut', rating: 4.5, reviews: 132 },
+            { id: '28', name: 'Bánh quy gừng', price: 27000, img: 'cake-pic/ginger.jpg', type: 'cookie', rating: 4.4, reviews: 101 },
+            { id: '30', name: 'Tiramisu ngàn lớp', price: 265000, img: 'cake-pic/crepe249.jpg', type: 'tiramisu', rating: 4.7, reviews: 235 },
+            { id: '31', name: 'Mousse Socola', price: 159000, img: 'cake-pic/mousesocola27.jpg', type: 'mousse', rating: 4.7, reviews: 222 },
+            { id: '32', name: 'Mousse Dâu tây', price: 159000, img: 'cake-pic/strawmousse.jpg', type: 'mousse', rating: 4.6, reviews: 210 }
+        ];
+
+        // Get current product ID from URL or default
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentProductId = urlParams.get('id') || '06';
+        const currentProduct = products.find(p => p.id === currentProductId);
+
+        // ===== LOAD PRODUCT DETAILS =====
+        if (currentProduct) {
+            document.querySelector('.detail-info h1').textContent = currentProduct.name;
+            document.querySelector('.current-price').textContent = currentProduct.price.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('mainImage').src = currentProduct.img;
+            document.querySelector('.breadcrumb span').textContent = currentProduct.name;
+            
+            // Update rating
+            const starsContainer = document.querySelector('.rating-section .stars');
+            const fullStars = Math.floor(currentProduct.rating);
+            const hasHalfStar = currentProduct.rating % 1 >= 0.5;
+            let starsHTML = '';
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<i class="fas fa-star"></i>';
+            }
+            if (hasHalfStar) {
+                starsHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            for (let i = Math.ceil(currentProduct.rating); i < 5; i++) {
+                starsHTML += '<i class="far fa-star"></i>';
+            }
+            starsContainer.innerHTML = starsHTML;
+            document.querySelector('.review-count').textContent = `(${currentProduct.reviews} đánh giá)`;
+        }
+
+        // ===== LOAD RELATED PRODUCTS =====
+        function loadRelatedProducts() {
+            const relatedScroll = document.getElementById('relatedScroll');
+            const relatedProducts = products
+                .filter(p => p.id !== currentProductId && p.type === currentProduct.type)
+                .slice(0, 8);
+
+            relatedScroll.innerHTML = relatedProducts.map(product => `
+                <a href="detail.html?id=${product.id}" class="related-item">
+                    <div class="related-img-wrapper">
+                        <img src="${product.img}" alt="${product.name}">
+                        <span class="related-badge">Mới</span>
+                    </div>
+                    <div class="related-item-info">
+                        <h4>${product.name}</h4>
+                        <span class="related-price">${product.price.toLocaleString('vi-VN')}đ</span>
+                        <div class="related-rating">
+                            <span class="related-stars">
+                                ${'<i class="fas fa-star"></i>'.repeat(Math.floor(product.rating))}
+                                ${product.rating % 1 >= 0.5 ? '<i class="fas fa-star-half-alt"></i>' : ''}
+                            </span>
+                            <span class="related-count">(${product.reviews})</span>
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+
+            updateArrowButtons();
+        }
+
         // ===== IMAGE GALLERY =====
         const mainImage = document.getElementById('mainImage');
         const mainImageContainer = document.getElementById('mainImageContainer');
         const thumbnails = document.querySelectorAll('.thumbnail');
 
-        // Thumbnail click to change main image
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', function() {
-                mainImage.src = this.src.replace('w=200', 'w=800');
+                mainImage.src = this.src;
                 thumbnails.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
             });
         });
 
-        // Image zoom on hover
         mainImageContainer.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -988,41 +883,6 @@
 
         mainImageContainer.addEventListener('mouseleave', function() {
             mainImage.style.transform = 'scale(1)';
-        });
-
-        // ===== SIZE SELECTION =====
-        const sizeOptions = document.querySelectorAll('.size-option');
-        const currentPrice = document.querySelector('.current-price');
-        let selectedSize = 'small';
-
-        sizeOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                sizeOptions.forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                selectedSize = this.dataset.size;
-                const price = parseInt(this.dataset.price);
-                currentPrice.textContent = price.toLocaleString('vi-VN') + 'đ';
-            });
-        });
-
-        // ===== QUANTITY CONTROL =====
-        const decreaseBtn = document.getElementById('decreaseQty');
-        const increaseBtn = document.getElementById('increaseQty');
-        const qtyValue = document.getElementById('qtyValue');
-
-        decreaseBtn.addEventListener('click', function() {
-            let value = parseInt(qtyValue.value);
-            if (value > 1) {
-                qtyValue.value = value - 1;
-            }
-        });
-
-        increaseBtn.addEventListener('click', function() {
-            let value = parseInt(qtyValue.value);
-            if (value < 99) {
-                qtyValue.value = value + 1;
-            }
         });
 
         // ===== WISHLIST =====
@@ -1039,7 +899,6 @@
                 this.style.borderColor = '#E0A3BB';
                 this.style.color = '#E0A3BB';
                 
-                // Show toast
                 toast.classList.add('show');
                 setTimeout(() => {
                     toast.classList.remove('show');
@@ -1068,40 +927,47 @@
             });
         });
 
-        // ===== RELATED PRODUCTS SCROLL =====
+        // ===== RELATED PRODUCTS CAROUSEL =====
         const scrollLeftBtn = document.getElementById('scrollLeft');
-        const scrollRightBtn = document.getElementById('scrollRight');
-        const relatedScroll = document.getElementById('relatedScroll');
+const scrollRightBtn = document.getElementById('scrollRight');
+const relatedScroll = document.getElementById('relatedScroll');
 
-        scrollLeftBtn.addEventListener('click', function() {
-            relatedScroll.scrollBy({ left: -300, behavior: 'smooth' });
-        });
+function updateArrowButtons() {
+    const maxScroll = relatedScroll.scrollWidth - relatedScroll.clientWidth;
+    scrollLeftBtn.disabled = relatedScroll.scrollLeft <= 0;
+    scrollRightBtn.disabled = relatedScroll.scrollLeft >= maxScroll - 5;
+}
 
-        scrollRightBtn.addEventListener('click', function() {
-            relatedScroll.scrollBy({ left: 300, behavior: 'smooth' });
-        });
+scrollLeftBtn.addEventListener('click', function () {
+    const itemWidth = relatedScroll.querySelector('.related-item').offsetWidth + 25;
+    relatedScroll.scrollBy({ left: -itemWidth * 2, behavior: 'smooth' });
+    setTimeout(updateArrowButtons, 400);
+});
+
+scrollRightBtn.addEventListener('click', function () {
+    const itemWidth = relatedScroll.querySelector('.related-item').offsetWidth + 25;
+    relatedScroll.scrollBy({ left: itemWidth * 2, behavior: 'smooth' });
+    setTimeout(updateArrowButtons, 400);
+});
+
+updateArrowButtons();
+
+
+        // ===== INITIALIZE =====
+        loadRelatedProducts();
 
         // ===== STORE ORDER INFO BEFORE REDIRECT =====
         const buyNowBtn = document.getElementById('buyNow');
         
         buyNowBtn.addEventListener('click', function(e) {
-            // Store order details in sessionStorage
             const orderDetails = {
-                productName: 'Tart Chocolate Cao Cấp',
-                size: selectedSize,
-                quantity: qtyValue.value,
-                price: currentPrice.textContent,
+                productId: currentProductId,
+                productName: currentProduct.name,
+                price: currentProduct.price,
                 timestamp: new Date().toISOString()
             };
             
             sessionStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-        });
-
-        // ===== SMOOTH SCROLL TO TOP =====
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                // Could add a back-to-top button here if needed
-            }
         });
     </script>
 </body>
