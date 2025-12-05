@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tart Chocolate - Halo Sweet Bakery</title>
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style2.css">
     <script src="main.js" defer></script>
+    <script src="products-data.js"></script>
     
     <style>
 
@@ -579,7 +580,7 @@
                     <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="thumbnail-container">
-                    <img src="https://images.unsplash.com/photo-1557308536-ee471ef2c39a?w=200" 
+                    <img src="cake-pic/banhkemdau299.jpg" 
                          class="thumbnail active" 
                          alt="Góc nhìn 1">
                     <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200" 
@@ -715,21 +716,6 @@
                     </div>
                     <p>Chất lượng tốt, vị chocolate ngon. Giá hơi cao một chút nhưng xứng đáng với chất lượng. Mình sẽ quay lại mua!</p>
                 </div>
-
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">DaUa</span>
-                        <span class="review-date">05/11/2024</span>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>Tuyệt vời! Đây là món bánh chocolate tart ngon nhất mình từng ăn. Chocolate thơm, không bị ngấy. Nhân viên tư vấn nhiệt tình. 10/10!</p>
-                </div>
             </div>
         </div>
 
@@ -797,38 +783,63 @@
             { id: '28', name: 'Bánh quy gừng', price: 27000, img: 'cake-pic/ginger.jpg', type: 'cookie', rating: 4.4, reviews: 101 },
             { id: '30', name: 'Tiramisu ngàn lớp', price: 265000, img: 'cake-pic/crepe249.jpg', type: 'tiramisu', rating: 4.7, reviews: 235 },
             { id: '31', name: 'Mousse Socola', price: 159000, img: 'cake-pic/mousesocola27.jpg', type: 'mousse', rating: 4.7, reviews: 222 },
-            { id: '32', name: 'Mousse Dâu tây', price: 159000, img: 'cake-pic/strawmousse.jpg', type: 'mousse', rating: 4.6, reviews: 210 }
+            { id: '32', name: 'Mousse Dâu tây', price: 159000, img: 'cake-pic/strawmousse.jpg', type: 'mousse', rating: 4.6, reviews: 210 },
+            { id: '33', name: 'Set Mousse Mini', price: 159000, img: 'https://down-vn.img.susercontent.com/file/805af3be6cbb16704202cfe910462dca.webp', type: 'mousse', rating: 4.6, reviews: 200 },
+            { id: '34', name: 'Mousse Blueberry Mini', price: 22000, img: 'https://i.pinimg.com/736x/d7/42/2d/d7422db89aea54f52436503950560311.jpg', type: 'mousse', rating: 4.7, reviews: 230 },
+            { id: '35', name: 'Muffin ngũ cốc', price: 30000, img: 'https://i.pinimg.com/736x/7a/01/21/7a0121443d876c29d7bdb1c6585eb7b5.jpg', type: 'cupcake', rating: 4.8, reviews: 220 },
+            { id: '36', name: 'Mousse Mocha', price: 22000, img: 'https://i.pinimg.com/1200x/0e/b3/cd/0eb3cd869291b9188d59ed1850cdbf4f.jpg', type: 'mousse', rating: 4.5, reviews: 110 },
         ];
 
-        // Get current product ID from URL or default
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentProductId = urlParams.get('id') || '06';
-        const currentProduct = products.find(p => p.id === currentProductId);
+        // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentProductId = urlParams.get('id') || '06';
+    const currentProduct = getProductById(currentProductId);
 
-        // ===== LOAD PRODUCT DETAILS =====
-        if (currentProduct) {
-            document.querySelector('.detail-info h1').textContent = currentProduct.name;
-            document.querySelector('.current-price').textContent = currentProduct.price.toLocaleString('vi-VN') + 'đ';
-            document.getElementById('mainImage').src = currentProduct.img;
-            document.querySelector('.breadcrumb span').textContent = currentProduct.name;
-            
-            // Update rating
-            const starsContainer = document.querySelector('.rating-section .stars');
-            const fullStars = Math.floor(currentProduct.rating);
-            const hasHalfStar = currentProduct.rating % 1 >= 0.5;
-            let starsHTML = '';
-            for (let i = 0; i < fullStars; i++) {
-                starsHTML += '<i class="fas fa-star"></i>';
-            }
-            if (hasHalfStar) {
-                starsHTML += '<i class="fas fa-star-half-alt"></i>';
-            }
-            for (let i = Math.ceil(currentProduct.rating); i < 5; i++) {
-                starsHTML += '<i class="far fa-star"></i>';
-            }
-            starsContainer.innerHTML = starsHTML;
-            document.querySelector('.review-count').textContent = `(${currentProduct.reviews} đánh giá)`;
+    // Load product details
+    if (currentProduct) {
+        document.querySelector('.detail-info h1').textContent = currentProduct.name;
+        document.querySelector('.current-price').textContent = currentProduct.price.toLocaleString('vi-VN') + 'đ';
+        
+        if (currentProduct.originalPrice) {
+            document.querySelector('.original-price').textContent = currentProduct.originalPrice.toLocaleString('vi-VN') + 'đ';
+            document.querySelector('.discount-badge').textContent = `-${currentProduct.discount}%`;
         }
+        
+        document.querySelector('.description').textContent = currentProduct.description;
+        document.querySelector('.breadcrumb span').textContent = currentProduct.name;
+        
+        // Update main image
+        document.getElementById('mainImage').src = currentProduct.img;
+        
+        // Update thumbnails if available
+        if (currentProduct.images && currentProduct.images.length > 1) {
+            const thumbnailContainer = document.querySelector('.thumbnail-container');
+            thumbnailContainer.innerHTML = currentProduct.images.map((img, index) => 
+                `<img src="${img}" class="thumbnail ${index === 0 ? 'active' : ''}" alt="Góc nhìn ${index + 1}">`
+            ).join('');
+        }
+        
+        // Update rating
+        const fullStars = Math.floor(currentProduct.rating);
+        const hasHalfStar = currentProduct.rating % 1 >= 0.5;
+        let starsHTML = '';
+        for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<i class="fas fa-star"></i>';
+        }
+        if (hasHalfStar) {
+            starsHTML += '<i class="fas fa-star-half-alt"></i>';
+        }
+        for (let i = Math.ceil(currentProduct.rating); i < 5; i++) {
+            starsHTML += '<i class="far fa-star"></i>';
+        }
+        document.querySelector('.rating-section .stars').innerHTML = starsHTML;
+        document.querySelector('.review-count').textContent = `(${currentProduct.reviews} đánh giá)`;
+        
+        // Update features
+        if (currentProduct.features) {
+            document.querySelector('.features-list').innerHTML = currentProduct.features.map(f => `<li>${f}</li>`).join('');
+        }
+    }
 
         // ===== LOAD RELATED PRODUCTS =====
         function loadRelatedProducts() {
@@ -838,7 +849,7 @@
                 .slice(0, 8);
 
             relatedScroll.innerHTML = relatedProducts.map(product => `
-                <a href="detail.html?id=${product.id}" class="related-item">
+                <a href="product-detail.html?id=${product.id}" class="related-item">
                     <div class="related-img-wrapper">
                         <img src="${product.img}" alt="${product.name}">
                         <span class="related-badge">Mới</span>
@@ -969,6 +980,7 @@ updateArrowButtons();
             
             sessionStorage.setItem('orderDetails', JSON.stringify(orderDetails));
         });
+
     </script>
 </body>
 </html>
