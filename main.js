@@ -500,6 +500,58 @@ $("#back-to-top").click(function () {
     });
 
 
+        /* * =========================================
+        * LOGIC TRANG CHI TIẾT SẢN PHẨM
+        * =========================================
+        */
+
+        // 1. Hàm đổi ảnh (Phải đặt GLOBAL - ngoài document.ready)
+        function changeImage(element) {
+            var newSrc = element.src;
+            // Đổi ảnh lớn (Logic thay đổi size ảnh unsplash từ w=150 sang w=600)
+            var bigImage = document.getElementById('currentImg');
+            if (bigImage) {
+                bigImage.src = newSrc.replace('w=150', 'w=600');
+            }
+            
+            // Xử lý active class cho thumbnail
+            var thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(function(thumb) {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // 2. Logic cần chạy khi trang đã tải xong
+        $(document).ready(function() {
+            
+            // Xử lý nút tăng giảm số lượng
+            // Sử dụng .off('click').on('click') để đảm bảo không bị gán sự kiện nhiều lần
+            $('.qty-btn.plus').off('click').on('click', function() {
+                var input = $(this).prev('.qty-input');
+                var val = parseInt(input.val());
+                input.val(val + 1);
+            });
+
+            $('.qty-btn.minus').off('click').on('click', function() {
+                var input = $(this).next('.qty-input');
+                var val = parseInt(input.val());
+                if (val > 1) {
+                    input.val(val - 1);
+                }
+            });
+            
+            // Xử lý nút chọn size
+            $('.opt-btn').click(function() {
+                $('.opt-btn').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Thêm vào giỏ hàng (Hiệu ứng đơn giản)
+            $('.btn-add-cart').click(function() {
+                alert('Đã thêm sản phẩm vào giỏ hàng!');
+            });
+        });
 
 
 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- Thư viện FontAwesome cho Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Thư viện jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+        <!-- 1. TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone-alt"></i> 0909 123 456</span> 
+                <span class="separator">|</span>
+                <span class="desktop-only"><i class="fas fa-clock"></i> 07:00 - 20:00</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#" class="topbar__link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="topbar__link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="topbar__link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fa-solid fa-lemon"></i> Halo Sweet Bakery
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+                <li><a href="index.html" class="nav-item active">Trang Chủ</a></li>
+                <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
+                <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
+                <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
+                <li>
+                    <a href="contact.html" class="btn-navbar-highlight">
+                        Đặt Bánh Ngay
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- NÚT LÊN ĐẦU TRANG -->
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <main class="container">
+        <!-- 1. BREADCRUMB -->
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a> / 
+            <a href="san-pham.html">Bánh Sinh Nhật</a> / 
+            <span>Chocolate Chân Mây Mini</span>
+        </div>
+
+        <!-- 2. KHUNG CHI TIẾT SẢN PHẨM -->
+        <div class="product-detail-wrapper">
+            <!-- CỘT TRÁI: ẢNH -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="currentImg" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Bánh chính">
+                </div>
+                <div class="thumbnail-list">
+                    <!-- onclick gọi hàm changeImage() đã được chuyển sang file JS -->
+                    <img class="thumb active" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=150" onclick="changeImage(this)">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1606890737304-57a1fd872542?w=150" onclick="changeImage(this)">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1557308536-ee471ef2c39a?w=150" onclick="changeImage(this)">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1559553156-2e97137af16f?w=150" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: THÔNG TIN -->
+            <div class="product-info-col">
+                <h1 class="product-title">Chocolate Chân Mây Mini</h1>
+                <div class="product-meta">
+                    <span class="sku">Mã: BNH-001</span>
+                    <span class="status">Tình trạng: <span class="in-stock">Còn hàng</span></span>
+                </div>
+                
+                <div class="product-price-large">350.000₫</div>
+                
+                <div class="short-desc">
+                    <p>Một chiếc bánh Chocolate đậm đà, kết hợp với lớp kem sữa tươi thanh mát. Phủ bên ngoài là lớp bột cacao nguyên chất tạo nên hương vị "Chân Mây" bồng bềnh khó cưỡng.</p>
+                </div>
+
+                <!-- Chọn kích thước -->
+                <div class="product-option">
+                    <label>Kích thước:</label>
+                    <div class="option-buttons">
+                        <button class="opt-btn active">Mini (12cm)</button>
+                        <button class="opt-btn">Vừa (16cm)</button>
+                        <button class="opt-btn">Lớn (20cm)</button>
+                    </div>
+                </div>
+
+                <!-- Chọn số lượng -->
+                <div class="quantity-wrapper">
+                    <label>Số lượng:</label>
+                    <div class="quantity-control">
+                        <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1" class="qty-input">
+                        <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Nút bấm hành động -->
+                <div class="action-buttons">
+                    <button class="btn-add-cart"><i class="fas fa-shopping-bag"></i> Thêm vào giỏ</button>
+                    <button class="btn-buy-now">Mua Ngay</button>
+                </div>
+
+                <!-- Cam kết -->
+                <div class="policy-box">
+                    <div class="policy-item"><i class="fas fa-shipping-fast"></i> Giao hàng trong 2h</div>
+                    <div class="policy-item"><i class="fas fa-sync-alt"></i> Đổi trả nếu bánh lỗi</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. NỘI DUNG CHI TIẾT -->
+        <div class="product-description-section">
+            <h3 class="desc-title">Chi Tiết Sản Phẩm</h3>
+            <div class="desc-content">
+                <p><strong>Hương vị tuyệt hảo:</strong> Bánh được làm từ Chocolate Bỉ nguyên chất 70%, mang lại vị đắng nhẹ hòa quyện cùng vị ngọt của kem tươi.</p>
+                <p><strong>Thành phần:</strong> Bột mì, trứng gà, bơ lạt, chocolate đen, kem tươi, đường, bột cacao.</p>
+                <p><strong>Hướng dẫn bảo quản:</strong> Bảo quản trong ngăn mát tủ lạnh (2-4 độ C). Ngon nhất khi dùng trong vòng 2 ngày.</p>
+            </div>
+        </div>
+
+        <!-- 4. SẢN PHẨM LIÊN QUAN -->
+        <section class="related-products">
+            <h2 class="section-title">Có Thể Bạn Sẽ Thích</h2>
+            <div class="products-grid">
+                <!-- Sản phẩm 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400" alt="Cupcake" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Cupcake Dâu Tây</div>
+                        <div class="product-price">45.000đ</div>
+                        <a href="#" class="btn-add">Xem Ngay</a>
+                    </div>
+                </div>
+                <!-- Sản phẩm 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1588195538326-c5f1f9c4a792?w=400" alt="Donut" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Donut Cầu Vồng</div>
+                        <div class="product-price">30.000đ</div>
+                        <a href="#" class="btn-add">Xem Ngay</a>
+                    </div>
+                </div>
+                <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=400" alt="Tart" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Tart Trứng</div>
+                        <div class="product-price">20.000đ</div>
+                        <a href="#" class="btn-add">Xem Ngay</a>
+                    </div>
+                </div>
+                <!-- Sản phẩm 4 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?w=400" alt="Macaron" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Hộp Macaron</div>
+                        <div class="product-price">150.000đ</div>
+                        <a href="#" class="btn-add">Xem Ngay</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tiệm Bánh Góc Nhỏ. Thiết kế với <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+</body>
+</html>
