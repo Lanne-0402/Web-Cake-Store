@@ -75,7 +75,7 @@ const productsDatabase = {
         img: 'cake-pic/cupcakecaramel25.jpg',
         images: [
             'cake-pic/cupcakecaramel25.jpg',
-            'https://images.unsplash.com/photo-1587241321921-91a834d82e64?w=800'
+            'https://i.pinimg.com/1200x/d2/34/9d/d2349dc47c2462d32b865273b33bb089.jpg'
         ],
         type: 'cupcake',
         rating: 4.8,
@@ -106,7 +106,7 @@ const productsDatabase = {
         images: [
             'cake-pic/tiramisu250.jpg',
             'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800',
-            'https://images.unsplash.com/photo-1534432586043-388fe87c99e7?w=800'
+            'https://i.pinimg.com/1200x/97/5b/82/975b828369c16f30ffce388057f8bdbb.jpg'
         ],
         type: 'tiramisu',
         rating: 4.7,
