@@ -9,8 +9,8 @@
          * =========================================
          */
         :root {
-            --bg-color: #F4DFE6;        /* Nền chính - Lavender Blush */
-            --primary-color: #E0A3BB;   /* Màu chủ đạo - Amaranth Pink */
+            --bg-color: #f6e4ea;        /* Nền chính - Lavender Blush */
+            --primary-color: #e19ab6;   /* Màu chủ đạo - Amaranth Pink */
             --accent-color: #97A13B;    /* Màu nhấn/Text đậm - Moss Green */
             --secondary-color: #C5CC82; /* Màu phụ - Citron */
             --light-blue: #D6E6E7;      /* Màu nền phụ - Azure */
