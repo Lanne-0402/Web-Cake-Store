@@ -1281,14 +1281,151 @@
 
         /* * =========================================
          * 9. FOOTER
-         * =========================================
-         */
-        footer {
-            background-color: var(--accent-color);
-            color: var(--white);
-            text-align: center;
+        * FOOTER STYLING (Giao diện Poeme Cake)
+        * Copy đoạn này vào CUỐI file style.css
+        * =========================================
+        */
+
+        .site-footer {
+            background-color: #1a1e21; /* Màu nền tối (Dark Slate) giống mẫu */
+            color: #b0b0b0; /* Màu chữ xám nhạt */
+            padding-top: 60px;
+            font-size: 0.95rem;
+            margin-top: 80px; /* Cách phần nội dung bên trên ra một chút */
+            font-family: 'Nunito', sans-serif; /* Đảm bảo font chữ dễ đọc */
+        }
+
+        .footer-content {
+            display: grid;
+            /* Chia 4 cột, tự động xuống dòng trên mobile (tối thiểu 220px/cột) */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        /* Tiêu đề của từng cột */
+        .footer-title {
+            color: #ffffff; /* Màu tiêu đề trắng */
+            font-family: 'Nunito', sans-serif; /* Dùng font đứng, in hoa cho mạnh mẽ */
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--primary-color); /* Thêm gạch màu hồng bên trái cho đẹp */
+            padding-left: 10px;
+        }
+
+        /* --- CỘT 1: THÔNG TIN LIÊN HỆ --- */
+        .contact-info-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .contact-info-list li {
+            display: flex;
+            align-items: flex-start; /* Căn icon lên trên nếu text dài */
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-info-list i {
+            color: #ffffff;
+            margin-right: 15px;
+            font-size: 1.1rem;
+            margin-top: 3px;
+            width: 20px; /* Cố định chiều rộng để thẳng hàng */
+        }
+
+        /* Icon Bộ công thương (làm mờ đi một chút cho đỡ chói) */
+        .gov-icon { 
+            margin-top: 20px; 
+            filter: grayscale(100%); 
+            opacity: 0.7; 
+            transition: 0.3s;
+        }
+        .gov-icon:hover { 
+            filter: none; 
+            opacity: 1; 
+        }
+
+        /* --- CỘT 2 & 3: DANH SÁCH LIÊN KẾT --- */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1); /* Đường gạch mờ ngăn cách */
+            padding-bottom: 5px;
+        }
+
+        .footer-links li:last-child {
+            border-bottom: none;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color); /* Hover đổi sang màu hồng chủ đạo */
+            transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ sang phải */
+            padding-left: 5px;
+        }
+
+        /* --- CỘT 4: THƯ VIỆN ẢNH (GALLERY) --- */
+        .footer-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 ảnh 1 hàng */
+            gap: 10px;
+        }
+
+        .footer-gallery img {
+            width: 100%;
+            aspect-ratio: 1/1; /* Ảnh luôn vuông */
+            object-fit: cover;
+            border-radius: 4px;
+            transition: 0.3s;
+            opacity: 0.7;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .footer-gallery img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+        }
+
+        /* --- DÒNG BẢN QUYỀN (Copyright) --- */
+        .copyright-bar {
+            background-color: #111; /* Màu đen hơn footer chính */
             padding: 20px 0;
-            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .copyright-bar p {
+            font-size: 0.85rem;
+            margin: 0;
+            color: #777;
+        }
+
+        /* Responsive cho Footer trên điện thoại */
+        @media (max-width: 768px) {
+            .site-footer { 
+                text-align: left; 
+                padding-top: 40px;
+            }
+            .footer-content { 
+                gap: 30px; 
+                grid-template-columns: 1fr; /* 1 cột duy nhất */
+            }
         }
 
         /* * =========================================
