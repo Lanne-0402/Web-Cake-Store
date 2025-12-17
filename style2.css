@@ -919,40 +919,82 @@
 
         /*INGREDIENT CARD */
 
-        .ingredient-card {
-            width: 70%;
-            background: #fff5f8;
-            padding: 20px 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(255, 150, 175, 0.25);
-            margin-bottom: 30px;
-        }
+        /* --- 1. KHUNG BAO NGOÀI --- */
+.ingredient-card {
+    width: 70%;
+    background: #fff5f8;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 150, 175, 0.25);
+    margin-bottom: 30px;
+    overflow: hidden; /* Quan trọng: để bo tròn góc không bị mất */
+    padding: 0; /* Reset padding cũ để header tràn viền */
+}
 
-        .ingredient-card h3 {
-            margin-bottom: 14px;
-            font-size: 24px;
-            color: #d45d82;
-            font-weight: 800;
-        }
-        .ingredient-card ul {
-            margin-top: 10px;
-        }
+/* --- 2. HEADER (Phần click được) --- */
+.ingredient-card .accordion-header {
+    padding: 20px 25px; /* Khoảng cách rộng rãi */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Đẩy chữ sang trái, mũi tên sang phải */
+    align-items: center;
+    background: #fff5f8; /* Màu nền trùng với card */
+    transition: background 0.3s;
+    border-bottom: 1px dashed rgba(212, 93, 130, 0.2); /* Đường kẻ mờ ngăn cách */
+}
 
-        .ingredient-card li {
-            margin-bottom: 8px;
-            list-style: none;
-            position: relative;
-            padding-left: 18px;
-        }
+.ingredient-card .accordion-header:hover {
+    background: #ffe6ee; /* Đổi màu nhẹ khi di chuột */
+}
 
-        .ingredient-card li::before {
-            content: "✦";
-            color: #ff99b9;
-            font-size: 14px;
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
+.ingredient-card h3 {
+    margin-bottom: 0; 
+    font-size: 24px;
+    color: #d45d82;
+    font-weight: 800;
+}
+
+/* Icon mũi tên */
+.toggle-icon {
+    color: #d45d82;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease; /* Hiệu ứng xoay mượt */
+}
+
+/* Khi active thì xoay mũi tên 180 độ */
+.ingredient-card .accordion-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* --- 3. NỘI DUNG LIST --- */
+.ingredient-card .accordion-content {
+    padding: 20px 25px; /* Padding cho phần list bên dưới */
+    background: #fff5f8;
+    /* display: none; -> JS sẽ xử lý việc ẩn hiện */
+}
+
+.ingredient-card ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style cho từng dòng nguyên liệu (giữ nguyên ngôi sao) */
+.ingredient-card li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 20px; /* Chừa chỗ cho ngôi sao */
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.ingredient-card li::before {
+    content: "✦";
+    color: #ff99b9;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
 
         /* INFO BOX BÊN PHẢI (THỜI GIAN – MỨC ĐỘ – KHẨU PHẦN) */
 
@@ -983,7 +1025,6 @@
             font-weight: bold;
             color: #b44466;
         }
-
 
         /* CHAT BUBBLE */
         #chat-bubble {

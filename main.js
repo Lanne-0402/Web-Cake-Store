@@ -36,14 +36,20 @@ $(document).ready(function() {
     }, 5000);
 
     // 3. ACCORDION (Trang Công Thức)
-    $('.recipe-header').click(function() {
-        // Đóng tất cả content khác
-        $('.recipe-content').not($(this).next()).slideUp();
-        // Toggle content hiện tại
-        $(this).next('.recipe-content').slideToggle();
-        // Toggle icon
-        $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+
+$(document).ready(function() {
+    // Xử lý click cho Accordion Nguyên Liệu
+    $('.accordion-header').click(function() {
+        // 1. Tìm nội dung ngay bên dưới header được click
+        var content = $(this).next('.accordion-content');
+        
+        // 2. Trượt lên/xuống (Toggle)
+        content.slideToggle(300);
+        
+        // 3. Thêm/Xóa class active để xoay mũi tên
+        $(this).toggleClass('active');
     });
+});
 
     // 4. FORM VALIDATION (Trang Liên Hệ)
     $('#orderForm').submit(function(e) {
