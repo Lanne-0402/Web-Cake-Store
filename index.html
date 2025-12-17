@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    <title>Halo Sweet - Tiệm bánh ngọt ngào</title>
+    
+    <!-- CSS & FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style2.css">
+    
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js" defer></script>
 </head>
 <body>
-        <!-- TOP BAR -->
+
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-left">
@@ -27,8 +32,7 @@
         </div>
     </div>
 
-
-    <!-- Header -->
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -40,219 +44,198 @@
                 <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
                 <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
                 <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
-                <li>
-                    <a href="contact.html" class="btn-navbar-highlight">
-                        Đặt Bánh Ngay
-                    </a>
-                </li>
+                <li><a href="contact.html" class="btn-navbar-highlight">Đặt Bánh Ngay</a></li>
             </ul>
         </div>
     </header>
 
+    <!-- BACK TO TOP BUTTON -->
     <div id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <main class="container">
 
-      <!-- BANNER -->
-    <section class="slider-container">
-        <div class="slide active-slide" style="background-image: url('cake-pic/cupcakeredvelvet27.jpg');">
-            <div class="slide-content">
-                <h2>Vị Ngọt Hạnh Phúc</h2>
-                <p>Mỗi chiếc bánh là một câu chuyện ngọt ngào dành riêng cho bạn.</p>
+        <!-- SLIDER BANNER -->
+        <section class="slider-container">
+            <div class="slide active-slide" style="background-image: url('cake-pic/cupcakeredvelvet27.jpg');">
+                <div class="slide-content">
+                    <h2>Vị Ngọt Hạnh Phúc</h2>
+                    <p>Mỗi chiếc bánh là một câu chuyện ngọt ngào dành riêng cho bạn.</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="slide" style="background-image: url('cake-pic/cupcakecaramel25.jpg');">
-            <div class="slide-content">
-                <h2>Ngày Mới Vui Vẻ</h2>
-                <p>Đem lại niềm vui cho bạn vào mỗi ngày mới.</p>
-            </div>
-        </div>
-
-        <div class="slide" style="background-image: url('cake-pic/tiramisumatcha22.jpg');">
-            <div class="slide-content">
-                <h2>Nguyên Liệu Tươi Mới</h2>
-                <p>Cam kết 100% nguyên liệu tự nhiên, không chất bảo quản.</p>
-            </div>
-        </div>
-
-        <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-    </section>
-
-    <!-- DANH MỤC NỔI BẬT -->
-    <section class="container">
-        <h2 class="section-title">Danh Mục Bánh</h2>
-        
-        <div class="category-row">
-            <a href="product.html" class="category-item">
-                <div class="cat-img-box">
-                    <img src="cake-pic/banhsinhnhat299.jpg" alt="Bánh Sinh Nhật">
-                </div>
-                <h4>Sinh Nhật</h4>
-            </a>
-
-            <a href="product.html" class="category-item">
-                <div class="cat-img-box">
-                    <img src="cake-pic/donut27.jpg" alt="Donut">
-                </div>
-                <h4>Donut</h4>
-            </a>
-
-            <a href="product.html" class="category-item">
-                <div class="cat-img-box">
-                    <img src="cake-pic/cupcakematchachip27.jpg" alt="Cupcake">
-                </div>
-                <h4>Cupcake</h4>
-            </a>
-
-            <a href="product.html" class="category-item">
-                <div class="cat-img-box">
-                    <img src="cake-pic/cookieschip17.jpg" alt="Cookies">
-                </div>
-                <h4>Cookies</h4>
-            </a>
-        </div>
-    </section>
-
-    <!-- SẢN PHẨM BÁN CHẠY -->
-    <section class="container">
-        <h2 class="section-title">Bánh Ngon Mỗi Ngày</h2>
-        <div class="products-grid">
             
-            <!-- Sản phẩm 1 -->
-            <div class="product-card" data-type="cake" data-id="02" data-sold="530" data-price="249000">
-                <img src="cake-pic/banhtheoyeucau249.jpg" alt="Request Cake" class="product-img">
-                <div class="price-overlay"><span class="price-text">249.000 VNĐ</span></div>
-                <div class="product-info">
-                    <h3>Bánh theo yêu cầu</h3>
-                    <p>Vị ngọt theo cách của bạn</p>
+            <div class="slide" style="background-image: url('cake-pic/cupcakecaramel25.jpg');">
+                <div class="slide-content">
+                    <h2>Ngày Mới Vui Vẻ</h2>
+                    <p>Đem lại niềm vui cho bạn mỗi ngày, chào đón một ngày mới tràn đầy sức sống.</p>
                 </div>
             </div>
 
-            <!-- Sản phẩm 2 -->
-             <div class="product-card" data-type="donut" data-id="14" data-sold="200" data-price="155000">
-                    <img src="cake-pic/setdonutsocola155.jpg" class="product-img">
-                    <div class="price-overlay">
-                        <span class="price-text">155.000 VNĐ</span>
+            <div class="slide" style="background-image: url('cake-pic/tiramisumatcha22.jpg');">
+                <div class="slide-content">
+                    <h2>Nguyên Liệu Tươi Mới</h2>
+                    <p>Cam kết 100% nguyên liệu tự nhiên, không chất bảo quản.</p>
+                </div>
+            </div>
+
+            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+        <!-- DANH MỤC SẢN PHẨM -->
+        <section class="container">
+            <h2 class="section-title">Danh Mục Bánh</h2>
+            <div class="category-row">
+                <a href="product.html" class="category-item">
+                    <div class="cat-img-box">
+                        <img src="cake-pic/banhsinhnhat299.jpg" alt="Bánh Sinh Nhật">
                     </div>
+                    <h4>Sinh Nhật</h4>
+                </a>
+
+                <a href="product.html" class="category-item">
+                    <div class="cat-img-box">
+                        <img src="cake-pic/donut27.jpg" alt="Donut">
+                    </div>
+                    <h4>Donut</h4>
+                </a>
+
+                <a href="product.html" class="category-item">
+                    <div class="cat-img-box">
+                        <img src="cake-pic/cupcakematchachip27.jpg" alt="Cupcake">
+                    </div>
+                    <h4>Cupcake</h4>
+                </a>
+
+                <a href="product.html" class="category-item">
+                    <div class="cat-img-box">
+                        <img src="cake-pic/cookieschip17.jpg" alt="Cookies">
+                    </div>
+                    <h4>Cookies</h4>
+                </a>
+            </div>
+        </section>
+
+        <!-- SẢN PHẨM NỔI BẬT -->
+        <section class="container">
+            <h2 class="section-title">Bánh Ngon Mỗi Ngày</h2>
+            <div class="products-grid">
+                
+                <!-- Sản phẩm 1 -->
+                <div class="product-card" data-type="cake" data-id="02" data-sold="530" data-price="249000">
+                    <img src="cake-pic/banhtheoyeucau249.jpg" alt="Request Cake" class="product-img">
+                    <div class="price-overlay"><span class="price-text">249.000 VNĐ</span></div>
+                    <div class="product-info">
+                        <h3>Bánh theo yêu cầu</h3>
+                        <p>Vị ngọt theo cách của bạn</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product-card" data-type="donut" data-id="14" data-sold="200" data-price="155000">
+                    <img src="cake-pic/setdonutsocola155.jpg" class="product-img">
+                    <div class="price-overlay"><span class="price-text">155.000 VNĐ</span></div>
                     <div class="product-info">
                         <h3>Set Donut Socola</h3>
                         <p>Socola đậm vị trong từng Donut</p>
                     </div>
                 </div>
-            
+                
+                <!-- Sản phẩm 3 -->
+                <div class="product-card" data-type="cupcake"  data-id="05" data-sold="312" data-price="25000">
+                    <img src="cake-pic/cupcakevani25.jpg" class="product-img">
+                    <div class="price-overlay"><span class="price-text">25.000 VNĐ</span></div>
+                    <div class="product-info">
+                        <h3>Cupcake Vani</h3>
+                        <p>Vani đậm đà trong lớp bánh mềm</p>
+                    </div>
+                </div>
 
-            <!-- Sản phẩm 3 -->
-            <div class="product-card" data-type="cupcake"  data-id="05" data-sold="312" data-price="25000">
-                <img src="cake-pic/cupcakevani25.jpg" class="product-img">
-                <div class="price-overlay"><span class="price-text">25.000 VNĐ</span></div>
-                <div class="product-info">
-                    <h3>Cupcake Vani</h3>
-                    <p>Vani đậm đà trong lớp bánh mềm</p>
+                <!-- Sản phẩm 4 -->
+                <div class="product-card" data-type="cookie" data-id="20" data-sold="210" data-price="22000">
+                    <img src="cake-pic/macaronchristmas22.jpg" class="product-img">
+                    <div class="price-overlay"><span class="price-text">22.000 VNĐ</span></div>
+                    <div class="product-info">
+                        <h3>Macaron Christmas</h3>
+                        <p>Christmas trong Macaron của bạn?</p>
+                    </div>
+                </div>
+                
+                <!-- Sản phẩm 5 -->
+                <div class="product-card" data-type="tiramisu" data-id="07" data-sold="310" data-price="320000">
+                    <img src="cake-pic/tiramisudautay320.jpg" alt="Tiramisu" class="product-img">
+                    <div class="price-overlay"><span class="price-text">320.000 VNĐ</span></div>
+                    <div class="product-info">
+                        <h3>Tiramisu Dâu Tây</h3>
+                        <p>Dâu tây tươi hòa quyện với lớp bánh mềm tan</p>
+                    </div>
+                </div>
+                
+                <!-- Sản phẩm 6 -->
+                <div class="product-card" data-type="donut" data-id="16" data-sold="230" data-price="25000">
+                    <img src="cake-pic/sukemsocola25.jpg" class="product-img">
+                    <div class="price-overlay"><span class="price-text">25.000 VNĐ</span></div>
+                    <div class="product-info">
+                        <h3>Bánh Sukem Socola</h3>
+                        <p>Sukem mềm cùng Socola ngọt lịm</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Sản phẩm 4 -->
-            <div class="product-card" data-type="cookie" data-id="20" data-sold="210" data-price="22000">
-                <img src="cake-pic/macaronchristmas22.jpg" class="product-img">
-                <div class="price-overlay">
-                    <span class="price-text">22.000 VNĐ</span>
-                </div>
-                <div class="product-info">
-                    <h3>Macaron Christmas</h3>
-                    <p>Christmas trong Macaron của bạn?</p>
-                </div>
-            </div>
-            
-            <!-- Sản phẩm 5 -->
-            <div class="product-card" data-type="tiramisu" data-id="07" data-sold="310" data-price="320000">
-                <img src="cake-pic/tiramisudautay320.jpg" alt="Tiramisu" class="product-img">
-                <div class="price-overlay"><span class="price-text">320.000 VNĐ</span></div>
-                <div class="product-info">
-                    <h3>Tiramisu Dâu Tây</h3>
-                    <p>Dâu tây tươi hòa quyện với lớp bánh mềm tan</p>
-                </div>
-            </div>
-            
-            
-            <div class="product-card" data-type="donut" data-id="16" data-sold="230" data-price="25000">
-                <img src="cake-pic/sukemsocola25.jpg" class="product-img">
-                <div class="price-overlay">
-                    <span class="price-text">25.000 VNĐ</span>
-                </div>
-                <div class="product-info">
-                <h3>Bánh Sukem Socola</h3>
-                <p>Sukem mềm cùng Socola ngọt lịm</p>
-                </div>
-            </div>
-        </div>
     
             <div class="view-all-container">
                 <a href="product.html" class="btn-view-all">Xem Tất Cả Bánh</a>
             </div>
-    </section>
+        </section>
 
-    <!-- 6. TẠI SAO CHỌN CHÚNG TÔI (Đã nâng cấp) -->
-    <section class="features-section" id="whyChooseUs">
-        <div class="container">
-            <h2 class="section-title">Tại Sao Chọn Halo Sweet?</h2>
-            
-            <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-box">
-                    <div class="feature-img-frame">
-                        <!-- Ảnh Nguyên liệu: Bột mì/Trứng -->
-                        <img src="cake-pic/botmi_trung.jpg" alt="Nguyên liệu">
+        <!-- TẠI SAO CHỌN CHÚNG TÔI -->
+        <section class="features-section" id="whyChooseUs">
+            <div class="container">
+                <h2 class="section-title">Tại Sao Chọn Halo Sweet?</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-img-frame">
+                            <img src="cake-pic/botmi_trung.jpg" alt="Nguyên liệu">
+                        </div>
+                        <h4>Nguyên Liệu Sạch</h4>
+                        <p>Nhập khẩu từ các thương hiệu uy tín.</p>
                     </div>
-                    <h4>Nguyên Liệu Sạch</h4>
-                    <p>Nhập khẩu từ các thương hiệu uy tín.</p>
-                </div>
 
-                <!-- Feature 2 -->
-                <div class="feature-box">
-                    <div class="feature-img-frame">
-                        <!-- Ảnh Hương vị: Dâu tây/Trái cây -->
-                        <img src="cake-pic/traicay.jpg" alt="Hương vị">
+                    <div class="feature-box">
+                        <div class="feature-img-frame">
+                            <img src="cake-pic/traicay.jpg" alt="Hương vị">
+                        </div>
+                        <h4>Hương Vị Tự Nhiên</h4>
+                        <p>Không chất bảo quản, ngọt thanh.</p>
                     </div>
-                    <h4>Hương Vị Tự Nhiên</h4>
-                    <p>Không chất bảo quản, ngọt thanh.</p>
-                </div>
 
-                <!-- Feature 3 -->
-                <div class="feature-box">
-                    <div class="feature-img-frame">
-                        <!-- Ảnh Giao hàng: Xe máy/Hộp quà -->
-                        <img src="cake-pic/xegiaohang.jpg" alt="Giao hàng">
+                    <div class="feature-box">
+                        <div class="feature-img-frame">
+                            <img src="cake-pic/xegiaohang.jpg" alt="Giao hàng">
+                        </div>
+                        <h4>Giao Hàng Nhanh</h4>
+                        <p>Giao bánh tận nơi trong 2h.</p>
                     </div>
-                    <h4>Giao Hàng Nhanh</h4>
-                    <p>Giao bánh tận nơi trong 2h.</p>
-                </div>
 
-                <!-- Feature 4 -->
-                <div class="feature-box">
-                    <div class="feature-img-frame">
-                        <!-- Ảnh Dịch vụ: Đầu bếp/Mỉm cười -->
-                        <img src="cake-pic/chief.jpg" alt="Tận tâm">
+                    <div class="feature-box">
+                        <div class="feature-img-frame">
+                            <img src="cake-pic/chief.jpg" alt="Tận tâm">
+                        </div>
+                        <h4>Tận Tâm Phục Vụ</h4>
+                        <p>Tư vấn nhiệt tình, chu đáo.</p>
                     </div>
-                    <h4>Tận Tâm Phục Vụ</h4>
-                    <p>Tư vấn nhiệt tình, chu đáo.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
 
     </main>
 
-    <!-- FOOTER MỚI (Style Poeme Cake) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 
-                <!-- Cột 1: Thông tin liên hệ -->
+                <!-- Cột liên hệ -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Hệ</h3>
                     <ul class="contact-info-list">
@@ -273,14 +256,12 @@
                             <span>ĐKKD: 0123456789 do Sở KHĐT TP.HCM cấp</span>
                         </li>
                     </ul>
-                    <!-- Logo Bộ công thương (Demo) -->
                     <div class="gov-icon">
                         <i class="fa-solid fa-lemon"></i> Halo Sweet
-                        
                     </div>
                 </div>
 
-                <!-- Cột 2: Sản Phẩm -->
+                <!-- Cột sản phẩm -->
                 <div class="footer-col">
                     <h3 class="footer-title">Sản Phẩm</h3>
                     <ul class="footer-links">
@@ -291,7 +272,7 @@
                     </ul>
                 </div>
 
-                <!-- Cột 3: Liên Kết Nhanh -->
+                <!-- Cột liên kết nhanh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Kết Nhanh</h3>
                     <ul class="footer-links">
@@ -302,7 +283,7 @@
                     </ul>
                 </div>
 
-                <!-- Cột 4: Thư Viện Ảnh (Gallery) -->
+                <!-- Cột thư viện ảnh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Thư Viện Ảnh</h3>
                     <div class="footer-gallery">
@@ -318,7 +299,6 @@
             </div>
         </div>
         
-        <!-- Dòng bản quyền dưới cùng -->
         <div class="copyright-bar">
             <div class="container">
                 <p>&copy; 2023 Tiệm Bánh Halo Sweet. All rights reserved.</p>
