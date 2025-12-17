@@ -47,9 +47,8 @@ $(document).ready(function() {
 
     // 4. FORM VALIDATION (Trang Liên Hệ)
     $('#orderForm').submit(function(e) {
-        e.preventDefault(); // Ngăn form reload trang
+        e.preventDefault(); 
         var isValid = true;
-
         // Validate Tên
         var name = $('#name').val().trim();
         if(name === "") {
@@ -58,7 +57,6 @@ $(document).ready(function() {
         } else {
             $('#error-name').hide();
         }
-
         // Validate SĐT (Kiểm tra 10 chữ số)
         var phone = $('#phone').val().trim();
         var phoneRegex = /^[0-9]{10}$/;
@@ -68,7 +66,6 @@ $(document).ready(function() {
         } else {
             $('#error-phone').hide();
         }
-
         // Validate Địa chỉ
         var address = $('#address').val().trim();
         if(address === "") {
@@ -77,11 +74,9 @@ $(document).ready(function() {
         } else {
             $('#error-address').hide();
         }
-
-        // Nếu tất cả hợp lệ
+        // Nếu hợp lệ
         if(isValid) {
             alert("Cảm ơn bạn! Đơn hàng của bạn đã được gửi thành công.");
-            // Reset form
             $('#orderForm')[0].reset();
         }
     });
@@ -490,4 +485,3 @@ $(document).ready(function() {
     });
 
 });
-
