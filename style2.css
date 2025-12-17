@@ -1,24 +1,17 @@
- /* * =========================================
-         * 1. CẤU HÌNH MÀU SẮC & CƠ BẢN (CSS VARIABLES)
-         * Dựa trên bảng màu:
-         * Lavender Blush: #F4DFE6
-         * Amaranth Pink: #E0A3BB
-         * Azure: #D6E6E7
-         * Citron: #C5CC82
-         * Moss Green: #97A13B
-         * =========================================
-         */
-        :root {
-            --bg-color: #f6e4ea;        /* Nền chính - Lavender Blush */
-            --primary-color: #e19ab6;   /* Màu chủ đạo - Amaranth Pink */
-            --accent-color: #97A13B;    /* Màu nhấn/Text đậm - Moss Green */
-            --secondary-color: #C5CC82; /* Màu phụ - Citron */
-            --light-blue: #D6E6E7;      /* Màu nền phụ - Azure */
-            --text-color: #555;         /* Màu chữ chung */
+       :root {
+            --bg-color: #f6e4ea;        
+            --primary-color: #e19ab6;   
+            --accent-color: #97A13B;    
+            --secondary-color: #C5CC82; 
+            --light-blue: #D6E6E7;      
+            --text-color: #555;         
             --white: #ffffff;
             --shadow: 0 4px 6px rgba(0,0,0,0.1);
             --error-color: #e74c3c;
             --success-color: #27ae60;
+            --pink-light: #f7dce7;
+            --pink: #e0a3bb;
+            --pink-dark: #c07697;
         }
 
         * {
@@ -35,7 +28,7 @@
         }
 
         h1, h2, h3 {
-            font-family: 'Dancing Script', cursive; /* Font chữ viết tay cho tiêu đề */
+            font-family: 'Dancing Script', cursive; 
             color: var(--accent-color);
         }
 
@@ -48,38 +41,33 @@
             color: inherit;
         }
 
-        /* Container chung để căn giữa nội dung */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px;
         }
 
-        /* * =========================================
-        * TOP BAR STYLING
-        * =========================================
-        */
+        /* TOP BAR STYLING */
         .top-bar {
-            background-color: var(--accent-color); /* Màu Moss Green */
+            background-color: var(--accent-color); 
             color: var(--white);
-            font-size: 1rem; /* Chữ nhỏ hơn body một chút cho tinh tế */
+            font-size: 1rem; 
             padding: 8px 0;
             font-family: 'Nunito', sans-serif;
         }
 
         .top-bar-content {
             display: flex;
-            justify-content: space-between; /* Đẩy 2 khối sang 2 bên */
+            justify-content: space-between; 
             align-items: center;
         }
 
         .top-bar-left, .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 15px; /* Khoảng cách giữa các phần tử */
+            gap: 15px; 
         }
 
-        /* Style cho các liên kết và icon */
         .top-bar a {
             color: var(--white);
             transition: color 0.3s;
@@ -87,23 +75,21 @@
         }
 
         .top-bar a:hover {
-            color: var(--secondary-color); /* Đổi màu vàng chanh khi hover */
+            color: var(--secondary-color); 
             text-decoration: underline;
         }
 
         .top-bar i {
-            margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+            margin-right: 5px;
             font-size: 1.2rem;
         }
 
         .separator {
-            opacity: 0.6; /* Làm mờ dấu gạch đứng cho đẹp */
+            opacity: 0.6;
         }
 
 
- /* Thêm mới*/
-
-    /* === NEW: DANH MỤC SẢN PHẨM (Category Circle) === */
+    /* === DANH MỤC SẢN PHẨM (Category Circle) === */
     .section-title { 
         text-align: center; 
         margin: 50px 0 30px; 
@@ -219,15 +205,12 @@
     .btn-add:hover { background: var(--accent-color); }
 
 
-    /* * =========================================
-    * NÚT XEM TẤT CẢ (Tách biệt & Trang trí)
-    * =========================================
-    */
+    /* NÚT XEM TẤT CẢ (Tách biệt & Trang trí) */
 
     .view-all-container {
         text-align: center;
-        margin-top: 40px;    /* Cách sản phẩm ở trên */
-        margin-bottom: 80px; /* Cách phần "Tại sao chọn chúng tôi" ở dưới (Tách ra) */
+        margin-top: 40px;    
+        margin-bottom: 80px; 
         position: relative;
         z-index: 10;
     }
@@ -235,12 +218,12 @@
     .btn-view-all {
         display: inline-block;
         padding: 12px 40px;
-        background-color: var(--primary-color); /* Màu hồng chủ đạo */
+        background-color: var(--primary-color); 
         color: var(--white);
         font-size: 1.1rem;
         font-weight: 700;
-        border-radius: 50px; /* Bo tròn hình viên thuốc */
-        box-shadow: 0 5px 15px rgba(224, 163, 187, 0.4); /* Đổ bóng hồng nhẹ */
+        border-radius: 50px; 
+        box-shadow: 0 5px 15px rgba(224, 163, 187, 0.4); 
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -248,27 +231,17 @@
 
     /* Hiệu ứng khi di chuột vào nút */
     .btn-view-all:hover {
-        background-color: var(--accent-color); /* Đổi sang màu xanh rêu */
-        transform: translateY(-3px); /* Nút bay lên nhẹ */
+        background-color: var(--accent-color); 
+        transform: translateY(-3px); 
         box-shadow: 0 8px 20px rgba(151, 161, 59, 0.3);
     }
 
-    /* * =========================================
-    * NEW: TẠI SAO CHỌN CHÚNG TÔI (Parallax + Image Frame)
-    * =========================================
-    */
-
-    /* * =========================================
- * CODE HOÀN CHỈNH: TẠI SAO CHỌN CHÚNG TÔI
- * (Bao gồm: Parallax, Grid Layout, Zoom Effect)
- * =========================================
- */
+    /* TẠI SAO CHỌN CHÚNG TÔI*/
 
 /* 1. Thiết lập nền Parallax */
     .features-section {
-        /* Ảnh nền Parallax */
         background-image: url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
-        background-attachment: fixed; /* QUAN TRỌNG: Tạo hiệu ứng nền đứng yên khi cuộn */
+        background-attachment: fixed; 
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -276,19 +249,17 @@
         padding: 80px 0;
         position: relative;
         overflow: hidden;
-        text-align: center; /* Căn giữa chữ */
+        text-align: center;
     }
 
-    /* Lớp phủ màu trắng mờ để chữ dễ đọc hơn */
     .features-section::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(255, 255, 255, 0.85); /* Màu trắng đục 85% */
+        background: rgba(255, 255, 255, 0.85);
         z-index: 1;
     }
 
-    /* Tiêu đề section */
     .features-section .section-title {
         position: relative;
         z-index: 2;
@@ -296,31 +267,27 @@
         margin-top: 2px;
     }
 
-    /* 2. CLASS BẠN ĐANG THIẾU: Dàn trang dạng lưới (Grid) */
+
     .features-grid {
         display: grid;
-        /* Tự động chia cột: Mỗi cột tối thiểu 220px, còn lại tự co giãn */
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 40px; /* Khoảng cách giữa các ô */
+        gap: 40px;
         position: relative;
-        z-index: 2; /* Để nội dung nổi lên trên lớp phủ nền */
+        z-index: 2; 
         padding: 0 20px;
     }
 
-    /* 3. Hiệu ứng Animation (Thu vào tâm) */
     .feature-box {
-        opacity: 0; /* Ban đầu ẩn */
-        transform: scale(0.5); /* Ban đầu nhỏ xíu (50%) */
-        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy đàn hồi */
+        opacity: 0; 
+        transform: scale(0.5); 
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Class này sẽ được JS thêm vào khi cuộn tới */
     .feature-box.visible {
         opacity: 1;
-        transform: scale(1); /* Phóng to về kích thước thật */
+        transform: scale(1);
     }
 
-    /* 4. Khung ảnh tròn */
     .feature-img-frame {
         width: 130px;
         height: 130px;
@@ -339,7 +306,6 @@
         object-fit: cover;
     }
 
-    /* Hiệu ứng khi di chuột vào từng ô */
     .feature-box:hover .feature-img-frame {
         transform: scale(1.1) rotate(5deg);
         border-color: var(--accent-color);
@@ -355,34 +321,109 @@
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { 
-            display: none; 
-            flex-direction: column; 
-            position: absolute; 
-            top: 60px; left: 0; 
-            width: 100%; background: var(--white); 
-            padding: 20px; 
-            box-shadow: var(--shadow); 
-        }
-        .nav-links.active { display: flex; }
         .slider-container { height: 300px; }
         .top-bar-content { 
             flex-direction: column; 
             gap: 5px; 
         }
         .desktop-only { display: none; }
+        header { padding: 15px 0; }
+        
+        .site-footer { 
+            text-align: left; 
+            padding-top: 40px;
+        }
+        .footer-content { 
+            gap: 30px; 
+            grid-template-columns: 1fr; 
+        }
+        .intro-layout, .contact-layout {
+            grid-template-columns: 1fr;
+        }
+        .menu-toggle { display: block; }
+        .recipe-detail { flex-direction: column; }
+        .slider-container { height: 300px; }
+        .featured-cakes { gap: 10px; }
+        .featured-item img { width: 100px; height: 100px; }
+        .chef-layout {
+            grid-template-columns: 1fr;
+        }
+        .moments-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .chef-exp-badge {
+            right: 10px; bottom: 10px;
+        }
     }
 
-        /* * =========================================
-         * 2. HEADER & NAVIGATION
-         * =========================================
-         */
+    @media (max-width: 600px) {
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+        .product-info-col h1 {
+            font-size: 24px;
+        }
+        .product-price-large {
+            font-size: 28px;
+        }
+        .related-scroll-wrapper {
+            padding: 0;
+        }
+        .scroll-arrow {
+            display: none;
+        }
+        .related-product-card {
+            min-width: 180px;
+            max-width: 180px;
+        }
+    }
+
+     @media (max-width: 968px) {
+        .product-detail-wrapper {
+            grid-template-columns: 1fr;
+            padding: 20px;
+            gap: 30px;
+        }
+        .main-image {
+            height: 400px;
+        }
+        .policy-box {
+            grid-template-columns: 1fr;
+        }
+        .tabs-header {
+            flex-direction: column;
+            gap: 0;
+        }
+        .tab-btn {
+            border-bottom: 1px solid #eee;
+            border-left: 3px solid transparent;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .tab-btn.active {
+            border-bottom: 1px solid #eee;
+            border-left-color: var(--accent-color);
+        }
+        .related-scroll-wrapper {
+            padding: 0 50px;
+        }
+        .scroll-arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+        /* HEADER & NAVIGATION */
 
         header {
             background-color: var(--white);
-            /* 1. Tăng chiều cao (Rộng hơn) */
             padding: 22px 0; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Bóng mờ nhẹ sang trọng hơn */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -396,7 +437,6 @@
         }
 
         .logo {
-            /* Logo to hơn một chút */
             font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
@@ -405,24 +445,21 @@
 
         .nav-links {
             display: flex;
-            gap: 30px; /* Tăng khoảng cách giữa các menu */
+            gap: 30px;
             align-items: center;
         }
 
-        /* Style cho các link menu thường */
         .nav-links li a {
             font-size: 1rem;
             font-weight: 700;
-            /* 2. Chữ in hoa cho bắt mắt */
             text-transform: uppercase; 
             color: var(--text-color);
             padding: 10px 0;
             position: relative;
             transition: color 0.3s;
-            background: none; /* Bỏ background cũ */
+            background: none; 
         }
 
-        /* Hiệu ứng gạch chân chạy từ trái sang phải khi hover */
         .nav-links li a::after {
             content: '';
             position: absolute;
@@ -440,52 +477,33 @@
         }
 
         .nav-links li a:hover::after {
-            width: 100%; /* Gạch chân chạy full */
+            width: 100%;
         }
 
-        /* Loại bỏ gạch chân cho nút active nếu muốn, hoặc giữ nguyên */
         .nav-links li a.active {
             color: var(--primary-color);
         }
 
-        /* 3. Style đặc biệt cho nút ĐẶT NGAY/LIÊN HỆ (Nút nổi bật) */
         .nav-links li a.btn-navbar-highlight {
-            background-color: var(--accent-color); /* Màu xanh rêu */
+            background-color: var(--accent-color);
             color: white !important;
-            padding: 12px 30px; /* Nút to rộng */
-            border-radius: 50px; /* Bo tròn hoàn toàn */
-            box-shadow: 0 4px 10px rgba(151, 161, 59, 0.3); /* Đổ bóng cho nút */
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(151, 161, 59, 0.3);
             text-transform: uppercase;
         }
 
-        /* Khi hover vào nút nổi bật */
         .nav-links li a.btn-navbar-highlight:hover {
             background-color: var(--secondary-color);
-            transform: translateY(-2px); /* Nút bay lên nhẹ */
+            transform: translateY(-2px); 
             box-shadow: 0 6px 15px rgba(151, 161, 59, 0.4);
         }
 
-        /* Ẩn gạch chân đối với nút nổi bật */
         .nav-links li a.btn-navbar-highlight::after {
             display: none;
         }
 
-        /* Responsive giữ nguyên */
-        @media (max-width: 768px) {
-            header { padding: 15px 0; }
-            .nav-links { gap: 0; }
-            .nav-links li a { 
-                padding: 15px; 
-                width: 100%; 
-                display: block; 
-            }
-            .nav-links li a.btn-navbar-highlight {
-                border-radius: 0; 
-                margin-top: 10px; 
-                text-align: center;
-            }
-        }
-
+        
         /* Nút menu mobile */
         .menu-toggle {
             display: none;
@@ -494,20 +512,16 @@
             color: var(--accent-color);
         }
 
-        /* * =========================================
-         * 3. CHUYỂN ĐỔI TRANG (SPA Logic)
-         * Các section sẽ ẩn đi, chỉ hiện section đang active
-         * =========================================
-         */
+        /* CHUYỂN ĐỔI TRANG (SPA Logic) */
+
         section.page-section {
-             /* Mặc định ẩn tất cả */
             padding: 40px 0;
             min-height: auto !important;;
             animation: fadeIn 0.5s ease-in-out;
         }
 
         section.page-section.active {
-            display: block; /* Chỉ hiện trang active */
+            display: block; 
         }
 
         @keyframes fadeIn {
@@ -515,11 +529,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* * =========================================
-         * 4. TRANG HOME (Trang Chủ)
-         * - Banner Slideshow
-         * =========================================
-         */
+        /* TRANG HOME */
+
         .slider-container {
             position: relative;
             width: 100%;
@@ -560,7 +571,6 @@
             color: var(--primary-color);
         }
 
-        /* Nút điều hướng Slider */
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -594,10 +604,8 @@
             box-shadow: var(--shadow);
         }
 
-        /* * =========================================
-         * 5. TRANG GIỚI THIỆU (Layout 2 cột + Hover Scale)
-         * =========================================
-         */
+        /*  TRANG GIỚI THIỆU */
+
         .intro-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -606,7 +614,7 @@
         }
 
         .intro-img-container {
-            overflow: hidden; /* Cần thiết để hiệu ứng scale không bị tràn */
+            overflow: hidden; 
             border-radius: 20px;
             box-shadow: var(--shadow);
         }
@@ -615,11 +623,10 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
-            transition: transform 0.5s ease; /* Hiệu ứng mượt mà */
+            transition: transform 0.5s ease; 
             display: block;
         }
 
-        /* Yêu cầu: Hover scale ảnh */
         .intro-img-container:hover .intro-img {
             transform: scale(1.1);
         }
@@ -631,592 +638,550 @@
             box-shadow: var(--shadow);
         }
 
-        /* * =========================================
-         * 6. TRANG SẢN PHẨM (Grid Layout + Hover Price)
-         * ========================================= */
-:root {
-    --pink-light: #f7dce7;
-    --pink: #e0a3bb;
-    --pink-dark: #c07697;
-}
-
-/* =============================================================
-   SIDEBAR (BÊN TRÁI)
-============================================================= */
-.product-layout {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.sidebar {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    height: fit-content;
-}
-
-.sidebar h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--accent-color);
-    font-family: 'Dancing Script', cursive;
-}
-
-.sidebar ul {
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar li {
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: var(--pink-light);
-    text-align: center;
-    cursor: pointer;
-    transition: 0.25s;
-    font-weight: bold;
-    user-select: none;
-}
-
-.sidebar li:hover {
-    background: var(--pink);
-    color: white;
-}
-
-.active-filter {
-    background: var(--primary-color) !important;
-    color: white !important;
-}
-
-
-/* =============================================================
-   GRID SẢN PHẨM (3 CỘT)
-============================================================= */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    width: 100%;
-}
-
-/* CARD SẢN PHẨM */
-.product-card {
-    background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.product-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-}
-
-/* ẢNH SẢN PHẨM */
-.product-img {
-    width: 100%;
-    height: 273px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* INFO */
-.product-info {
-    padding: 15px;
-    text-align: center;
-}
-
-/* Hover – Overlay giá */
-.price-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 280px;
-    background: rgba(224, 163, 187, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-    opacity: 0;
-}
-
-.product-card:hover .price-overlay {
-    opacity: 1;
-}
-
-.price-text {
-    color: white;
-    font-size: 1.7rem;
-    font-family: 'Dancing Script', cursive;
-}
-
-
-/* =============================================================
-   SORT BAR
-============================================================= */
-.sort-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 16px;
-    gap: 10px;
-    font-size: 18px;
-    width: 100%;
-}
-
-.sort-bar select {
-    padding: 8px 12px;
-    border-radius: 7px;
-    border: 2px solid #ddd; 
-    cursor: pointer;
-    transition: 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sort-bar select:hover {
-    transform: translateY(-2px);
-    transition: 0.2s;
-    border-color: var(--primary-color);
-    background: #fff7f9;
-}
-
-
-/* =============================================================
-   PAGINATION
-============================================================= */
-.product-content-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pagination {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 25px 0 40px 0;
-}
-
-.pagination button {
-    padding: 10px 15px;
-    margin: 0 6px;
-    border: none;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.pagination button.active-page {
-    background: var(--accent-color);
-}
-
-.pagination button:hover {
-    transform: translateY(-3px);
-    opacity: 0.85;
-}
-
-/* RESPONSIVE GRID */
-@media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-        /* * =========================================
-         * 7. TRANG CÔNG THỨC (List + Accordion)
-         * =========================================
-         */
-/* ==== WRAPPER CHUNG ==== */
-.recipe-wrapper {
-    display: flex;
-    gap: 50px;
-}
-
-/* ==== LEFT MENU ==== */
-.recipe-menu {
-    font-size: 18px;
-    width: 300px;
-    border-right: 2px solid #eee;
-    padding-right: 30px;
-}
-
-.recipe-menu-item {
-    padding: 12px;
-    margin-bottom: 10px;
-    background: #f8f8f8;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.recipe-menu-item:hover {
-    background: #ffe6ee;
-}
-
-.recipe-menu-item.active {
-    background: #ffb5c8;
-    color: #fff;
-}
-
-/* ==== RIGHT CONTENT ==== */
-.recipe-top {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;   /* đảm bảo nằm trên cùng 1 hàng */
-    margin-bottom: 30px;
-}
-
-.recipe-display {
-    font-size: 18px;
-    width: calc(100% - 100px);
-    padding-left: 20px;
-
-    /* NEW: chia thành 2 phần — nguyên liệu + info bên phải */
-    display: flex;
-    gap: 15px;
-    align-items: flex-start;
-}
-
-/* ===== CONTENT LEFT (ingredients + steps) ===== */
-.recipe-box {
-    width: 90%;
-    animation: fade 0.3s ease-in-out;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes fade {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==== STEP IMAGE ==== */
-.step {
-    margin-bottom: 25px;
-}
-
-.step img {
-    width: 100%;
-    max-width: 500px;
-    height: fit-content;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-top: 8px;
-    margin: 15px auto;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.img-note {
-    font-style: italic;
-    font-size: 1rem;
-    color: #888;
-    text-align: center;
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* ========================================================= */
-/* === 🧁 INGREDIENT CARD — LAYOUT B (NỔI BẬT & PASTEL) === */
-/* ========================================================= */
-
-.ingredient-card {
-    width: 70%;
-    background: #fff5f8;
-    padding: 20px 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(255, 150, 175, 0.25);
-    margin-bottom: 30px;
-}
-
-.ingredient-card h3 {
-    margin-bottom: 14px;
-    font-size: 24px;
-    color: #d45d82;
-    font-weight: 800;
-}
-
-/* bullet nguyên liệu đẹp */
-.ingredient-card ul {
-    margin-top: 10px;
-}
-
-.ingredient-card li {
-    margin-bottom: 8px;
-    list-style: none;
-    position: relative;
-    padding-left: 18px;
-}
-
-.ingredient-card li::before {
-    content: "✦";
-    color: #ff99b9;
-    font-size: 14px;
-    position: absolute;
-    left: 0;
-    top: 2px;
-}
-
-/* ========================================================= */
-/* === 🎀 INFO BOX BÊN PHẢI (THỜI GIAN – MỨC ĐỘ – KHẨU PHẦN) === */
-/* ========================================================= */
-
-.recipe-info-box {
-    width: 40%;
-    height: fit-content;
-    background: #ffe9f0;
-    padding: 20px 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(200, 100, 140, 0.25);
-    position: sticky;
-    top: 20px;
-}
-
-.recipe-info-box h4 {
-    font-size: 20px;
-    color: #c8587a;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.recipe-info-box p {
-    font-size: 17px;
-    margin: 8px 0;
-}
-
-.recipe-info-label {
-    font-weight: bold;
-    color: #b44466;
-}
-
-
-/* CHAT BUBBLE */
-#chat-bubble {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #ff7fa7;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: 0.3s;
-    z-index: 999;
-}
-
-#chat-bubble:hover {
-    transform: scale(1.08);
-}
-
-/* CHAT POPUP */
-#chat-popup {
-    position: fixed;
-    bottom: 100px;
-    right: 25px;
-    width: 320px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    overflow: hidden;
-    z-index: 1000;
-}
-
-.hidden {
-    display: none;
-}
-
-/* HEADER */
-.chat-header {
-    background: #ff7fa7;
-    color: white;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.chat-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-}
-
-.close-chat {
-    margin-left: auto;
-    cursor: pointer;
-}
-
-/* BODY */
-.chat-body {
-    padding: 10px;
-    max-height: 250px;
-    overflow-y: auto;
-}
-
-.chat-msg {
-    background: #f1f1f1;
-    padding: 8px 12px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    max-width: 85%;
-}
-
-.chat-msg.bot {
-    background: #ffe6f1;
-}
-
-/* INPUT */
-.chat-input {
-    display: flex;
-    border-top: 1px solid #ddd;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-}
-
-.chat-input button {
-    background: #ff7fa7;
-    color: #fff;
-    border: none;
-    width: 50px;
-    cursor: pointer;
-}
-
-/* RELATED RECIPES BOX */
-.related-box {
-    width: 260px;
-    position: sticky;
-    top: 150px;
-    z-index: 10;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #fff7fa;
-    border: 2px solid #ffd3e0;
-    font-size: 16px;
-    transition: all 0.25s ease;
-}
-
-.related-box h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #d45a8b;
-}
-
-.related-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: #ffffff;
-    border: 1px solid #ffd6e3;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.related-item:hover {
-    background: #ffe8f0;
-    transform: translateX(4px);
-}
-
-.related-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.related-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.related-info a {
-    font-size: 15px;
-    font-weight: 600;
-    color: #b94570;
-    text-decoration: none;
-}
-
-.related-info a:hover {
-    text-decoration: underline;
-}
-
-/* NÚT QUAY LÊN ĐẦU TRANG */
-#back-to-top {
-    position: fixed;
-    bottom: 40px;
-    left: 50px;
-    width: 50px;
-    height: 50px;
-    background: #ff85a1; /* màu hồng pastel xinh */
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 24px;
-    padding: auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 999;
-}
-
-#back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-#back-to-top:hover {
-    transform: scale(1.1);
-    background: #ff6c8d;
-}
-
-        /* * =========================================
-         * 8. TRANG LIÊN HỆ (Form + Validate)
-         * =========================================
-         */
+        /* TRANG SẢN PHẨM */
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .sidebar {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .sidebar ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: var(--pink-light);
+            text-align: center;
+            cursor: pointer;
+            transition: 0.25s;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .sidebar li:hover {
+            background: var(--pink);
+            color: white;
+        }
+
+        .active-filter {
+            background: var(--primary-color) !important;
+            color: white !important;
+        }
+
+
+        /* GRID SẢN PHẨM (3 CỘT) */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* CARD SẢN PHẨM */
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .product-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* ẢNH SẢN PHẨM */
+        .product-img {
+            width: 100%;
+            height: 273px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* INFO */
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .price-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 280px;
+            background: rgba(224, 163, 187, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            opacity: 0;
+        }
+
+        .product-card:hover .price-overlay {
+            opacity: 1;
+        }
+
+        .price-text {
+            color: white;
+            font-size: 1.7rem;
+            font-family: 'Dancing Script', cursive;
+        }
+
+
+        /* SORT BAR */
+
+        .sort-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+            gap: 10px;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .sort-bar select {
+            padding: 8px 12px;
+            border-radius: 7px;
+            border: 2px solid #ddd; 
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sort-bar select:hover {
+            transform: translateY(-2px);
+            transition: 0.2s;
+            border-color: var(--primary-color);
+            background: #fff7f9;
+        }
+
+
+        /* PAGINATION */
+
+        .product-content-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pagination {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 25px 0 40px 0;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            margin: 0 6px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .pagination button.active-page {
+            background: var(--accent-color);
+        }
+
+        .pagination button:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        /*7. TRANG CÔNG THỨC */
+
+        /* ==== WRAPPER CHUNG ==== */
+        .recipe-wrapper {
+            display: flex;
+            gap: 50px;
+        }
+
+        /* ==== LEFT MENU ==== */
+        .recipe-menu {
+            font-size: 18px;
+            width: 300px;
+            border-right: 2px solid #eee;
+            padding-right: 30px;
+        }
+
+        .recipe-menu-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f8f8f8;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .recipe-menu-item:hover {
+            background: #ffe6ee;
+        }
+
+        .recipe-menu-item.active {
+            background: #ffb5c8;
+            color: #fff;
+        }
+
+        /* ==== RIGHT CONTENT ==== */
+        .recipe-top {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;  
+            margin-bottom: 30px;
+        }
+
+        .recipe-display {
+            font-size: 18px;
+            width: calc(100% - 100px);
+            padding-left: 20px;
+
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        /* ===== CONTENT LEFT (ingredients + steps) ===== */
+        .recipe-box {
+            width: 90%;
+            animation: fade 0.3s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==== STEP IMAGE ==== */
+        .step {
+            margin-bottom: 25px;
+        }
+
+        .step img {
+            width: 100%;
+            max-width: 500px;
+            height: fit-content;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 8px;
+            margin: 15px auto;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            display: block;
+        }
+
+        .img-note {
+            font-style: italic;
+            font-size: 1rem;
+            color: #888;
+            text-align: center;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /*INGREDIENT CARD */
+
+        .ingredient-card {
+            width: 70%;
+            background: #fff5f8;
+            padding: 20px 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(255, 150, 175, 0.25);
+            margin-bottom: 30px;
+        }
+
+        .ingredient-card h3 {
+            margin-bottom: 14px;
+            font-size: 24px;
+            color: #d45d82;
+            font-weight: 800;
+        }
+        .ingredient-card ul {
+            margin-top: 10px;
+        }
+
+        .ingredient-card li {
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .ingredient-card li::before {
+            content: "✦";
+            color: #ff99b9;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* INFO BOX BÊN PHẢI (THỜI GIAN – MỨC ĐỘ – KHẨU PHẦN) */
+
+        .recipe-info-box {
+            width: 40%;
+            height: fit-content;
+            background: #ffe9f0;
+            padding: 20px 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(200, 100, 140, 0.25);
+            position: sticky;
+            top: 20px;
+        }
+
+        .recipe-info-box h4 {
+            font-size: 20px;
+            color: #c8587a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .recipe-info-box p {
+            font-size: 17px;
+            margin: 8px 0;
+        }
+
+        .recipe-info-label {
+            font-weight: bold;
+            color: #b44466;
+        }
+
+
+        /* CHAT BUBBLE */
+        #chat-bubble {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #ff7fa7;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        #chat-bubble:hover {
+            transform: scale(1.08);
+        }
+
+        /* CHAT POPUP */
+        #chat-popup {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 320px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .chat-header {
+            background: #ff7fa7;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+        }
+
+        .close-chat {
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            padding: 10px;
+            max-height: 250px;
+            overflow-y: auto;   
+        }
+
+        .chat-msg {
+            background: #f1f1f1;
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 85%;
+        }
+
+        .chat-msg.bot {
+            background: #ffe6f1;
+        }
+
+        /* INPUT */
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .chat-input button {
+            background: #ff7fa7;
+            color: #fff;
+            border: none;
+            width: 50px;
+            cursor: pointer;
+        }
+
+        /* RELATED RECIPES BOX */
+        .related-box {
+            width: 260px;
+            position: sticky;
+            top: 150px;
+            z-index: 10;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #fff7fa;
+            border: 2px solid #ffd3e0;
+            font-size: 16px;
+            transition: all 0.25s ease;
+        }
+
+        .related-box h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #d45a8b;
+        }
+
+        .related-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: #ffffff;
+            border: 1px solid #ffd6e3;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .related-item:hover {
+            background: #ffe8f0;
+            transform: translateX(4px);
+        }
+
+        .related-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .related-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .related-info a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #b94570;
+            text-decoration: none;
+        }
+
+        .related-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* NÚT QUAY LÊN ĐẦU TRANG */
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            left: 50px;
+            width: 50px;
+            height: 50px;
+            background: #ff85a1;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            padding: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: scale(1.1);
+            background: #ff6c8d;
+        }
+
+        /* TRANG LIÊN HỆ (Form + Validate)*/
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1275,44 +1240,38 @@
         .error-message {
             color: red;
             font-size: 0.85rem;
-            display: none; /* Mặc định ẩn */
+            display: none;
             margin-top: 5px;
         }
 
-        /* * =========================================
-         * 9. FOOTER
-        * FOOTER STYLING (Giao diện Poeme Cake)
-        * Copy đoạn này vào CUỐI file style.css
-        * =========================================
-        */
+        /* FOOTER */
+
 
         .site-footer {
-            background-color: #1a1e21; /* Màu nền tối (Dark Slate) giống mẫu */
-            color: #b0b0b0; /* Màu chữ xám nhạt */
+            background-color: #1a1e21; 
+            color: #b0b0b0;
             padding-top: 60px;
             font-size: 0.95rem;
-            margin-top: 80px; /* Cách phần nội dung bên trên ra một chút */
-            font-family: 'Nunito', sans-serif; /* Đảm bảo font chữ dễ đọc */
+            margin-top: 80px; 
+            font-family: 'Nunito', sans-serif; 
         }
 
         .footer-content {
             display: grid;
-            /* Chia 4 cột, tự động xuống dòng trên mobile (tối thiểu 220px/cột) */
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
             padding-bottom: 50px;
         }
 
-        /* Tiêu đề của từng cột */
         .footer-title {
-            color: #ffffff; /* Màu tiêu đề trắng */
-            font-family: 'Nunito', sans-serif; /* Dùng font đứng, in hoa cho mạnh mẽ */
+            color: #ffffff;
+            font-family: 'Nunito', sans-serif; 
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 25px;
             font-size: 1.1rem;
             letter-spacing: 1px;
-            border-left: 3px solid var(--primary-color); /* Thêm gạch màu hồng bên trái cho đẹp */
+            border-left: 3px solid var(--primary-color);
             padding-left: 10px;
         }
 
@@ -1324,7 +1283,7 @@
 
         .contact-info-list li {
             display: flex;
-            align-items: flex-start; /* Căn icon lên trên nếu text dài */
+            align-items: flex-start; 
             margin-bottom: 15px;
             line-height: 1.5;
         }
@@ -1334,10 +1293,9 @@
             margin-right: 15px;
             font-size: 1.1rem;
             margin-top: 3px;
-            width: 20px; /* Cố định chiều rộng để thẳng hàng */
+            width: 20px;
         }
 
-        /* Icon Bộ công thương (làm mờ đi một chút cho đỡ chói) */
         .gov-icon { 
             margin-top: 20px; 
             filter: grayscale(100%); 
@@ -1357,7 +1315,7 @@
 
         .footer-links li {
             margin-bottom: 12px;
-            border-bottom: 1px dashed rgba(255,255,255,0.1); /* Đường gạch mờ ngăn cách */
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
             padding-bottom: 5px;
         }
 
@@ -1373,21 +1331,21 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary-color); /* Hover đổi sang màu hồng chủ đạo */
-            transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ sang phải */
+            color: var(--primary-color); 
+            transform: translateX(5px); 
             padding-left: 5px;
         }
 
         /* --- CỘT 4: THƯ VIỆN ẢNH (GALLERY) --- */
         .footer-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 ảnh 1 hàng */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 10px;
         }
 
         .footer-gallery img {
             width: 100%;
-            aspect-ratio: 1/1; /* Ảnh luôn vuông */
+            aspect-ratio: 1/1; 
             object-fit: cover;
             border-radius: 4px;
             transition: 0.3s;
@@ -1402,9 +1360,9 @@
             border-color: var(--primary-color);
         }
 
-        /* --- DÒNG BẢN QUYỀN (Copyright) --- */
+        /* --- Copyright--- */
         .copyright-bar {
-            background-color: #111; /* Màu đen hơn footer chính */
+            background-color: #111; 
             padding: 20px 0;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -1416,630 +1374,505 @@
             color: #777;
         }
 
-        /* Responsive cho Footer trên điện thoại */
-        @media (max-width: 768px) {
-            .site-footer { 
-                text-align: left; 
-                padding-top: 40px;
-            }
-            .footer-content { 
-                gap: 30px; 
-                grid-template-columns: 1fr; /* 1 cột duy nhất */
-            }
+
+        /* PRODUCT DETAIL */
+
+        /* Detail Page Wrapper */
+        .detail-page-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* * =========================================
-         * 10. RESPONSIVE
-         * =========================================
-         */
-        @media (max-width: 768px) {
-            .intro-layout, .contact-layout {
-                grid-template-columns: 1fr;
-            }
-            .menu-toggle { display: block; }
-            .nav-links {
-                display: none; /* Ẩn menu trên mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                padding: 20px;
-                box-shadow: var(--shadow);
-            }
-            .nav-links.active { display: flex; }
-            .recipe-detail { flex-direction: column; }
-            .slider-container { height: 300px; }
-            .featured-cakes { gap: 10px; }
-            .featured-item img { width: 100px; height: 100px; }
+        /* Product Detail Grid */
+        .product-detail-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 40px 0;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
-    
-
-        /* =====================================================
-   PRODUCT DETAIL PAGE CSS
-   Add this to the end of your style2.css file
-   ===================================================== */
-
-/* Detail Page Wrapper */
-.detail-page-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Product Detail Grid */
-.product-detail-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin: 40px 0;
-    background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-/* ===== IMAGE GALLERY ===== */
-.product-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.main-image {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 16px;
-    border: 2px solid #f0f0f0;
-    position: relative;
-    cursor: zoom-in;
-}
-
-.main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.15s ease-out;
-}
-
-.main-image:hover img {
-    transform: scale(1.1);
-}
-
-.thumbnail-list {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-}
-
-.thumb {
-    min-width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    opacity: 0.7;
-    transition: all 0.3s;
-}
-
-.thumb:hover,
-.thumb.active {
-    border-color: var(--primary-color);
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-/* ===== PRODUCT INFO ===== */
-.product-info-col h1 {
-    font-size: 32px;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-    font-family: 'Dancing Script', cursive;
-}
-
-.product-meta {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.in-stock {
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.product-price-large {
-    font-size: 36px;
-    color: var(--accent-color);
-    font-weight: 800;
-    margin-bottom: 25px;
-}
-
-.rating-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.stars {
-    color: #ffc107;
-    font-size: 18px;
-}
-
-.review-count {
-    color: #888;
-    font-size: 14px;
-}
-
-.short-desc {
-    line-height: 1.8;
-    margin-bottom: 25px;
-    color: #666;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #ddd;
-}
-
-/* ===== QUANTITY CONTROL ===== */
-.quantity-wrapper {
-    margin-bottom: 25px;
-}
-
-.quantity-wrapper label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-.quantity-control {
-    display: flex;
-    align-items: center;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: fit-content;
-    overflow: hidden;
-}
-
-.qty-btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: var(--light-blue);
-    cursor: pointer;
-    font-size: 18px;
-    color: var(--accent-color);
-    transition: background 0.3s;
-}
-
-.qty-btn:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.qty-input {
-    width: 60px;
-    height: 40px;
-    text-align: center;
-    border: none;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.qty-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-/* ===== ORDER BUTTON ===== */
-.action-buttons {
-    margin-bottom: 20px;
-}
-
-.btn-order-now {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 90%;
-    padding: 15px;
-    border-radius: 30px;
-    background: var(--primary-color);
-    color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.btn-order-now:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ===== POLICY BOX ===== */
-.policy-box {
-    background: var(--light-blue);
-    padding: 20px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    font-size: 14px;
-}
-
-.policy-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.policy-item i {
-    color: var(--accent-color);
-    font-size: 20px;
-}
-
-/* ===== TABS SECTION ===== */
-.tabs-container {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: var(--shadow);
-    margin-bottom: 40px;
-}
-
-.tabs-header {
-    display: flex;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 25px;
-    gap: 10px;
-}
-
-.tab-btn {
-    padding: 15px 30px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: #888;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
-    transition: all 0.3s;
-}
-
-.tab-btn:hover {
-    color: var(--accent-color);
-}
-
-.tab-btn.active {
-    color: var(--accent-color);
-    border-bottom-color: var(--accent-color);
-}
-
-.tab-content {
-    display: none;
-    animation: fadeIn 0.5s;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.desc-content p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    color: #555;
-}
-
-/* ===== REVIEWS ===== */
-.review-item {
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.review-item:last-child {
-    border-bottom: none;
-}
-
-.review-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.reviewer-name {
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.review-date {
-    color: #888;
-    font-size: 14px;
-}
-
-.review-stars {
-    color: #ffc107;
-    margin-bottom: 10px;
-}
-
-.review-item p {
-    line-height: 1.7;
-    color: #666;
-}
-
-/* ===== RELATED PRODUCTS - SCROLLABLE ===== */
-.related-products {
-    margin-top: 60px;
-}
-
-.related-products .section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: var(--accent-color);
-}
-
-.related-scroll-wrapper {
-    position: relative;
-    padding: 0 60px;
-}
-
-.related-scroll-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) #f0f0f0;
-}
-
-.related-scroll-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.related-scroll-container::-webkit-scrollbar-track {
-    background: #f0f0f0;
-    border-radius: 4px;
-}
-
-.related-scroll-container::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
-.related-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
-}
-
-.related-product-card {
-    min-width: 220px;
-    max-width: 220px;
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.related-product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.related-product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.related-product-info {
-    padding: 15px;
-    text-align: center;
-}
-
-.related-product-info h4 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text-color);
-    line-height: 1.4;
-    min-height: 40px;
-}
-
-.related-product-price {
-    color: var(--accent-color);
-    font-weight: 700;
-    font-size: 18px;
-}
-
-/* Scroll Arrows */
-.scroll-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: var(--accent-color);
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.scroll-arrow:hover {
-    background: #7d8a32;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.scroll-arrow.left {
-    left: 0;
-}
-
-.scroll-arrow.right {
-    right: 0;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 968px) {
-    .product-detail-wrapper {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 30px;
-    }
-
-    .main-image {
-        height: 400px;
-    }
-
-    .policy-box {
-        grid-template-columns: 1fr;
-    }
-
-    .tabs-header {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .tab-btn {
-        border-bottom: 1px solid #eee;
-        border-left: 3px solid transparent;
-        margin-bottom: 0;
-        text-align: left;
-    }
-
-    .tab-btn.active {
-        border-bottom: 1px solid #eee;
-        border-left-color: var(--accent-color);
-    }
-
-    .related-scroll-wrapper {
-        padding: 0 50px;
-    }
-
-    .scroll-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 600px) {
-    .product-info-col h1 {
-        font-size: 24px;
-    }
-
-    .product-price-large {
-        font-size: 28px;
-    }
-
-    .related-scroll-wrapper {
-        padding: 0;
-    }
-
-    .scroll-arrow {
-        display: none;
-    }
-
-    .related-product-card {
-        min-width: 180px;
-        max-width: 180px;
-    }
-}
-
-/* * =========================================
- * NÂNG CẤP TRANG GIỚI THIỆU
- * =========================================
- */
-
-/* --- PHẦN GIÁ TRỊ CỐT LÕI --- */
-.values-section {
-    padding: 40px 0;
-    background-color: var(--light-blue); /* Nền xanh nhạt tạo sự tách biệt */
-    margin-top: 0;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.value-card {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.value-card:hover {
-    transform: translateY(-10px); /* Hiệu ứng bay lên khi hover */
-}
-
-.value-icon {
-    font-size: 4rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.value-card h3 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-
-/* --- PHẦN KHOẢNH KHẮC (GALLERY) --- */
-.moments-section {
-    padding-bottom: 60px;
-}
-
-.moments-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.moments-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.moments-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Responsive cho trang giới thiệu */
-@media (max-width: 768px) {
-    .chef-layout {
-        grid-template-columns: 1fr;
-    }
-    .moments-grid {
-        grid-template-columns: repeat(2, 1fr); /* Mobile hiển thị 2 cột ảnh */
-    }
-    .chef-exp-badge {
-        right: 10px; bottom: 10px;
-    }
-}
+
+        /* ===== IMAGE GALLERY ===== */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 2px solid #f0f0f0;
+            position: relative;
+            cursor: zoom-in;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.15s ease-out;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .thumb {
+            min-width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .thumb:hover,
+        .thumb.active {
+            border-color: var(--primary-color);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* ===== PRODUCT INFO ===== */
+        .product-info-col h1 {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .in-stock {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .product-price-large {
+            font-size: 36px;
+            color: var(--accent-color);
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+        }
+
+        .review-count {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .short-desc {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #666;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* ===== QUANTITY CONTROL ===== */
+        .quantity-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .quantity-wrapper label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: fit-content;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--light-blue);
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--accent-color);
+            transition: background 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .qty-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .qty-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        /* ===== ORDER BUTTON ===== */
+        .action-buttons {
+            margin-bottom: 20px;
+        }
+
+        .btn-order-now {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 90%;
+            padding: 15px;
+            border-radius: 30px;
+            background: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-order-now:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== POLICY BOX ===== */
+        .policy-box {
+            background: var(--light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .policy-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-item i {
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+
+        /* ===== TABS SECTION ===== */
+        .tabs-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .desc-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* ===== REVIEWS ===== */
+        .review-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .review-date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .review-item p {
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* ===== RELATED PRODUCTS - SCROLLABLE ===== */
+        .related-products {
+            margin-top: 60px;
+        }
+
+        .related-products .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+
+        .related-scroll-wrapper {
+            position: relative;
+            padding: 0 60px;
+        }
+
+        .related-scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) #f0f0f0;
+        }
+
+        .related-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .related-scroll-container::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .related-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .related-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        .related-product-card {
+            min-width: 220px;
+            max-width: 220px;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .related-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .related-product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .related-product-info h4 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            line-height: 1.4;
+            min-height: 40px;
+        }
+
+        .related-product-price {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Scroll Arrows */
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: var(--accent-color);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .scroll-arrow:hover {
+            background: #7d8a32;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .scroll-arrow.left {
+            left: 0;
+        }
+
+        .scroll-arrow.right {
+            right: 0;
+        }
+       
+        /* --- PHẦN GIÁ TRỊ CỐT LÕI --- */
+        .values-section {
+            padding: 40px 0;
+            background-color: var(--light-blue); 
+            margin-top: 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px); 
+        }
+
+        .value-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+
+        /* --- GALLERY --- */
+        .moments-section {
+            padding-bottom: 60px;
+        }
+
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .moments-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .moments-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        
 

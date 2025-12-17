@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
-    
-    <!-- Thư viện FontAwesome cho Icon -->
+    <title>Halo Sweet - Tiệm bánh ngọt ngào</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Thư viện jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js" defer></script>
 </head>
 <body>
 
-    <!-- 1. TOP BAR -->
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-left">
@@ -32,8 +28,7 @@
         </div>
     </div>
 
-
-    <!-- Header -->
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -41,30 +36,26 @@
             </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
                 <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
                 <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
                 <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
                 <li><a href="recipe.html" class="nav-item">Công Thức</a></li>
-                <li>
-                    <a href="contact.html  active" class="btn-navbar-highlight">
-                        Đặt Bánh Ngay
-                    </a>
-                </li>
+                <li><a href="contact.html" class="nav-item active btn-navbar-highlight">Đặt Bánh Ngay</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- NÚT LÊN ĐẦU TRANG -->
+    <!-- BACK TO TOP BUTTON -->
     <div id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <main class="container">
 
-        <!-- ================= TRANG LIÊN HỆ ================= -->
+        <!-- CONTACT SECTION -->
         <section id="contact" class="page-section">
             <h2 style="text-align: center; margin-bottom: 30px; font-size: 30px;">Liên Hệ Đặt Bánh</h2>
+            
             <div class="contact-layout">
                 <div class="contact-info">
                     <h3>Thông Tin</h3>
@@ -78,11 +69,9 @@
                     <div style="margin-top: 30px;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.494668106037!2d106.6997639148007!3d10.773374292323577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f487a2a0755%3A0x6b83ce60907481!2sBen%20Thanh%20Market!5e0!3m2!1sen!2s!4v1638890000000!5m2!1sen!2s" width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    
                 </div>
 
-
-                <!-- Form đặt bánh -->
+                <!-- Form -->
                 <form id="orderForm">
                     <div class="form-group">
                         <label>Họ và Tên</label>
@@ -114,12 +103,11 @@
 
     </main>
 
-    <!-- FOOTER MỚI (Style Poeme Cake) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                
-                <!-- Cột 1: Thông tin liên hệ -->
+
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Hệ</h3>
                     <ul class="contact-info-list">
@@ -140,14 +128,11 @@
                             <span>ĐKKD: 0123456789 do Sở KHĐT TP.HCM cấp</span>
                         </li>
                     </ul>
-                    <!-- Logo Bộ công thương (Demo) -->
                     <div class="gov-icon">
                         <i class="fa-solid fa-lemon"></i> Halo Sweet
-                        
                     </div>
                 </div>
 
-                <!-- Cột 2: Sản Phẩm -->
                 <div class="footer-col">
                     <h3 class="footer-title">Sản Phẩm</h3>
                     <ul class="footer-links">
@@ -158,7 +143,6 @@
                     </ul>
                 </div>
 
-                <!-- Cột 3: Liên Kết Nhanh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Kết Nhanh</h3>
                     <ul class="footer-links">
@@ -169,7 +153,6 @@
                     </ul>
                 </div>
 
-                <!-- Cột 4: Thư Viện Ảnh (Gallery) -->
                 <div class="footer-col">
                     <h3 class="footer-title">Thư Viện Ảnh</h3>
                     <div class="footer-gallery">
@@ -185,10 +168,11 @@
             </div>
         </div>
         
-        <!-- Dòng bản quyền dưới cùng -->
         <div class="copyright-bar">
             <div class="container">
                 <p>&copy; 2023 Tiệm Bánh Halo Sweet. All rights reserved.</p>
             </div>
         </div>
     </footer>
+</body>
+</html>

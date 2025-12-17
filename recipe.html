@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Halo Sweet - Tiệm bánh ngọt ngào</title>
+    <title>Halo Sweet - Tiệm bánh ngọt ngào</title>
     
-    <!-- Thư viện FontAwesome cho Icon -->
+    <!-- CSS & FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Thư viện jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style2.css">
+    
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js" defer></script>
 </head>
-
-<!-- CHAT BUBBLE -->
-<div id="chat-bubble">
-    <i class="fas fa-comment-dots"></i>
-</div>
-
-<!-- CHAT POPUP -->
-<div id="chat-popup" class="hidden">
-    <div class="chat-header">
-        <img src="cake-pic/logo.jpg" class="chat-avatar">
-        <span>Halo Sweet Hỗ Trợ</span>
-        <i class="fas fa-times close-chat"></i>
-    </div>
-
-    <div class="chat-body">
-        <div class="chat-msg bot">Xin chào 👋 Bạn muốn hỏi công thức bánh nào thế nè?</div>
-    </div>
-
-    <div class="chat-input">
-        <input type="text" placeholder="Nhập câu hỏi...">
-        <button><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
 <body>
 
-    <!-- 1. TOP BAR -->
+    <!-- CHAT BUBBLE & POPUP -->
+    <div id="chat-bubble">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chat-popup" class="hidden">
+        <div class="chat-header">
+            <img src="cake-pic/logo.jpg" class="chat-avatar" alt="Avatar">
+            <span>Halo Sweet Hỗ Trợ</span>
+            <i class="fas fa-times close-chat"></i>
+        </div>
+        <div class="chat-body">
+            <div class="chat-msg bot">Xin chào 👋 Bạn muốn hỏi công thức bánh nào thế nè?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Nhập câu hỏi...">
+            <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-left">
@@ -56,8 +52,7 @@
         </div>
     </div>
 
-
-    <!-- Header -->
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -65,552 +60,549 @@
             </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
                 <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
                 <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
                 <li><a href="product.html" class="nav-item">Sản Phẩm</a></li>
                 <li><a href="recipe.html" class="nav-item active">Công Thức</a></li>
-                <li>
-                    <a href="contact.html" class="btn-navbar-highlight">
-                        Đặt Bánh Ngay
-                    </a>
-                </li>
+                <li><a href="contact.html" class="btn-navbar-highlight">Đặt Bánh Ngay</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- NÚT LÊN ĐẦU TRANG -->
-<div id="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-</div>
+    <!-- BACK TO TOP BUTTON -->
+    <div id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <main class="container">
 
-        <!-- ================= TRANG CÔNG THỨC ================= -->
+        <!-- RECIPE SECTION -->
         <section id="recipes" class="page-section">
-    <h2 style="text-align: center; margin-bottom: 30px; font-size: 30px;">Góc Chia Sẻ Công Thức</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 30px;">Góc Chia Sẻ Công Thức</h2>
 
-    <div class="recipe-wrapper">
+            <div class="recipe-wrapper">
 
-        <!-- ==== LEFT MENU ==== -->
-        <div class="recipe-menu">
-            <div class="recipe-menu-item active" data-target="macaron">Macaron chuẩn Pháp</div>
-            <div class="recipe-menu-item" data-target="donut">Donut Socola</div>
-            <div class="recipe-menu-item" data-target="cookies">Cookies Chocolate Chip</div>
-            <div class="recipe-menu-item" data-target="tiramisu">Tiramisu mềm mịn</div>
-            <div class="recipe-menu-item" data-target="redvelvet">Red Velvet truyền thống</div>
+                <!-- LEFT MENU -->
+                <div class="recipe-menu">
+                    <div class="recipe-menu-item active" data-target="macaron">Macaron chuẩn Pháp</div>
+                    <div class="recipe-menu-item" data-target="donut">Donut Socola</div>
+                    <div class="recipe-menu-item" data-target="cookies">Cookies Chocolate Chip</div>
+                    <div class="recipe-menu-item" data-target="tiramisu">Tiramisu mềm mịn</div>
+                    <div class="recipe-menu-item" data-target="redvelvet">Red Velvet truyền thống</div>
 
-            <!-- ==== RELATED RECIPES / MÓN LIÊN QUAN ==== -->
-              <div class="related-box">
-                <h4>Món liên quan</h4>
-                <div class="related-list"></div>
+                    <!-- Related Recipes Placeholder -->
+                    <div class="related-box">
+                        <h4>Món liên quan</h4>
+                        <div class="related-list"></div>
+                    </div>
                 </div>
-        </div>
 
-        <!-- ==== RIGHT CONTENT ==== -->
-        <div class="recipe-display">
+                <!-- RIGHT CONTENT -->
+                <div class="recipe-display">
 
-            <!-- MACARON -->
-            <div class="recipe-box" id="macaron">
-    <h3>Macaron</h3><br>
+                    <!-- 1. MACARON -->
+                    <div class="recipe-box" id="macaron">
+                        <h3>Macaron</h3><br>
 
-<div class="recipe-top">
-    <div class="ingredient-card">
-    <h3>Nguyên liệu</h3>
-    <ul>
-        <li>Bột hạnh nhân: 150g</li>
-        <li>Đường bột: 320g</li>
-        <li>Kem béo: 30ml</li>
-        <li>Lòng trắng trứng: 110g</li>
-        <li>Bột cacao: 15g</li>
-        <li>Bơ: 240g</li>
-        <li>Đường cát: 150g</li>
-        <li>Màu thực phẩm (tùy chọn): vài giọt</li>
-    </ul>
-</div>
+                        <div class="recipe-top">
+                            <div class="ingredient-card">
+                                <h3>Nguyên liệu</h3>
+                                <ul>
+                                    <li>Bột hạnh nhân: 150g</li>
+                                    <li>Đường bột: 320g</li>
+                                    <li>Kem béo: 30ml</li>
+                                    <li>Lòng trắng trứng: 110g</li>
+                                    <li>Bột cacao: 15g</li>
+                                    <li>Bơ: 240g</li>
+                                    <li>Đường cát: 150g</li>
+                                    <li>Màu thực phẩm (tùy chọn): vài giọt</li>
+                                </ul>
+                            </div>
 
-<div class="recipe-info-box">
-    <h4>Thông Tin Nhanh</h4>
-    <p><span class="recipe-info-label">⏱ Thời gian:</span> 45 phút</p>
-    <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
-    <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 8 bánh</p>
-</div><br>
-</div>
+                            <div class="recipe-info-box">
+                                <h4>Thông Tin Nhanh</h4>
+                                <p><span class="recipe-info-label">⏱ Thời gian:</span> 45 phút</p>
+                                <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
+                                <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 8 bánh</p>
+                            </div><br>
+                        </div>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
 
-    <div class="step">
-        <p><strong>Bước 1: Làm hỗn hợp bột và đun chảy socola</strong></p>
-        <img src="https://ctvvietnam.com/upload/sanpham/792430.png" alt="Rây bột">
-        <p class="img-note">Lọc hỗn hợp qua bột rây</p>
-        <p>
-            <li>Cho bột hạnh nhân và icing sugar vào máy xay sinh tố, xay nhuyễn ra. Sau đó, lọc hỗn hợp qua rây.</li>
-            <li>Đun cách thủy wipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn</li>
-            <li>làm tan chảy chocolate trắng bằng phương pháp đun cách thủy. Làm tương tự như vậy với chocolate đen. Lưu ý là phải khuấy liên tục trong quá trình đun</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 1: Làm hỗn hợp bột và đun chảy socola</strong></p>
+                            <img src="https://ctvvietnam.com/upload/sanpham/792430.png" alt="Rây bột">
+                            <p class="img-note">Lọc hỗn hợp qua bột rây</p>
+                            <p>
+                                <li>Cho bột hạnh nhân và icing sugar vào máy xay sinh tố, xay nhuyễn ra. Sau đó, lọc hỗn hợp qua rây.</li>
+                                <li>Đun cách thủy wipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn</li>
+                                <li>Làm tan chảy chocolate trắng bằng phương pháp đun cách thủy. Làm tương tự như vậy với chocolate đen. Lưu ý là phải khuấy liên tục trong quá trình đun</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 2: Làm vỏ bánh</strong></p>
-        <img src="https://i.ytimg.com/vi/QUqv6TcZz-I/maxresdefault.jpg" alt="Đánh trứng">
-        <p class="img-note">Đánh bông lòng trắng trứng</p>
-        <p>
-            <li>Đun sôi đường với nước đến 1180C thì tắt bếp. Dùng máy đánh trứng đánh bông 50 gram lòng trắng rồi từ từ đổ nước đường vào, vừa đổ vừa đánh.</li>
-            <li>Thêm một ít màu thực phẩm vào, tiếp tục đánh đều lên để tạo màu cho vỏ bánh thật đẹp và bắt mắt.</li>
-            <li>Thêm 60 gram lòng trắng trứng còn lại vào hỗn hợp bột hạnh nhân và icing sugar, trộn đều rồi tiếp tục cho hỗn hợp vỏ bánh vào, trộn nhẹ nhàng đến khi các nguyên liệu hòa quyện vào nhau và nhuyễn mịn.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 2: Làm vỏ bánh</strong></p>
+                            <img src="https://i.ytimg.com/vi/QUqv6TcZz-I/maxresdefault.jpg" alt="Đánh trứng">
+                            <p class="img-note">Đánh bông lòng trắng trứng</p>
+                            <p>
+                                <li>Đun sôi đường với nước đến 1180C thì tắt bếp. Dùng máy đánh trứng đánh bông 50 gram lòng trắng rồi từ từ đổ nước đường vào, vừa đổ vừa đánh.</li>
+                                <li>Thêm một ít màu thực phẩm vào, tiếp tục đánh đều lên để tạo màu cho vỏ bánh thật đẹp và bắt mắt.</li>
+                                <li>Thêm 60 gram lòng trắng trứng còn lại vào hỗn hợp bột hạnh nhân và icing sugar, trộn đều rồi tiếp tục cho hỗn hợp vỏ bánh vào, trộn nhẹ nhàng đến khi các nguyên liệu hòa quyện vào nhau và nhuyễn mịn.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 3: Tạo hình và nướng bánh</strong></p>
-        <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/158591/Originals/lam-banh-Macaron-bang-lo-vi-song-4.jpg" alt="Bắt macaron">
-        <p class="img-note">Tạo hình bánh trước khi nướng</p>
-        <p>
-            <li>Cho hỗn hợp vỏ bánh vào túi bắt kem, bắt thành những hình tròn nhỏ lên khay nướng đã lót giấy nến.</li>
-            <li>Để khay bánh ở nhiệt độ phòng trong vòng 30 phút đến 1 tiếng để vỏ bánh khô lại, khi chạm tay vào không còn dính nữa.</li>
-            <li>Bật sẵn lò nướng ở 1500C trước 10 phút rồi cho khay vào nướng khoảng 12 phút.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 3: Tạo hình và nướng bánh</strong></p>
+                            <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/158591/Originals/lam-banh-Macaron-bang-lo-vi-song-4.jpg" alt="Bắt macaron">
+                            <p class="img-note">Tạo hình bánh trước khi nướng</p>
+                            <p>
+                                <li>Cho hỗn hợp vỏ bánh vào túi bắt kem, bắt thành những hình tròn nhỏ lên khay nướng đã lót giấy nến.</li>
+                                <li>Để khay bánh ở nhiệt độ phòng trong vòng 30 phút đến 1 tiếng để vỏ bánh khô lại, khi chạm tay vào không còn dính nữa.</li>
+                                <li>Bật sẵn lò nướng ở 1500C trước 10 phút rồi cho khay vào nướng khoảng 12 phút.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 4: Làm nhân bánh</strong></p>
-        <img src="https://file.hstatic.net/200000692767/file/banh-macaron__2_.jpg" alt="Nướng macaron">
-        <p class="img-note">Làm nhân bánh Macaron</p>
-        <p>
-            <li>Đun cách thủy whipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn.</li>
-            <li>Chia nhân bánh thành hai phần, một phần cho socola trắng đã đun chảy vào trộn đều, một phần cho socola đen đã đun chảy vào trộn đều.</li>
-            <li>Cho nhân bánh vào túi bắt kem, bắt nhân vào giữa hai vỏ bánh macaron đã nướng.</li>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 4: Làm nhân bánh</strong></p>
+                            <img src="https://file.hstatic.net/200000692767/file/banh-macaron__2_.jpg" alt="Nướng macaron">
+                            <p class="img-note">Làm nhân bánh Macaron</p>
+                            <p>
+                                <li>Đun cách thủy whipping cream và bơ, khuấy đều để bơ tan chảy và nguyên liệu hòa quyện vào nhau hoàn toàn.</li>
+                                <li>Chia nhân bánh thành hai phần, một phần cho socola trắng đã đun chảy vào trộn đều, một phần cho socola đen đã đun chảy vào trộn đều.</li>
+                                <li>Cho nhân bánh vào túi bắt kem, bắt nhân vào giữa hai vỏ bánh macaron đã nướng.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 5: Thành phẩm</strong></p>
-        <img src="https://bakes-saigon.com/cdn/shop/collections/macarons-658574.jpg?v=1744550671" alt="Thành phẩm macaron">
-        <p class="img-note">Thành phẩm bánh Macaron chuẩn Pháp</p>
+                        <div class="step">
+                            <p><strong>Bước 5: Thành phẩm</strong></p>
+                            <img src="https://bakes-saigon.com/cdn/shop/collections/macarons-658574.jpg?v=1744550671" alt="Thành phẩm macaron">
+                            <p class="img-note">Thành phẩm bánh Macaron chuẩn Pháp</p>
+                        </div>
 
-    </div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
+                        <p>
+                            <li>Bảo quản macaron trong hộp kín, để ngăn mát tủ lạnh từ 24 – 48 tiếng trước khi thưởng thức để bánh đạt hương vị ngon nhất.</li>
+                            <li>Trước khi ăn, nên để bánh ở nhiệt độ phòng khoảng 15 phút để nhân bánh mềm mịn và thơm ngon hơn.</li>
+                            ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Macaron ngon nhất khi được thưởng thức ở ngày thứ 2 hoặc thứ 3 sau khi làm. Thời gian ủ giúp hương vị hòa quyện và kết cấu bánh trở nên hoàn hảo hơn."
+                        </p><br>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
-    <p>
-        <li>Bảo quản macaron trong hộp kín, để ngăn mát tủ lạnh từ 24 – 48 tiếng trước khi thưởng thức để bánh đạt hương vị ngon nhất.</li>
-        <li>Trước khi ăn, nên để bánh ở nhiệt độ phòng khoảng 15 phút để nhân bánh mềm mịn và thơm ngon hơn.</li>
-        ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Macaron ngon nhất khi được thưởng thức ở ngày thứ 2 hoặc thứ 3 sau khi làm. Thời gian ủ giúp hương vị hòa quyện và kết cấu bánh trở nên hoàn hảo hơn."
-    </p><br>
+                        <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
+                        <ul>
+                            <li>▫ Khi khuấy phải fold nhẹ tay để macaron không bị xẹp.</li>
+                            <li>▫ Khi có “chân bánh” là macaron đạt chuẩn.</li>
+                            <li>▫ Không nên thay thế đường bột bằng đường cát. Nếu có thời gian bạn nên xay kỹ bột hạnh nhân và đường bột, rây từ 2 – 3 lần để chắc chắn các nguyên liệu đều mịn màng</li>
+                            <li>▫ Bạn có thể không dùng đuôi bắt kem khi nặn bánh ra khay nhưng thành phẩm sẽ không được tròn đều và đẹp mắt nhất.</li>
+                        </ul>
+                    </div>
 
-    <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
-    <ul>
-        <li>▫ Khi khuấy phải fold nhẹ tay để macaron không bị xẹp.</li>
-        <li>▫ Khi có “chân bánh” là macaron đạt chuẩn.</li>
-        <li>▫ Không nên thay thế đường bột bằng đường cát. Nếu có thời gian bạn nên xay kỹ bột hạnh nhân và đường bột, rây từ 2 – 3 lần để chắc chắn các nguyên liệu đều mịn màng</li>
-        <li>▫ Bạn có thể không dùng đuôi bắt kem khi nặn bánh ra khay nhưng thành phẩm sẽ không được tròn đều và đẹp mắt nhất.</li>
-    </ul>
-        </div>
+                    <!-- 2. DONUT -->
+                    <div class="recipe-box hidden" id="donut">
+                        <h3>Donut Socola</h3><br>
 
-            <!-- DONUT -->
-<div class="recipe-box hidden" id="donut">
-    <h3>Donut Socola</h3><br>
+                        <div class="recipe-top">
+                            <div class="ingredient-card">
+                                <h3>Nguyên liệu</h3>
+                                <ul>
+                                    <li>Bột mì đa dụng: 500 gram</li>
+                                    <li>Đường bột: 250 gram</li>
+                                    <li>Lòng trắng trứng: 100 gram</li>
+                                    <li>Bơ: 100 gram</li>
+                                    <li>Sữa tươi không đường: 350 ml</li>
+                                    <li>Đường cát: 400 gram</li>
+                                    <li>Nước: 440 ml</li>
+                                    <li>Bột cacao: 35 gram</li>
+                                </ul>
+                            </div>
 
-    <div class="recipe-top">
-    <div class="ingredient-card">
-    <h3>Nguyên liệu</h3>
-    <ul>
-        <li>Bột mì đa dụng: 500 gram</li>
-        <li>Đường bột: 250 gram</li>
-        <li>Lòng trắng trứng: 100 gram</li>
-        <li>Bơ: 100 gram</li>
-        <li>Sữa tươi không đường: 350 ml</li>
-        <li>Đường cát: 400 gram</li>
-        <li>Nước: 440 ml</li>
-        <li>Bột cacao: 35 gram</li>
-    </ul>
-</div>
+                            <div class="recipe-info-box">
+                                <h4>Thông Tin Nhanh</h4>
+                                <p><span class="recipe-info-label">⏱ Thời gian:</span> 35 phút</p>
+                                <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
+                                <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 10 bánh</p>
+                            </div><br>
+                        </div>
 
-<div class="recipe-info-box">
-    <h4>Thông Tin Nhanh</h4>
-    <p><span class="recipe-info-label">⏱ Thời gian:</span> 35 phút</p>
-    <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
-    <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 10 bánh</p>
-</div><br>
-</div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
+                        <div class="step">
+                            <p><strong>Bước 1: Trộn bột</strong></p>
+                            <img src="https://file.hstatic.net/200000963387/file/g_60_-_90_phut_den_khi_bot_no_gap_doi_92c51d84fb894fdda72580e1a6151e9e_grande.png" alt="Trộn bột">
+                            <p class="img-note">Trộn đều các nguyên liệu khô</p>
+                            <p>
+                                <li>Trộn đều bột mì, bột cacao và đường bột trong một tô lớn.</li>
+                                <li>Trong một tô khác, đánh tan lòng trắng trứng, sau đó thêm sữa tươi và bơ đã đun chảy vào, khuấy đều.</li>
+                                <li>Từ từ đổ hỗn hợp ướt vào tô bột khô, trộn đều cho đến khi hỗn hợp đồng nhất.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 1: Trộn bột</strong></p>
-        <img src="https://file.hstatic.net/200000963387/file/g_60_-_90_phut_den_khi_bot_no_gap_doi_92c51d84fb894fdda72580e1a6151e9e_grande.png" alt="Trộn bột">
-        <p class="img-note">Trộn đều các nguyên liệu khô</p>
-        <p>
-            <li>Trộn đều bột mì, bột cacao và đường bột trong một tô lớn.</li>
-            <li>Trong một tô khác, đánh tan lòng trắng trứng, sau đó thêm sữa tươi và bơ đã đun chảy vào, khuấy đều.</li>
-            <li>Từ từ đổ hỗn hợp ướt vào tô bột khô, trộn đều cho đến khi hỗn hợp đồng nhất.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 2: Nhào bột bánh</strong></p>
+                            <img src="https://file.hstatic.net/200000963387/file/ng_tay_giup_tao_do_dai_cho_banh_donut_25241c7ffa8247d88c4a7ce62f37940a_grande.png" alt="Trộn nguyên liệu">
+                            <p class="img-note">Nhào bột bánh</p>
+                            <p>
+                                <li>Cho hỗn hợp sữa, trứng vào tô bột đã trộn bên trên rồi trộn đều chúng cho đến khi các hỗn hợp hòa quyện với nhau.</li>
+                                <li>Dùng cây đánh trứng khuấy đều cho nguyên liệu hòa quyện.</li>
+                                <li>Đổ bột ra mặt phẳng sạch, nhồi bột trong khoảng 10 phút đến khi bột mịn và không dính tay.</li>
+                                <li>Đặt bột vào tô, phủ khăn ẩm lên và ủ bột trong khoảng 1 giờ đến khi bột nở gấp đôi.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 2: Nhào bột bánh</strong></p>
-        <img src="https://file.hstatic.net/200000963387/file/ng_tay_giup_tao_do_dai_cho_banh_donut_25241c7ffa8247d88c4a7ce62f37940a_grande.png" alt="Trộn nguyên liệu">
-        <p class="img-note">Nhào bột bánh</p>
-        <p>
-            <li>Cho hỗn hợp sữa, trứng vào tô bột đã trộn bên trên rồi trộn đều chúng cho đến khi các hỗn hợp hòa quyện với nhau.</li>
-            <li>Dùng cây đánh trứng khuấy đều cho nguyên liệu hòa quyện.</li>
-            <li>Đổ bột ra mặt phẳng sạch, nhồi bột trong khoảng 10 phút đến khi bột mịn và không dính tay.</li>
-            <li>Đặt bột vào tô, phủ khăn ẩm lên và ủ bột trong khoảng 1 giờ đến khi bột nở gấp đôi.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 3: Tạo khuôn</strong></p>
+                            <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/164892/Originals/banh-donut-7.jpg" alt="Tạo hình donut">
+                            <p class="img-note">Cắt bột thành hình donut</p>
+                            <p>
+                                <li>Đổ bột ra mặt phẳng đã rắc một lớp bột mì mỏng, dùng cán lăn bột mỏng khoảng 1cm.</li>
+                                <li>Dùng khuôn cắt bánh donut để tạo hình bánh.</li>
+                                <li>Đặt bánh đã cắt lên khay nướng đã lót giấy nến, phủ khăn ẩm lên và ủ tiếp trong vòng 30 phút.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 3: Tạo khuôn</strong></p>
-        <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/164892/Originals/banh-donut-7.jpg" alt="Tạo hình donut">
-        <p class="img-note">Cắt bột thành hình donut</p>
-        <p>
-            <li>Đổ bột ra mặt phẳng đã rắc một lớp bột mì mỏng, dùng cán lăn bột mỏng khoảng 1cm.</li>
-            <li>Dùng khuôn cắt bánh donut để tạo hình bánh.</li>
-            <li>Đặt bánh đã cắt lên khay nướng đã lót giấy nến, phủ khăn ẩm lên và ủ tiếp trong vòng 30 phút.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 4: Chiên hoặc nướng</strong></p>
+                            <img src="https://www.huongnghiepaau.com/wp-content/uploads/2019/01/donut-chien-1.jpg" alt="Chiên donut">
+                            <p class="img-note">Chiên donut đến khi vàng đều</p>
+                            <p>
+                                <li>Đun nóng dầu ăn trong chảo sâu lòng, khi dầu nóng già thì thả bánh donut vào chiên với lửa vừa.</li>
+                                <li>Chiên đến khi bánh vàng đều hai mặt thì vớt ra.</li>
+                                <li>Dùng vợt lưới vớt bánh ra, để ráo dầu trên giấy thấm.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 4: Chiên hoặc nướng</strong></p>
-        <img src="https://www.huongnghiepaau.com/wp-content/uploads/2019/01/donut-chien-1.jpg" alt="Chiên donut">
-        <p class="img-note">Chiên donut đến khi vàng đều</p>
-        <p>
-            <li>Đun nóng dầu ăn trong chảo sâu lòng, khi dầu nóng già thì thả bánh donut vào chiên với lửa vừa.</li>
-            <li>Chiên đến khi bánh vàng đều hai mặt thì vớt ra.</li>
-            <li>Dùng vợt lưới vớt bánh ra, để ráo dầu trên giấy thấm.</li>
+                        <div class="step">
+                            <p><strong>Bước 5: Làm lớp phủ socola</strong></p>
+                            <img src="https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/bom-nhan-va-phu-socola-2.jpg" alt="Trang trí donut">
+                            <p class="img-note">Lớp phủ socola</p>
+                            <p>
+                                <li>Lấy một cái tô rồi cho vào đó 200gr socola. Bắt nồi nước lên bếp cho nước nóng rồi cho tô socola vào khuấy đều cho socola tan chảy.</li>
+                                <li>Nhúng mặt bánh donut vào phần sốt socola, kê lên giá và để yên cho socola khô lại.</li>
+                            </p>
+                        </div>
 
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 6: Trang trí và thành phẩm</strong></p>
+                            <img src="https://file.hstatic.net/200000079049/file/lam-banh-donut-sieu-ngon_1ae70acfda444a609cf9a62323ef4e4b.jpg" alt="Trang trí donut">
+                            <p class="img-note">Trang trí bánh donut</p>
+                            <p>
+                                <li>Dùng các loại topping như hạt trang trí, kẹo dẻo, socola bào vụn để trang trí lên mặt bánh theo sở thích.</li>
+                                <li>Ngoài ra bạn cũng có thể trang trí thêm cho bánh bằng dừa bào sợi hay những viên kẹo bảy màu bắt mắt.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 5: Làm lớp phủ socola</strong></p>
-        <img src="https://cdn.tgdd.vn/2021/09/CookRecipe/GalleryStep/bom-nhan-va-phu-socola-2.jpg" alt="Trang trí donut">
-        <p class="img-note">Lớp phủ socola</p>
-        <p>
-            <li>Lấy một cái tô rồi cho vào đó 200gr socola. Bắt nồi nước lên bếp cho nước nóng rồi cho tô socola vào khuấy đều cho socola tan chảy.</li>
-            <li>Nhúng mặt bánh donut vào phần sốt socola, kê lên giá và để yên cho socola khô lại.</li>
-        </p>
-    </div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
+                        <p>
+                            <li>Bảo quản donut trong hộp kín, để nơi thoáng mát và dùng trong vòng 2 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
+                            <li>Donut ngon nhất khi thưởng thức cùng một ly sữa tươi hoặc cà phê vào buổi sáng hoặc chiều tối.</li>
+                            ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Để giữ được độ mềm mịn của donut, bạn có thể hâm nóng bánh trong lò vi sóng khoảng 10-15 giây trước khi ăn."
+                        </p><br>
 
-    <div class="step">
-        <p><strong>Bước 6: Trang trí và thành phẩm</strong></p>
-        <img src="https://file.hstatic.net/200000079049/file/lam-banh-donut-sieu-ngon_1ae70acfda444a609cf9a62323ef4e4b.jpg" alt="Trang trí donut">
-        <p class="img-note">Trang trí bánh donut</p>
-        <p>
-            <li>Dùng các loại topping như hạt trang trí, kẹo dẻo, socola bào vụn để trang trí lên mặt bánh theo sở thích.</li>
-            <li>Ngoài ra bạn cũng có thể trang trí thêm cho bánh bằng dừa bào sợi hay những viên kẹo bảy màu bắt mắt.</li>
-        </p>
-    </div>
+                        <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
+                        <ul>
+                            <li>▫ Không nhào bột quá mạnh để donut không bị chai.</li>
+                            <li>▫ Chiên lửa vừa để bánh không bị cháy vỏ mà vẫn chín trong.</li>
+                            <li>▫ Đảm bảo dầu đủ nóng trước khi thả bánh vào chiên để bánh không bị ngấm quá nhiều dầu.</li>
+                        </ul>
+                    </div>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
-    <p>
-        <li>Bảo quản donut trong hộp kín, để nơi thoáng mát và dùng trong vòng 2 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
-        <li>Donut ngon nhất khi thưởng thức cùng một ly sữa tươi hoặc cà phê vào buổi sáng hoặc chiều tối.</li>
-        ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Để giữ được độ mềm mịn của donut, bạn có thể hâm nóng bánh trong lò vi sóng khoảng 10-15 giây trước khi ăn."
-    </p><br>
+                    <!-- 3. COOKIES -->
+                    <div class="recipe-box hidden" id="cookies">
+                        <h3>Cookies Socola Chip</h3><br>
 
-    <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
-    <ul>
-        <li>▫ Không nhào bột quá mạnh để donut không bị chai.</li>
-        <li>▫ Chiên lửa vừa để bánh không bị cháy vỏ mà vẫn chín trong.</li>
-        <li>▫ Đảm bảo dầu đủ nóng trước khi thả bánh vào chiên để bánh không bị ngấm quá nhiều dầu.</li>
-    </ul>
-</div>
+                        <div class="recipe-top">
+                            <div class="ingredient-card">
+                                <h3>Nguyên liệu</h3>
+                                <ul>
+                                    <li>Bột mì đa dụng: 300 gram</li>
+                                    <li>Đường bột: 200 gram</li>
+                                    <li>Lòng trắng trứng: 2 trái</li>
+                                    <li>Bơ: 200 gram</li>
+                                    <li>Vani: 7.5 ml</li>
+                                    <li>Nước: 440 ml</li>
+                                    <li>Muối: 1/2 muỗng cà phê</li>
+                                    <li>Choco chip: 100 gram</li>
+                                </ul>
+                            </div>
 
-            <!-- COOKIES -->
-<div class="recipe-box hidden" id="cookies">
-    <h3>Cookies Socola Chip</h3><br>
+                            <div class="recipe-info-box">
+                                <h4>Thông Tin Nhanh</h4>
+                                <p><span class="recipe-info-label">⏱ Thời gian:</span> 40 phút</p>
+                                <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
+                                <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 10 bánh</p>
+                            </div><br>
+                        </div>
 
-        <div class="recipe-top">
-    <div class="ingredient-card">
-    <h3>Nguyên liệu</h3>
-    <ul>
-        <li>Bột mì đa dụng: 300 gram</li>
-        <li>Đường bột: 200 gram</li>
-        <li>Lòng trắng trứng: 2 trái</li>
-        <li>Bơ: 200 gram</li>
-        <li>Vani: 7.5 ml</li>
-        <li>Nước: 440 ml</li>
-        <li>Muối: 1/2 muỗng cà phê</li>
-        <li>Choco chip: 100 gram</li>
-    </ul>
-</div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
 
-<div class="recipe-info-box">
-    <h4>Thông Tin Nhanh</h4>
-    <p><span class="recipe-info-label">⏱ Thời gian:</span> 40 phút</p>
-    <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
-    <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 10 bánh</p>
-</div><br>
-</div>
+                        <div class="step">
+                            <p><strong>Bước 1: Rây bột</strong></p>
+                            <img src="https://khietminhbakery.com/wp-content/uploads/2025/09/ray-bot-mi-va-cac-nguyen-lieu-kho-chuan-bi-lam-banh-cookie.jpg" alt="Rây bột">
+                            <p class="img-note">Rây bột mì và các nguyên liệu khô</p>
+                            <p>
+                                <li>Rây bột mì, muối và baking soda vào một tô lớn để loại bỏ các cục bột và giúp bột mịn hơn.</li>
+                                <li>Trong một tô khác, dùng máy đánh trứng đánh bông bơ và đường bột đến khi hỗn hợp trở nên nhẹ và mịn.</li>
+                                <li>Thêm lòng trắng trứng và vani vào hỗn hợp bơ, tiếp tục đánh đều.</li>
+                            </p>
+                        </div>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
+                        <div class="step">
+                            <p><strong>Bước 2: Trộn bột</strong></p>
+                            <img src="https://cdn.tgdd.vn/Files/2020/05/11/1254925/cach-lam-banh-quy-socola-nhanh-chong-don-gian-bang-4.jpg" alt="Trộn bột">
+                            <p class="img-note">Trộn đều các nguyên liệu</p>
+                            <p>
+                                <li>Từ từ thêm hỗn hợp bột mì vào tô bơ, trộn đều cho đến khi các nguyên liệu hòa quyện với nhau.</li>
+                                <li>Cuối cùng, thêm choco chip vào và trộn nhẹ nhàng để phân bố đều trong hỗn hợp bột.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 1: Rây bột</strong></p>
-        <img src="https://khietminhbakery.com/wp-content/uploads/2025/09/ray-bot-mi-va-cac-nguyen-lieu-kho-chuan-bi-lam-banh-cookie.jpg" alt="Rây bột">
-        <p class="img-note">Rây bột mì và các nguyên liệu khô</p>
-        <p>
-            <li>Rây bột mì, muối và baking soda vào một tô lớn để loại bỏ các cục bột và giúp bột mịn hơn.</li>
-            <li>Trong một tô khác, dùng máy đánh trứng đánh bông bơ và đường bột đến khi hỗn hợp trở nên nhẹ và mịn.</li>
-            <li>Thêm lòng trắng trứng và vani vào hỗn hợp bơ, tiếp tục đánh đều.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 3: Tạo hình</strong></p>
+                            <img src="https://cdn.tgdd.vn/Files/2020/05/11/1254925/cach-lam-banh-quy-socola-nhanh-chong-don-gian-bang-8.jpg" alt="Tạo hình cookies">
+                            <p class="img-note">Tạo hình bánh trước khi nướng</p>
+                            <p>
+                                <li>Dùng muỗng múc bột thành từng viên nhỏ và đặt lên khay nướng đã lót giấy nến, giữ khoảng cách giữa các viên bột để bánh không dính vào nhau khi nở.</li>
+                                <li>Nắn kích thước to hoặc nhỏ tùy theo sở thích. Tiếp tục dùng tay ép nhẹ để bánh dẹp xuống, rắc một ít socola chip lên mặt bánh để trang trí.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 2: Trộn bột</strong></p>
-        <img src="https://cdn.tgdd.vn/Files/2020/05/11/1254925/cach-lam-banh-quy-socola-nhanh-chong-don-gian-bang-4.jpg" alt="Trộn bột">
-        <p class="img-note">Trộn đều các nguyên liệu</p>
-        <p>
-            <li>Từ từ thêm hỗn hợp bột mì vào tô bơ, trộn đều cho đến khi các nguyên liệu hòa quyện với nhau.</li>
-            <li>Cuối cùng, thêm choco chip vào và trộn nhẹ nhàng để phân bố đều trong hỗn hợp bột.</li>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 4: Nướng bánh</strong></p>
+                            <img src="https://cdn.tgdd.vn/Files/2021/08/23/1377257/cach-lam-banh-quy-socola-chip-thom-ngon-de-lam-tai-nha-202108232004381151.jpg" alt="Nướng cookies">
+                            <p class="img-note">Nướng bánh đến khi vàng đều</p>
+                            <p>
+                                <li>Đặt khay bánh vào lò nướng đã được làm nóng trước ở nhiệt độ 175 độ C, nướng trong vòng 10-12 phút hoặc đến khi bánh có màu vàng nâu đẹp mắt.</li>
+                                <li>Lấy bánh ra khỏi lò và để nguội trên khay trong vài phút trước khi chuyển sang giá làm mát để bánh nguội hoàn toàn.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 3: Tạo hình</strong></p>
-        <img src="https://cdn.tgdd.vn/Files/2020/05/11/1254925/cach-lam-banh-quy-socola-nhanh-chong-don-gian-bang-8.jpg" alt="Tạo hình cookies">
-        <p class="img-note">Tạo hình bánh trước khi nướng</p>
-        <p>
-            <li>Dùng muỗng múc bột thành từng viên nhỏ và đặt lên khay nướng đã lót giấy nến, giữ khoảng cách giữa các viên bột để bánh không dính vào nhau khi nở.</li>
-            <li>Nắn kích thước to hoặc nhỏ tùy theo sở thích. Tiếp tục dùng tay ép nhẹ để bánh dẹp xuống, rắc một ít socola chip lên mặt bánh để trang trí.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 5: Thành phẩm</strong></p>
+                            <img src="https://lh3.googleusercontent.com/proxy/YHWAvdWs7Xij1TGByGxFnVVzmkdgViW6FACgBbtZHW5TObH9ggjqTkaWtTzK7okw5WaTZ5m72sb31OwBkHlxSrrV-HjH8LPnhocn0zc_h2TusI3ThhLCQwprAgHrnF60s3iH" alt="thành phẩm cookies">
+                            <p class="img-note">Thành phẩm bánh cookies socola chip</p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 4: Nướng bánh</strong></p>
-        <img src="https://cdn.tgdd.vn/Files/2021/08/23/1377257/cach-lam-banh-quy-socola-chip-thom-ngon-de-lam-tai-nha-202108232004381151.jpg" alt="Nướng cookies">
-        <p class="img-note">Nướng bánh đến khi vàng đều</p>
-        <p>
-            <li>Đặt khay bánh vào lò nướng đã được làm nóng trước ở nhiệt độ 175 độ C, nướng trong vòng 10-12 phút hoặc đến khi bánh có màu vàng nâu đẹp mắt.</li>
-            <li>Lấy bánh ra khỏi lò và để nguội trên khay trong vài phút trước khi chuyển sang giá làm mát để bánh nguội hoàn toàn.</li>
-    </div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
+                        <p>
+                            <li>Bảo quản cookies trong hộp kín, để nơi thoáng mát và dùng trong vòng 1 tuần để đảm bảo hương vị và độ giòn của bánh.</li>
+                            <li>Cookies ngon nhất khi thưởng thức cùng một ly sữa tươi hoặc cà phê vào buổi sáng hoặc chiều tối.</li>
+                            <li>Để bánh nguội hoàn toàn trước khi bảo quản để tránh làm bánh bị ẩm.</li>
+                            ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Cookies sẽ giữ được độ giòn lâu hơn nếu bạn thêm một ít muối vào bột. Muối giúp cân bằng vị ngọt và làm nổi bật hương vị socola trong bánh."
+                        </p><br>
 
-    <div class="step">
-        <p><strong>Bước 5: Thành phẩm</strong></p>
-        <img src="https://lh3.googleusercontent.com/proxy/YHWAvdWs7Xij1TGByGxFnVVzmkdgViW6FACgBbtZHW5TObH9ggjqTkaWtTzK7okw5WaTZ5m72sb31OwBkHlxSrrV-HjH8LPnhocn0zc_h2TusI3ThhLCQwprAgHrnF60s3iH" alt="thành phẩm cookies">
-        <p class="img-note">Thành phẩm bánh cookies socola chip</p>
-    </div>
+                        <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
+                        <ul>
+                            <li>▫ Không trộn bột quá lâu để tránh làm bánh bị cứng.</li>
+                            <li>▫ Đảm bảo lò nướng được làm nóng trước để bánh nở đều và có màu vàng đẹp.</li>
+                            <li>▫ Không nên nướng quá lâu để tránh bánh bị khô và mất đi độ mềm mại bên trong.</li>
+                        </ul>
+                    </div>
 
-        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
-    <p>
-        <li>Bảo quản cookies trong hộp kín, để nơi thoáng mát và dùng trong vòng 1 tuần để đảm bảo hương vị và độ giòn của bánh.</li>
-        <li>Cookies ngon nhất khi thưởng thức cùng một ly sữa tươi hoặc cà phê vào buổi sáng hoặc chiều tối.</li>
-        <li>Để bánh nguội hoàn toàn trước khi bảo quản để tránh làm bánh bị ẩm.</li>
-        ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Cookies sẽ giữ được độ giòn lâu hơn nếu bạn thêm một ít muối vào bột. Muối giúp cân bằng vị ngọt và làm nổi bật hương vị socola trong bánh."
-    </p><br>
+                    <!-- 4. TIRAMISU -->
+                    <div class="recipe-box hidden" id="tiramisu">
+                        <h3>Tiramisu</h3><br>
 
-    <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
-    <ul>
-        <li>▫ Không trộn bột quá lâu để tránh làm bánh bị cứng.</li>
-        <li>▫ Đảm bảo lò nướng được làm nóng trước để bánh nở đều và có màu vàng đẹp.</li>
-        <li>▫ Không nên nướng quá lâu để tránh bánh bị khô và mất đi độ mềm mại bên trong.</li>
-    </ul>
+                        <div class="recipe-top">
+                            <div class="ingredient-card">
+                                <h3>Nguyên liệu</h3>
+                                <ul>
+                                    <li>Bánh sampa: 200 gram</li>
+                                    <li>Kem tươi : 200 ml, 30 – 40 % béo</li>
+                                    <li>Phô mai Mascarpone: 250 gram</li>
+                                    <li>Bột sữa béo: 10 gram</li>
+                                    <li>Lòng đỏ trứng: 100 gram</li>
+                                    <li>Bơ: 100 gram</li>
+                                    <li>Sữa tươi không đường: 30 ml</li>
+                                    <li>Đường cát: 100 gram</li>
+                                    <li>Nước: 440 ml</li>
+                                    <li>Cà phê đen pha đặc: 200 ml</li>
+                                    <li>Bột cacao: 10 gram</li>
+                                </ul>
+                            </div>
 
-</div>
+                            <div class="recipe-info-box">
+                                <h4>Thông Tin Nhanh</h4>
+                                <p><span class="recipe-info-label">⏱ Thời gian:</span> 50 phút</p>
+                                <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
+                                <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 1 bánh</p>
+                            </div><br>
+                        </div>
 
-            <!-- TIRAMISU -->
-<div class="recipe-box hidden" id="tiramisu">
-    <h3>Tiramisu</h3><br>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
 
-     <div class="recipe-top">
-    <div class="ingredient-card">
-    <h3>Nguyên liệu</h3>
-    <ul>
-        <li>Bánh sampa: 200 gram</li>
-        <li>Kem tươi : 200 ml, 30 – 40 % béo</li>
-        <li>Phô mai Mascarpone: 250 gram</li>
-        <li>Bột sữa béo: 10 gram</li>
-        <li>Lòng đỏ trứng: 100 gram</li>
-        <li>Bơ: 100 gram</li>
-        <li>Sữa tươi không đường: 30 ml</li>
-        <li>Đường cát: 100 gram</li>
-        <li>Nước: 440 ml</li>
-        <li>Cà phê đen pha đặc: 200 ml</li>
-        <li>Bột cacao: 10 gram</li>
-    </ul>
-</div>
+                        <div class="step">
+                            <p><strong>Bước 1: Pha bột cà phê</strong></p>
+                            <img src="https://2.bp.blogspot.com/-7hxXKa9g6iE/U-7rouHvx3I/AAAAAAAABC4/q3gp6nKROrc/s1600/9.jpg" alt="Trộn bột">
+                            <p class="img-note">Pha bột cà phê đen đặc</p>
+                            <p>
+                                <li>Pha cà phê đen đặc, để nguội.</li>
+                                <li>Cho cà phê vào tô lớn, thêm rượu Rum vào trộn đều.</li>
+                            </p>
+                        </div>
 
-<div class="recipe-info-box">
-    <h4>Thông Tin Nhanh</h4>
-    <p><span class="recipe-info-label">⏱ Thời gian:</span> 50 phút</p>
-    <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
-    <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 1 bánh</p>
-</div><br>
-</div>
+                        <div class="step">
+                            <p><strong>Bước 2: Đánh trứng và kem whipping</strong></p>
+                            <img src="https://cdn.eva.vn//upload/2-2015/images/2015-05-02/1430560400-banh-tiraminisu_3.jpg" alt="Đánh trứng">
+                            <p class="img-note">Đánh bông lòng đỏ trứng và whipping</p>
+                            <p>
+                                <li>Dùng máy đánh trứng đánh bông lòng đỏ trứng với đường cát đến khi hỗn hợp mịn và có màu vàng nhạt.</li>
+                                <p style="color:rgb(235, 110, 38);">Gợi ý nhỏ: Đánh lòng đỏ trứng trên nước ấm (40 - 50 độ) giúp cho đường tan, trứng bông nhanh và ổn định cấu trúc hơn.</p>
+                                <li>Trong một tô khác, đánh bông Whipping cream đến khi kem tạo chóp mềm.</li>
+                            </p>
+                        </div>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
+                        <div class="step">
+                            <p><strong>Bước 3: Làm kem tiramisu</strong></p>
+                            <img src="https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-kem-tiramisu-2.jpg" alt="Làm kem tiramisu">
+                            <p class="img-note">Làm kem tiramisu</p>
+                            <p>
+                                <li>Thêm phô mai Mascarpone vào hỗn hợp lòng đỏ trứng, trộn đều đến khi hỗn hợp mịn màng.</li>
+                                <li>Nhẹ nhàng trộn kem whipping vào hỗn hợp phô mai và trứng, dùng spatula fold nhẹ tay để giữ độ bông của kem.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 1: Pha bột cà phê</strong></p>
-        <img src="https://2.bp.blogspot.com/-7hxXKa9g6iE/U-7rouHvx3I/AAAAAAAABC4/q3gp6nKROrc/s1600/9.jpg" alt="Trộn bột">
-        <p class="img-note">Pha bột cà phê đen đặc</p>
-        <p>
-            <li>Pha cà phê đen đặc, để nguội.</li>
-            <li>Cho cà phê vào tô lớn, thêm rượu Rum vào trộn đều.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 4: Ráp bánh - Đổ khuôn</strong></p>
+                            <img src="https://www.huongnghiepaau.com/wp-content/uploads/2018/04/rap-banh-tiramisu.jpg" alt="Đổ khuôn tiramisu">
+                            <p class="img-note">Ráp bánh tiramisu</p>
+                            <p>
+                                <li>Nhúng từng chiếc bánh sampa vào hỗn hợp cà phê đã pha, sau đó xếp một lớp bánh vào đáy khuôn.</li>
+                                <li>Trải một lớp kem tiramisu lên trên lớp bánh, dùng spatula dàn đều.</li>
+                                <li>Lặp lại các bước trên cho đến khi hết nguyên liệu, kết thúc bằng một lớp kem tiramisu.</li>
+                                <li>Dùng màng bọc thực phẩm bọc kín hộp bánh lại và cho vào ngăn mát tủ lạnh từ 4 - 6 tiếng hoặc để qua đêm.</li>
+                            </p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 2: Đánh trứng và kem whipping</strong></p>
-        <img src="https://cdn.eva.vn//upload/2-2015/images/2015-05-02/1430560400-banh-tiraminisu_3.jpg" alt="Đánh trứng">
-        <p class="img-note">Đánh bông lòng đỏ trứng và whipping</p>
-        <p>
-            <li>Dùng máy đánh trứng đánh bông lòng đỏ trứng với đường cát đến khi hỗn hợp mịn và có màu vàng nhạt.</li>
-            <p style="color:rgb(235, 110, 38);">Gợi ý nhỏ: Đánh lòng đỏ trứng trên nước ấm (40 - 50 độ) giúp cho đường tan, trứng bông nhanh và ổn định cấu trúc hơn.</p>
-            <li>Trong một tô khác, đánh bông Whipping cream đến khi kem tạo chóp mềm.</li>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 5: Trang trí và thành phẩm</strong></p>
+                            <img src="https://www.micheldumas.com/wp-content/uploads/2025/05/tiramisu1-ezgif.com-jpg-to-webp-converter-1-1.webp" alt="Trang trí tiramisu">
+                            <p class="img-note">Trang trí bánh tiramisu</p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 3: Làm kem tiramisu</strong></p>
-        <img src="https://cdn.tgdd.vn/2021/04/CookRecipe/GalleryStep/lam-kem-tiramisu-2.jpg" alt="Làm kem tiramisu">
-        <p class="img-note">Làm kem tiramisu</p>
-        <p>
-            <li>Thêm phô mai Mascarpone vào hỗn hợp lòng đỏ trứng, trộn đều đến khi hỗn hợp mịn màng.</li>
-            <li>Nhẹ nhàng trộn kem whipping vào hỗn hợp phô mai và trứng, dùng spatula fold nhẹ tay để giữ độ bông của kem.</li>
-    </div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
+                        <p>
+                            <li>Bảo quản tiramisu trong hộp kín, để ngăn mát tủ lạnh và dùng trong vòng 2-3 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
+                            <li>Trước khi thưởng thức, nên để bánh ở nhiệt độ phòng khoảng 10-15 phút để kem mềm mại hơn.</li>
+                            ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Tiramisu ngon nhất khi được thưởng thức sau ít nhất 4 giờ trong tủ lạnh, giúp các hương vị hòa quyện hoàn hảo."
+                        </p><br>
 
-    <div class="step">
-        <p><strong>Bước 4: Ráp bánh - Đổ khuôn</strong></p>
-        <img src="https://www.huongnghiepaau.com/wp-content/uploads/2018/04/rap-banh-tiramisu.jpg" alt="Đổ khuôn tiramisu">
-        <p class="img-note">Ráp bánh tiramisu</p>
-        <p>
-            <li>Nhúng từng chiếc bánh sampa vào hỗn hợp cà phê đã pha, sau đó xếp một lớp bánh vào đáy khuôn.</li>
-            <li>Trải một lớp kem tiramisu lên trên lớp bánh, dùng spatula dàn đều.</li>
-            <li>Lặp lại các bước trên cho đến khi hết nguyên liệu, kết thúc bằng một lớp kem tiramisu.</li>
-            <li>Dùng màng bọc thực phẩm bọc kín hộp bánh lại và cho vào ngăn mát tủ lạnh từ 4 - 6 tiếng hoặc để qua đêm.</li>
-    </div>
+                        <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
+                        <ul>
+                            <li>▫ Không được nhúng bánh quá lâu vì sẽ khiến bánh bị mềm nhũn.</li>
+                            <li>▫ Phần kem tiramisu nên được trộn nhẹ nhàng để giữ được độ bông mịn.</li>
+                            <li>▫ Rắc bột cacao ngay trước khi thưởng thức để tránh bị ướt và mất đi hương vị đặc trưng.</li>
+                        </ul>
+                    </div>
 
-    <div class="step">
-        <p><strong>Bước 5: Trang trí và thành phẩm</strong></p>
-        <img src="https://www.micheldumas.com/wp-content/uploads/2025/05/tiramisu1-ezgif.com-jpg-to-webp-converter-1-1.webp" alt="Trang trí tiramisu">
-        <p class="img-note">Trang trí bánh tiramisu</p>
-    </div>
+                    <!-- 5. RED VELVET -->
+                    <div class="recipe-box hidden" id="redvelvet">
+                        <h3>Red Velvet Cake</h3><br>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
-    <p>
-        <li>Bảo quản tiramisu trong hộp kín, để ngăn mát tủ lạnh và dùng trong vòng 2-3 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
-        <li>Trước khi thưởng thức, nên để bánh ở nhiệt độ phòng khoảng 10-15 phút để kem mềm mại hơn.</li>
-        ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Tiramisu ngon nhất khi được thưởng thức sau ít nhất 4 giờ trong tủ lạnh, giúp các hương vị hòa quyện hoàn hảo."
-    </p><br>
+                        <div class="recipe-top">
+                            <div class="ingredient-card">
+                                <h3>Nguyên liệu</h3>
+                                <ul>
+                                    <li>Bột mì đa dụng: 200 gram</li>
+                                    <li>Bột ngô: 25 gram</li>
+                                    <li>Kem phô mai: 250 gram</li>
+                                    <li>Lòng trắng trứng: 100 gram</li>
+                                    <li>Bơ: 200 gram</li>
+                                    <li>Sữa tươi không đường: 150 ml</li>
+                                    <li>Đường cát: 400 gram</li>
+                                    <li>Đường bột: 140 gram</li>
+                                    <li>Nước: 440 ml</li>
+                                    <li>Bột cacao: 7 gram</li>
+                                    <li>Màu thực phẩm đỏ: 15 ml</li>
+                                    <li>Giấm trắng: 15 ml</li>
+                                </ul>
+                            </div>
 
+                            <div class="recipe-info-box">
+                                <h4>Thông Tin Nhanh</h4>
+                                <p><span class="recipe-info-label">⏱ Thời gian:</span> 45 phút</p>
+                                <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
+                                <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 1 bánh</p>
+                            </div><br>
+                        </div>
 
-    <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
-    <ul>
-        <li>▫ Không được nhúng bánh quá lâu vì sẽ khiến bánh bị mềm nhũn.</li>
-        <li>▫ Phần kem tiramisu nên được trộn nhẹ nhàng để giữ được độ bông mịn.</li>
-        <li>▫ Rắc bột cacao ngay trước khi thưởng thức để tránh bị ướt và mất đi hương vị đặc trưng.</li>
-    </ul>
-</div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
 
-            <!-- BÁNH REDVELVET -->
-<div class="recipe-box hidden" id="redvelvet">
-    <h3>Red Velvet Cake</h3><br>
+                        <div class="step">
+                            <p><strong>Bước 1: Chuẩn bị nguyên liệu</strong></p>
+                            <img src="https://cdn.tgdd.vn/Files/2021/08/20/1376567/cach-lam-banh-red-velvet-beo-min-thom-ngon-don-gian-tai-nha-202108201558291254.jpg" alt="Chuẩn bị nguyên liệu">
+                            <p class="img-note">Rây bột và trộn sữa với giấm</p>
+                            <p>
+                                <li>Rây bột mì, bột ngô và bột cacao vào một tô lớn để loại bỏ các cục bột và giúp bột mịn hơn.</li>
+                                <li>Trong một tô khác, trộn sữa tươi với giấm trắng, để yên trong 5 phút để tạo thành sữa chua tự nhiên.</li>
+                            </p>
+                        </div>
 
-    <div class="recipe-top">
-    <div class="ingredient-card">
-    <h3>Nguyên liệu</h3>
-    <ul>
-        <li>Bột mì đa dụng: 200 gram</li>
-        <li>Bột ngô: 25 gram</li>
-        <li>Kem phô mai: 250 gram</li>
-        <li>Lòng trắng trứng: 100 gram</li>
-        <li>Bơ: 200 gram</li>
-        <li>Sữa tươi không đường: 150 ml</li>
-        <li>Đường cát: 400 gram</li>
-        <li>Đường bột: 140 gram</li>
-        <li>Nước: 440 ml</li>
-        <li>Bột cacao: 7 gram</li>
-        <li>Màu thực phẩm đỏ: 15 ml</li>
-        <li>Giấm trắng: 15 ml</li>
-    </ul>
-</div>
+                        <div class="step">
+                            <p><strong>Bước 2: Trộn bột bánh</strong></p>
+                            <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_05-500x333.jpg" alt="Trộn bột">
+                            <p class="img-note">Nhào bột bánh</p>
+                            <p>
+                                <li>Dùng máy đánh trứng đánh bông bơ và đường cát đến khi hỗn hợp trở nên nhẹ và mịn.</li>
+                                <li>Thêm lòng trắng trứng vào hỗn hợp bơ, tiếp tục đánh đều.</li>
+                                <li>Từ từ thêm hỗn hợp bột mì vào tô bơ, xen kẽ với sữa chua đã chuẩn bị, trộn đều cho đến khi các nguyên liệu hòa quyện với nhau.</li>
+                                <li>Thêm màu thực phẩm đỏ vào hỗn hợp bột, trộn đều để tạo màu đỏ đặc trưng cho bánh.</li>
+                            </p>
+                        </div>
 
-<div class="recipe-info-box">
-    <h4>Thông Tin Nhanh</h4>
-    <p><span class="recipe-info-label">⏱ Thời gian:</span> 45 phút</p>
-    <p><span class="recipe-info-label">🔥 Độ khó:</span> Trung bình</p>
-    <p><span class="recipe-info-label">🍰 Khẩu phần:</span> 1 bánh</p>
-</div><br>
-</div>
+                        <div class="step">
+                            <p><strong>Bước 3: Nướng bánh</strong></p>
+                            <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_07-500x333.jpg" alt="Nướng bánh">
+                            <p class="img-note">Nướng bánh đến khi chín</p>
+                            <p>
+                                <li>Đổ bột vào khuôn bánh đã được lót giấy nến hoặc phết bơ chống dính.</li>
+                                <li>Bật lò nướng ở nhiệt độ 175 độ C trước 10 phút, sau đó cho khuôn bánh vào nướng trong vòng 30-35 phút hoặc đến khi bánh chín (kiểm tra bằng cách dùng tăm xiên vào giữa bánh, nếu tăm rút ra sạch là bánh đã chín).</li>
+                                <li>Lấy bánh ra khỏi lò và để nguội trên khay trong vài phút trước khi chuyển sang giá làm mát để bánh nguội hoàn toàn.</li>
+                            </p>
+                        </div>
 
-    <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Cách làm</p>
+                        <div class="step">
+                            <p><strong>Bước 4: Làm kem bánh</strong></p>
+                            <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_10-500x333.jpg" alt="Làm kem bánh">
+                            <p class="img-note">Làm kem phô mai</p>
+                            <p>
+                                <li>Dùng máy đánh trứng đánh bông kem phô mai và đường bột đến khi hỗn hợp mịn và bông nhẹ.</li>
+                                <li>Chia bánh thành hai hoặc ba lớp, phết một lớp kem phô mai lên mỗi lớp bánh, sau đó xếp các lớp bánh lại với nhau.</li>
+                                <li>Phết kem phô mai lên toàn bộ bề mặt bánh để trang trí.</li> 
+                            </p> 
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 1: Chuẩn bị nguyên liệu</strong></p>
-        <img src="https://cdn.tgdd.vn/Files/2021/08/20/1376567/cach-lam-banh-red-velvet-beo-min-thom-ngon-don-gian-tai-nha-202108201558291254.jpg" alt="Chuẩn bị nguyên liệu">
-        <p class="img-note">Rây bột và trộn sữa với giấm</p>
-        <p>
-            <li>Rây bột mì, bột ngô và bột cacao vào một tô lớn để loại bỏ các cục bột và giúp bột mịn hơn.</li>
-            <li>Trong một tô khác, trộn sữa tươi với giấm trắng, để yên trong 5 phút để tạo thành sữa chua tự nhiên.</li>
-        </p>
-    </div>
+                        <div class="step">
+                            <p><strong>Bước 5: Trang trí và thành phẩm</strong></p>
+                            <img src="https://cdn.tgdd.vn/Files/2021/08/20/1376567/cach-lam-banh-red-velvet-beo-min-thom-ngon-don-gian-tai-nha-202206041429182755.jpg" alt="Trang trí bánh">
+                            <p class="img-note">Trang trí bánh Red Velvet</p>
+                        </div>
 
-    <div class="step">
-        <p><strong>Bước 2: Trộn bột bánh</strong></p>
-        <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_05-500x333.jpg" alt="Trộn bột">
-        <p class="img-note">Nhào bột bánh</p>
-        <p>
-            <li>Dùng máy đánh trứng đánh bông bơ và đường cát đến khi hỗn hợp trở nên nhẹ và mịn.</li>
-            <li>Thêm lòng trắng trứng vào hỗn hợp bơ, tiếp tục đánh đều.</li>
-            <li>Từ từ thêm hỗn hợp bột mì vào tô bơ, xen kẽ với sữa chua đã chuẩn bị, trộn đều cho đến khi các nguyên liệu hòa quyện với nhau.</li>
-            <li>Thêm màu thực phẩm đỏ vào hỗn hợp bột, trộn đều để tạo màu đỏ đặc trưng cho bánh.</li>
-        </p>
-    </div>
+                        <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
+                        <p>
+                            <li>Bảo quản bánh Red Velvet trong hộp kín, để ngăn mát tủ lạnh và dùng trong vòng 3-4 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
+                            <li>Trước khi thưởng thức, nên để bánh ở nhiệt độ phòng khoảng 10-15 phút để kem mềm mại hơn.</li>
+                            ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Red Velvet ngon nhất khi được thưởng thức sau ít nhất 2 giờ trong tủ lạnh, giúp các hương vị hòa quyện hoàn hảo."
+                        </p><br>
 
-    <div class="step">
-        <p><strong>Bước 3: Nướng bánh</strong></p>
-        <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_07-500x333.jpg" alt="Nướng bánh">
-        <p class="img-note">Nướng bánh đến khi chín</p>
-        <p>
-            <li>Đổ bột vào khuôn bánh đã được lót giấy nến hoặc phết bơ chống dính.</li>
-            <li>Bật lò nướng ở nhiệt độ 175 độ C trước 10 phút, sau đó cho khuôn bánh vào nướng trong vòng 30-35 phút hoặc đến khi bánh chín (kiểm tra bằng cách dùng tăm xiên vào giữa bánh, nếu tăm rút ra sạch là bánh đã chín).</li>
-            <li>Lấy bánh ra khỏi lò và để nguội trên khay trong vài phút trước khi chuyển sang giá làm mát để bánh nguội hoàn toàn.</li>
-        </p>
-    </div>
+                        <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
+                        <ul>
+                            <li>▫ Đảm bảo không trộn bột quá lâu để bánh không bị chai.</li>
+                            <li>▫ Khi phết kem, nên dùng spatula dàn đều để có lớp kem mịn và đẹp mắt.</li>
+                            <li>▫ Để bánh nguội hoàn toàn trước khi phết kem để tránh kem bị chảy.</li>
+                            <li>▫ Cẩn thận ở bước pha màu vì Red Velvet chỉ đẹp khi có màu đỏ nhung. Bạn cần điều chỉnh sao cho phù hợp không nên pha màu quá đậm, cũng không quá nhạt mà phải là màu đỏ vừa phải, tinh tế và cuốn hút!</li>
+                        </ul>  
+                    </div>
 
-    <div class="step">
-        <p><strong>Bước 4: Làm kem bánh</strong></p>
-        <img src="http://abby.vn/wp-content/uploads/2015/04/banh_red_velvet_10-500x333.jpg" alt="Làm kem bánh">
-        <p class="img-note">Làm kem phô mai</p>
-        <p>
-            <li>Dùng máy đánh trứng đánh bông kem phô mai và đường bột đến khi hỗn hợp mịn và bông nhẹ.</li>
-            <li>Chia bánh thành hai hoặc ba lớp, phết một lớp kem phô mai lên mỗi lớp bánh, sau đó xếp các lớp bánh lại với nhau.</li>
-            <li>Phết kem phô mai lên toàn bộ bề mặt bánh để trang trí.</li> 
-        </p> 
-    </div>
-
-    <div class="step">
-        <p><strong>Bước 5: Trang trí và thành phẩm</strong></p>
-        <img src="https://cdn.tgdd.vn/Files/2021/08/20/1376567/cach-lam-banh-red-velvet-beo-min-thom-ngon-don-gian-tai-nha-202206041429182755.jpg" alt="Trang trí bánh">
-        <p class="img-note">Trang trí bánh Red Velvet</p>
-    </div>
-
-     <p style="color: #c8587a; font-size: 26px; font-family: 'Dancing Script', cursive;">Bảo quản và thưởng thức</p>
-    <p>
-        <li>Bảo quản bánh Red Velvet trong hộp kín, để ngăn mát tủ lạnh và dùng trong vòng 3-4 ngày để đảm bảo hương vị và độ tươi ngon của bánh.</li>
-        <li>Trước khi thưởng thức, nên để bánh ở nhiệt độ phòng khoảng 10-15 phút để kem mềm mại hơn.</li>
-        ✨Lời khuyên từ đầu bếp <strong>Christophe Felder</strong>: "Red Velvet ngon nhất khi được thưởng thức sau ít nhất 2 giờ trong tủ lạnh, giúp các hương vị hòa quyện hoàn hảo."
-    </p><br>
-
-    <p style="color: #c8587a; font-size: 22px"><strong>💬 Lưu ý:</strong></p>
-    <ul>
-        <li>▫ Đảm bảo không trộn bột quá lâu để bánh không bị chai.</li>
-        <li>▫ Khi phết kem, nên dùng spatula dàn đều để có lớp kem mịn và đẹp mắt.</li>
-        <li>▫ Để bánh nguội hoàn toàn trước khi phết kem để tránh kem bị chảy.</li>
-        <li>▫ Cẩn thận ở bước pha màu vì Red Velvet chỉ đẹp khi có màu đỏ nhung. Bạn cần điều chỉnh sao cho phù hợp không nên pha màu quá đậm, cũng không quá nhạt mà phải là màu đỏ vừa phải, tinh tế và cuốn hút!</li>
-    </ul>  
-</div>
-
-        </div>
-    </div>
-</section>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <!-- FOOTER MỚI (Style Poeme Cake) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 
-                <!-- Cột 1: Thông tin liên hệ -->
+                <!-- Cột liên hệ -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Hệ</h3>
                     <ul class="contact-info-list">
@@ -631,14 +623,12 @@
                             <span>ĐKKD: 0123456789 do Sở KHĐT TP.HCM cấp</span>
                         </li>
                     </ul>
-                    <!-- Logo Bộ công thương (Demo) -->
                     <div class="gov-icon">
                         <i class="fa-solid fa-lemon"></i> Halo Sweet
-                        
                     </div>
                 </div>
 
-                <!-- Cột 2: Sản Phẩm -->
+                <!-- Cột sản phẩm -->
                 <div class="footer-col">
                     <h3 class="footer-title">Sản Phẩm</h3>
                     <ul class="footer-links">
@@ -649,7 +639,7 @@
                     </ul>
                 </div>
 
-                <!-- Cột 3: Liên Kết Nhanh -->
+                <!-- Cột liên kết nhanh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Kết Nhanh</h3>
                     <ul class="footer-links">
@@ -660,7 +650,7 @@
                     </ul>
                 </div>
 
-                <!-- Cột 4: Thư Viện Ảnh (Gallery) -->
+                <!-- Cột thư viện ảnh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Thư Viện Ảnh</h3>
                     <div class="footer-gallery">
@@ -676,10 +666,11 @@
             </div>
         </div>
         
-        <!-- Dòng bản quyền dưới cùng -->
         <div class="copyright-bar">
             <div class="container">
                 <p>&copy; 2023 Tiệm Bánh Halo Sweet. All rights reserved.</p>
             </div>
         </div>
     </footer>
+</body>
+</html>
