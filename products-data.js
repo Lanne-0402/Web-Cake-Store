@@ -1,7 +1,3 @@
-// ===== SHARED PRODUCT DATABASE =====
-// Include this file in both product.html and product-detail.html
-// <script src="products-data.js"></script>
-
 const productsDatabase = {
     '01': {
         name: 'Bánh sinh nhật theo yêu cầu',
@@ -219,7 +215,6 @@ const productsDatabase = {
     '36': { name: 'Mousse Mocha', price: 22000, originalPrice: 32000, discount: 15, img: 'https://i.pinimg.com/1200x/0e/b3/cd/0eb3cd869291b9188d59ed1850cdbf4f.jpg', images: ['https://i.pinimg.com/1200x/0e/b3/cd/0eb3cd869291b9188d59ed1850cdbf4f.jpg'], type: 'donut', rating: 4.5, reviews: 150, sold: 150, description: 'Thử hương vị mới của nhà Halo nhé!', features: ['Mịn mượt', 'Vị dâu nhẹ', 'Ăn lạnh ngon'], ingredients: ['Dâu tươi', 'Kem tươi', 'Gelatin'], stock: 'Còn hàng' }
 };
 
-// Function to get product by ID
 function getProductById(id) {
     return productsDatabase[id] || null;
 }

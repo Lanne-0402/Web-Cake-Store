@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style2.css">
     <style>
 
-        /* Breadcrumb */
         .breadcrumb {
             max-width: 1400px;
             margin: 20px auto;
@@ -46,7 +45,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Image Gallery */
         .image-gallery {
             display: flex;
             flex-direction: column;
@@ -107,7 +105,6 @@
             box-shadow: 0 0 10px rgba(151, 161, 59, 0.3);
         }
 
-        /* Product Info */
         .detail-info h1 {
             font-size: 32px;
             margin-bottom: 15px;
@@ -182,7 +179,6 @@
             color: #666;
         }
 
-        /* Product Features */
         .features-list {
             list-style: none;
             margin-bottom: 25px;
@@ -202,7 +198,6 @@
             font-weight: bold;
         }
 
-        /* Action Buttons */
         .action-buttons {
             display: flex;
             gap: 15px;
@@ -249,7 +244,6 @@
             color: white;
         }
 
-        /* Tabs Section */
         .tabs-container {
             background: var(--white);
             border-radius: 20px;
@@ -300,7 +294,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* === RELATED PRODUCTS === */
+ /* MÓN LIÊN QUAN */
 .related-section {
     margin-top: 60px;
 }
@@ -473,7 +467,6 @@
     transform: translateY(-50%) scale(1);
 }
 
-        /* Notification Toast */
         .toast {
             position: fixed;
             top: 100px;
@@ -521,7 +514,6 @@
 
 <body>
 
-    <!-- 1. TOP BAR -->
     <div class="top-bar">
         <div class="container top-bar-content">
             <div class="top-bar-left">
@@ -537,7 +529,6 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="container navbar">
             <div class="logo">
@@ -545,7 +536,7 @@
             </div>
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <!-- Data-target dùng để jQuery biết cần hiện trang nào -->
+
                 <li><a href="index.html" class="nav-item">Trang Chủ</a></li>
                 <li><a href="introduce.html" class="nav-item">Giới Thiệu</a></li>
                 <li><a href="product.html" class="nav-item active">Sản Phẩm</a></li>
@@ -559,12 +550,10 @@
         </div>
     </header>
 
-<!-- NÚT LÊN ĐẦU TRANG -->
     <div id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-    
-    <!-- Breadcrumb -->
+
     <div class="breadcrumb">
         <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a> / 
         <a href="product.html">Sản phẩm</a> / 
@@ -572,9 +561,9 @@
     </div>
 
     <main class="detail-container">
-        <!-- Product Detail -->
+
         <div class="product-detail-wrapper">
-            <!-- Image Gallery -->
+
             <div class="image-gallery">
                 <div class="main-image-container" id="mainImageContainer">
                     <img src="cake-pic/tiramisudautay320.jpg" 
@@ -596,7 +585,6 @@
                 </div>
             </div>
 
-            <!-- Product Info -->
             <div class="detail-info">
                 <h1>Tart Chocolate Cao Cấp</h1>
                 
@@ -635,8 +623,7 @@
                     <li>Không chất bảo quản, làm tươi mỗi ngày</li>
                     <li>Bảo quản 3 ngày trong tủ lạnh</li>
                 </ul>
-                
-                <!-- Action Buttons -->
+
                 <div class="action-buttons">
                     <a href="contact.html" class="btn-primary" id="buyNow">
                         <i class="fas fa-shopping-bag"></i>
@@ -649,7 +636,6 @@
             </div>
         </div>
 
-        <!-- Tabs Section -->
         <div class="tabs-container">
             <div class="tabs-header">
                 <button class="tab-btn active" data-tab="description">Mô tả</button>
@@ -721,7 +707,6 @@
             </div>
         </div>
 
-        <!-- Related Products -->
         <div class="related-section">
             <h2 class="section-title">Sản phẩm tương tự</h2>
             <div class="related-wrapper">
@@ -729,18 +714,16 @@
                 <button class="arrow-btn right" id="scrollRight"><i class="fas fa-chevron-right"></i></button>
 
                 <div class="related-scroll" id="relatedScroll">
-                    <!-- Products will be dynamically loaded here -->
+
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- FOOTER MỚI (Style Poeme Cake) -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                
-                <!-- Cột 1: Thông tin liên hệ -->
+
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Hệ</h3>
                     <ul class="contact-info-list">
@@ -761,14 +744,13 @@
                             <span>ĐKKD: 0123456789 do Sở KHĐT TP.HCM cấp</span>
                         </li>
                     </ul>
-                    <!-- Logo Bộ công thương (Demo) -->
+
                     <div class="gov-icon">
                         <i class="fa-solid fa-lemon"></i> Halo Sweet
                         
                     </div>
                 </div>
 
-                <!-- Cột 2: Sản Phẩm -->
                 <div class="footer-col">
                     <h3 class="footer-title">Sản Phẩm</h3>
                     <ul class="footer-links">
@@ -779,7 +761,6 @@
                     </ul>
                 </div>
 
-                <!-- Cột 3: Liên Kết Nhanh -->
                 <div class="footer-col">
                     <h3 class="footer-title">Liên Kết Nhanh</h3>
                     <ul class="footer-links">
@@ -790,7 +771,6 @@
                     </ul>
                 </div>
 
-                <!-- Cột 4: Thư Viện Ảnh (Gallery) -->
                 <div class="footer-col">
                     <h3 class="footer-title">Thư Viện Ảnh</h3>
                     <div class="footer-gallery">
@@ -806,7 +786,6 @@
             </div>
         </div>
         
-        <!-- Dòng bản quyền dưới cùng -->
         <div class="copyright-bar">
             <div class="container">
                 <p>&copy; 2023 Tiệm Bánh Halo Sweet. All rights reserved.</p>
@@ -814,7 +793,6 @@
         </div>
     </footer>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i class="fas fa-check-circle" style="color: var(--success-color); font-size: 24px;"></i>
         <div>
@@ -826,6 +804,7 @@
     <script src="main.js" defer></script>
     <script src="products-data.js"></script>
     <script>
+
         // ===== PRODUCT DATABASE =====
         const products = [
             { id: '01', name: 'Bánh sinh nhật theo yêu cầu', price: 299000, img: 'cake-pic/banhsinhnhat299.jpg', type: 'cake', rating: 4.8, reviews: 221 },
@@ -866,12 +845,10 @@
             { id: '36', name: 'Mousse Mocha', price: 22000, img: 'https://i.pinimg.com/1200x/0e/b3/cd/0eb3cd869291b9188d59ed1850cdbf4f.jpg', type: 'mousse', rating: 4.5, reviews: 110 },
         ];
 
-        // Get product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const currentProductId = urlParams.get('id') || '06';
     const currentProduct = getProductById(currentProductId);
 
-    // Load product details
     if (currentProduct) {
         document.querySelector('.detail-info h1').textContent = currentProduct.name;
         document.querySelector('.current-price').textContent = currentProduct.price.toLocaleString('vi-VN') + 'đ';
@@ -884,18 +861,15 @@
         document.querySelector('.description').textContent = currentProduct.description;
         document.querySelector('.breadcrumb span').textContent = currentProduct.name;
         
-        // Update main image
         document.getElementById('mainImage').src = currentProduct.img;
         
-        // Update thumbnails if available
         if (currentProduct.images && currentProduct.images.length > 1) {
             const thumbnailContainer = document.querySelector('.thumbnail-container');
             thumbnailContainer.innerHTML = currentProduct.images.map((img, index) => 
                 `<img src="${img}" class="thumbnail ${index === 0 ? 'active' : ''}" alt="Góc nhìn ${index + 1}">`
             ).join('');
         }
-        
-        // Update rating
+    
         const fullStars = Math.floor(currentProduct.rating);
         const hasHalfStar = currentProduct.rating % 1 >= 0.5;
         let starsHTML = '';
@@ -911,7 +885,6 @@
         document.querySelector('.rating-section .stars').innerHTML = starsHTML;
         document.querySelector('.review-count').textContent = `(${currentProduct.reviews} đánh giá)`;
         
-        // Update features
         if (currentProduct.features) {
             document.querySelector('.features-list').innerHTML = currentProduct.features.map(f => `<li>${f}</li>`).join('');
         }
@@ -1043,7 +1016,6 @@ updateArrowButtons();
         // ===== INITIALIZE =====
         loadRelatedProducts();
 
-        // ===== STORE ORDER INFO BEFORE REDIRECT =====
         const buyNowBtn = document.getElementById('buyNow');
         
         buyNowBtn.addEventListener('click', function(e) {

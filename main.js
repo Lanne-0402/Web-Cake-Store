@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.nav-links').toggleClass('active');
     });
 
-    // 2. SLIDER JS (Custom Slider cho Trang Chủ)
+    // 2. SLIDER JS 
     var currentSlide = 0;
     var slides = $('.slide');
     var totalSlides = slides.length;
@@ -36,25 +36,22 @@ $(document).ready(function() {
     }, 5000);
 
     // 3. ACCORDION (Trang Công Thức)
-
 $(document).ready(function() {
-    // Xử lý click cho Accordion Nguyên Liệu
-    $('.accordion-header').click(function() {
-        // 1. Tìm nội dung ngay bên dưới header được click
-        var content = $(this).next('.accordion-content');
-        
-        // 2. Trượt lên/xuống (Toggle)
+    $('.accordion-header').click(function () {
+
+        const content = $(this).next('.accordion-content');
+
         content.slideToggle(300);
-        
-        // 3. Thêm/Xóa class active để xoay mũi tên
+
         $(this).toggleClass('active');
     });
 });
 
     // 4. FORM VALIDATION (Trang Liên Hệ)
     $('#orderForm').submit(function(e) {
-        e.preventDefault(); 
+        e.preventDefault(); // Ngăn form reload trang
         var isValid = true;
+
         // Validate Tên
         var name = $('#name').val().trim();
         if(name === "") {
@@ -63,6 +60,7 @@ $(document).ready(function() {
         } else {
             $('#error-name').hide();
         }
+
         // Validate SĐT (Kiểm tra 10 chữ số)
         var phone = $('#phone').val().trim();
         var phoneRegex = /^[0-9]{10}$/;
@@ -72,6 +70,7 @@ $(document).ready(function() {
         } else {
             $('#error-phone').hide();
         }
+
         // Validate Địa chỉ
         var address = $('#address').val().trim();
         if(address === "") {
@@ -80,48 +79,43 @@ $(document).ready(function() {
         } else {
             $('#error-address').hide();
         }
-        // Nếu hợp lệ
+
         if(isValid) {
             alert("Cảm ơn bạn! Đơn hàng của bạn đã được gửi thành công.");
             $('#orderForm')[0].reset();
         }
     });
 
-    // ======================================================
-    // 3. TRANG SẢN PHẨM - LINKING TO DETAIL PAGE
-    // ======================================================
-    
-    // ✨ CLICK ON PRODUCT CARD → GO TO DETAIL PAGE
+    // ========================================================
+    // 3. TRANG SẢN PHẨM - liên kết với TRANG CHI TIẾT SẢN PHẨM
+    // ========================================================
+
     $('.product-card').on('click', function(e) {
-        // Prevent multiple clicks
         if($(this).data('clicking')) return;
         $(this).data('clicking', true);
         
         const productId = $(this).data('id');
         if(productId) {
-            // Redirect to product detail page with ID parameter
+
             window.location.href = `product-detail.html?id=${productId}`;
         }
         
         setTimeout(() => $(this).data('clicking', false), 500);
     });
 
-    // Add hover effect cursor
+
     $('.product-card').css('cursor', 'pointer');
 
-    // ======================================================
+
     // BIẾN TOÀN CỤC
-    // ======================================================
     let allProducts = $('.product-card');  
     let currentFilter = "all";
     let itemsPerPage = 9;
     let currentPage = 1;
 
-    // ======================================================
     // HÀM HIỂN THỊ SẢN PHẨM SAU KHI LỌC + PHÂN TRANG
-    // ======================================================
     function renderProducts() {
-        // ---- Lọc theo loại ----
+
         let filtered = allProducts;
 
         if (currentFilter !== "all") {
@@ -130,7 +124,6 @@ $(document).ready(function() {
             });
         }
 
-        // ---- Ẩn toàn bộ trước ----
         allProducts.hide().removeClass('show');
 
         // ---- Pagination ----
@@ -151,14 +144,10 @@ $(document).ready(function() {
         });
 
         renderPagination(totalPages);
-        
-        // Re-attach click handlers after rendering
+
         attachProductClickHandlers();
     }
 
-    // ======================================================
-    // RE-ATTACH CLICK HANDLERS AFTER FILTERING
-    // ======================================================
     function attachProductClickHandlers() {
         $('.product-card').off('click').on('click', function(e) {
             if($(this).data('clicking')) return;
@@ -173,9 +162,7 @@ $(document).ready(function() {
         });
     }
 
-    // ======================================================
     // TẠO NÚT PHÂN TRANG
-    // ======================================================
     function renderPagination(totalPages) {
         let pagination = $('.pagination');
         pagination.empty();
@@ -196,9 +183,7 @@ $(document).ready(function() {
         }
     }
 
-    // ======================================================
     // CLICK SIDEBAR → LỌC CATEGORY
-    // ======================================================
     $('.sidebar li').off().on('click', function () {
         currentFilter = $(this).data('filter');
         currentPage = 1;
@@ -209,9 +194,7 @@ $(document).ready(function() {
         renderProducts();
     });
 
-    // ======================================================
     // SORTING SẢN PHẨM
-    // ======================================================
     $('#sortOption').on('change', function () {
         let option = $(this).val();
 
@@ -237,7 +220,6 @@ $(document).ready(function() {
         renderProducts();
     });
 
-    // KHỞI TẠO LẦN ĐẦU
     renderProducts();
 
     // ======================================================
@@ -379,18 +361,14 @@ $(document).ready(function() {
         });
     }
 
-    // Khi click menu món → đổi phần liên quan
     $(".recipe-menu-item").click(function () {
         let target = $(this).data("target");
         renderRelated(target);
     });
 
-    // Khi load trang → render mặc định cho món đầu tiên
     renderRelated("macaron");
 
-    // ======================================================
-    // 5. CHAT POPUP
-    // ======================================================
+    // CHAT POPUP
     $("#chat-bubble").click(function () {
         $("#chat-popup").toggleClass("hidden");
     });
@@ -452,9 +430,7 @@ $(document).ready(function() {
         }
     });
 
-    // ======================================================
     // NÚT LÊN ĐẦU TRANG
-    // ======================================================
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $("#back-to-top").addClass("show");
@@ -467,9 +443,7 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
     });
 
-    // ======================================================
     // INTERSECTION OBSERVER
-    // ======================================================
     const observerOptions = {
         threshold: 0.2
     };

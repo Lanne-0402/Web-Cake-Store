@@ -1,4 +1,4 @@
-       :root {
+:root {
             --bg-color: #f6e4ea;        
             --primary-color: #e19ab6;   
             --accent-color: #97A13B;    
@@ -825,10 +825,6 @@
 
         /*7. TRANG CÔNG THỨC */
 
-        /*ACCORDION STYLE (Cho trang Công thức) */
-
-
-        
         /* ==== WRAPPER CHUNG ==== */
         .recipe-wrapper {
             display: flex;
@@ -923,7 +919,7 @@
 
         /*INGREDIENT CARD */
 
-        /* --- 1. KHUNG BAO NGOÀI --- */
+/* --- 1. KHUNG BAO NGOÀI --- */
 .ingredient-card {
     width: 70%;
     background: #fff5f8;
@@ -1029,6 +1025,7 @@
             font-weight: bold;
             color: #b44466;
         }
+
 
         /* CHAT BUBBLE */
         #chat-bubble {
@@ -1918,6 +1915,3 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-
-        
-
